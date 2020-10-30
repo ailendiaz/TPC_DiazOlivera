@@ -26,6 +26,7 @@
         
 <%--    Vamos a necesitar que las opciones de las cards tengan nombre, descripcion e imagen asi podemos armar un un foreach con una card 
     y no tantas cards--%>
+    <%--Aca podemos tener la barra de navegacion con el nombre del inquilino, menu y logo--%>
 
 </asp:Content>
 
