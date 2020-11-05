@@ -1,0 +1,55 @@
+﻿
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+header{
+    width:100%;
+    height: 60px;
+    background:black;
+}
+
+.containet-header {
+    width: 100%;
+    max-height:1200px;
+    margin:auto;
+}
+.logo-title{
+
+    display:flex;
+}
+.logo-title img{
+    width:40px;
+    height:40px;
+    margin-top:10px;
+    margin-left:10px;
+}
+    .logo-title h4 {
+        color: dimgray;
+        font-weight: 100;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+ /*PORTADA*/
+
+.container-portada {
+    width:100%;
+    height: 500px;
+    background-image: url(https://t1.ev.ltmcdn.com/es/posts/6/8/2/img_las_ciudades_del_futuro_seran_mas_ecologicas_y_sostenibles_286_600.jpg);
+    background-size: cover;
+    animation: movimiento 10s infinite linear alternate;
+}
+
+@keyframes movimiento{
+
+    from{
+        background-position:bottom left;
+
+    }to{
+
+         background-position:top right;
+     }
+}

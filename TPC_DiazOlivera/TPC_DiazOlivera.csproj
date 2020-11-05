@@ -103,6 +103,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Estilo\Inicio.css" />
+    <Content Include="Inicio.html" />
     <Content Include="Inquilino.aspx" />
     <Content Include="Administrador.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
