@@ -41,7 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
+    <Compile Include="Carpooling.cs" />
+    <Compile Include="Casa.cs" />
+    <Compile Include="Clasificados.cs" />
+    <Compile Include="Depto.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Expensas.cs" />
+    <Compile Include="Gastos.cs" />
+    <Compile Include="Inquilino.cs" />
+    <Compile Include="Instalaciones.cs" />
+    <Compile Include="Invitaciones.cs" />
+    <Compile Include="Novedades.cs" />
+    <Compile Include="Opciones.cs" />
+    <Compile Include="Pagos.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publicaciones.cs" />
+    <Compile Include="Reclamos.cs" />
+    <Compile Include="Reserva.cs" />
+    <Compile Include="Telefono.cs" />
+    <Compile Include="Tipo.cs" />
+    <Compile Include="UnidadFuncional.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

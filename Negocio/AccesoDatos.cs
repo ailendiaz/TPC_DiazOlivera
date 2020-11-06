@@ -35,7 +35,7 @@ namespace Negocio
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-        public void ejecutarLector()
+        public void ejecutarReader()
         {
             try
             {
