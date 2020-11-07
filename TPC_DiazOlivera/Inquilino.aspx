@@ -2,31 +2,95 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    
 
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Novedades</h3>
-    <p class="card-text">En novedades podrá encontrar notificaciones sobre su edificio.</p>
-    <a href="#" class="btn btn-primary">Ingresar!</a>
-  </div>
-</div>
-    
-  
+    <div class="container">
+<div class="row row-cols-1 row-cols-md-4">
 
-      <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Estado de Cuenta</h3>
-    <p class="card-text">Podrá encontrar información sobre su cuenta..</p>
-    <a href="#" class="btn btn-primary">Ingresar!</a>
+    
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Novedades</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
   </div>
-</div>
-        
-<%--    Vamos a necesitar que las opciones de las cards tengan nombre, descripcion e imagen asi podemos armar un un foreach con una card 
-    y no tantas cards--%>
-    <%--Aca podemos tener la barra de navegacion con el nombre del inquilino, menu y logo--%>
+
+    <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Estado de Cuenta</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+    <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Reclamos</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Datos Utiles</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Invitados</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+      <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Reservas</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Clasificados</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+
+     <div class="col mb-4">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Carpooling</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
+      </div>
+    </div>
+  </div>
+       
+
+    </div>
+   
+     </div>
 
 </asp:Content>
 
