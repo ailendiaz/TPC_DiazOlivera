@@ -37,11 +37,13 @@ header{
 
 .container-portada {
     width:100%;
-    height: 500px;
+    height: 600px;
     background-image: url(https://t1.ev.ltmcdn.com/es/posts/6/8/2/img_las_ciudades_del_futuro_seran_mas_ecologicas_y_sostenibles_286_600.jpg);
     background-size: cover;
     animation: movimiento 10s infinite linear alternate;
+    
 }
+
 
 @keyframes movimiento{
 
@@ -53,3 +55,4 @@ header{
          background-position:top right;
      }
 }
+

@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
    
- <div class="container">
+ <div class="container-Administrador">
 <div class="row row-cols-1 row-cols-md-3">
 
     
