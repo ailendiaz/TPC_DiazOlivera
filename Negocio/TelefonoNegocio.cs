@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+
 namespace Negocio
 {
-    public class NegocioTelefono
+    public class TelefonoNegocio
     {
         public List<Telefono> Listar(Int64 IDUsuario)
         {
             AccesoDatos datos = new AccesoDatos();
             List<Telefono> lista = new List<Telefono>();
-            datos.setearQuery("Poner la query que se trae todos los telefonos del usuario");
+            datos.setearQuery("select * from telefonos");
             datos.ejecutarReader();
             while (datos.reader.Read())
             {
@@ -22,7 +23,7 @@ namespace Negocio
                     aux.ID = Convert.ToInt64(datos.reader[0]);
                     aux.IDUsuario = Convert.ToInt64(datos.reader[1]);
                     aux.telefono = (string)datos.reader[2];
-                    lista.Add(aux);                
+                    lista.Add(aux);
                 }
             }
             return lista;

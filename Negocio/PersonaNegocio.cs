@@ -14,10 +14,12 @@ namespace Negocio
         public List<Persona> Listar()
         {
             List<Persona> lista = new List<Persona>();
-            NegocioTelefono negocio = new NegocioTelefono();
+            TelefonoNegocio negocio = new TelefonoNegocio();
             AccesoDatos datos = new AccesoDatos();
+            
             datos.setearQuery("La query que devuelve los datos para Persona");
             datos.ejecutarReader();
+            
             while (datos.reader.Read())
             {
                 Persona aux = new Persona();

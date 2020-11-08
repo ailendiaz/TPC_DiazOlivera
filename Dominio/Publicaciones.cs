@@ -9,6 +9,7 @@ namespace Dominio
     public class Publicaciones
     {
         public Int64 ID { get; set; }
+        public Int64 IDUsuario  { get; set; }
         public string titulo { get; set; }
         public string detalle { get; set; }
         public DateTime fechaHora { get; set; }
