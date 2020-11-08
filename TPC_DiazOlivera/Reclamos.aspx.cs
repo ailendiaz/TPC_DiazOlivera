@@ -15,6 +15,7 @@ namespace TPC_DiazOlivera
         public List<Telefono> listaTelefonos = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             listaReclamos = new List<Dominio.Reclamos>();
             ReclamoNegocio negocio = new ReclamoNegocio();
             listaReclamos = negocio.Listar();

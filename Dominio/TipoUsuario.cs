@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Tipo
+    public class TipoUsuario
     {
         public int ID { get; set; }
-        public string tipo { get; set; }
-        public Tipo() { }
-        public Tipo(int id,string t)
+        public string tipoUsuario { get; set; }
+        public TipoUsuario() { }
+
+        public TipoUsuario(int id,string tipo)
         {
             ID = id;
-            tipo = t;
+            tipoUsuario = tipo;
         }
     }
 }

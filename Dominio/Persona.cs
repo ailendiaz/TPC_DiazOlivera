@@ -11,7 +11,7 @@ namespace Dominio
     {
         public Int64 ID { get; set; }
         public string contrasenia { get; set; }
-        public string tipoUsuario { get; set; }
+        public TipoUsuario tipoUsuario { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public char genero { get; set; }
