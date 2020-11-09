@@ -51,5 +51,28 @@ namespace Negocio
             }
            
         }
+
+        
+        public Persona login (Persona user)
+        {
+            
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                    
+                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo");
+                datos.ejecutarReader();
+
+                
+                datos.cerrarConexion();
+                return user;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

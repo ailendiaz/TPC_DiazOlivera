@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilo\Login.css" />
-    <Content Include="Login.html" />
+    <Content Include="Login.aspx" />
     <Content Include="Inquilino.aspx" />
     <Content Include="Administrador.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -186,6 +186,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reclamos.aspx.cs">
