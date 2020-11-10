@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,11 +18,13 @@ namespace Negocio
                 AccesoDatos datos = new AccesoDatos();
 
                 datos.setearQuery("select r.ID, r.IDUsuario,r.FechaHora, r.Asunto, r.Detalle,er.ID, er.Nombre from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado");
+                //datos.setearQuery("select r.ID, r.IDUsuario, r.FechaHora, r.Asunto, r.Detalle, er.ID, er.Nombre, dat.Nombres + dat.Apellidos as 'Nombre y Apellido' from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado inner join Datos_Personales as dat ON r.IDUsuario = dat.IDUsuario");
                 datos.ejecutarReader();
 
                 while (datos.reader.Read())
                 {
                     Reclamos aux = new Reclamos();
+                    //Persona auxper = new Persona();
                     aux.ID = Convert.ToInt64(datos.reader[0]);
                     aux.IDUsuario = Convert.ToInt64(datos.reader[1]);
                     aux.fechaHora = Convert.ToDateTime(datos.reader[2]);
@@ -30,8 +33,10 @@ namespace Negocio
                     aux.estado = new Estado();
                     aux.estado.ID = Convert.ToInt32(datos.reader[5]);
                     aux.estado.estado = Convert.ToString(datos.reader[6]);
+                    //auxper.nombre= Convert.ToString(datos.reader[7]); 
                     lista.Add(aux);
                 }
+            
                 datos.cerrarConexion();
                 return lista;
             }

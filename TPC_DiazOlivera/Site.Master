@@ -16,11 +16,8 @@
     <%--Bootstrap 3--%>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-   
-    <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
-           <link rel="stylesheet" href="Estilo/Administrador.css" type="text/css" />
-       </asp:ContentPlaceHolder>
-
+    <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />
+       
 </head>
 <body>
     <form runat="server">

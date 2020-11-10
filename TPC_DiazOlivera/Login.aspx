@@ -35,7 +35,7 @@
                             <asp:TextBox ID="txtContraseña" runat="server" placeholder="Usuario"></asp:TextBox>
                         </div>
                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-primary" BorderColor="" />
-                        <%--<button type="submit" class="btnIngresar">Ingresar</button>--%>
+                        
                     </form>
                 </div>
 
