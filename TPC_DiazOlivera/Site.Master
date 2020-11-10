@@ -17,6 +17,9 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
    
+    <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
+           <link rel="stylesheet" href="Estilo/Administrador.css" type="text/css" />
+       </asp:ContentPlaceHolder>
 
 </head>
 <body>
@@ -27,8 +30,8 @@
 
         <%--Segun el formato que nosotros pensamos no haria falta el menu del Site Master pero lo dejo, aunque desalineado, para que podamos movernos en la pagina--%>
 
-        <div class="navbar navbar-pills "><%--inverse navbar-fixed-top--%>
-            <div class="container">  
+        <%--<div class="navbar navbar-pills ">--%><%--inverse navbar-fixed-top--%>
+            <%--<div class="container">  
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -45,7 +48,7 @@
                     </ul>
                 </div>    
             </div>
-        </div>
+        </div>--%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

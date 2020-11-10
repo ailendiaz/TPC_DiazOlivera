@@ -1,12 +1,28 @@
 ﻿<%@ Page Title="Administrador" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrador.aspx.cs" Inherits="TPC_DiazOlivera.Contact" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="Stylesheets" runat="server">
+       <link rel="stylesheet" href="Estilo/Administrador.css" type="text/css" />
+</asp:Content>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+ 
+    <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="Reclamos.aspx">Reclamos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Expensas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+</ul>
+
     <h2><%: Title %>.</h2>
    
  <div class="container-Administrador">
 <div class="row row-cols-1 row-cols-md-3">
-
-    
+ 
   <div class="col mb-4">
     <div class="card h-100">
       <img src="https://obsbusiness.school/sites/default/files/styles/blog_post/public/post/istock-518311294_1.jpg?itok=LJ3Jd_Kz" class="card-img-top" alt="...">
@@ -81,5 +97,4 @@
     </div>
    
      </div>
-   
 </asp:Content>
