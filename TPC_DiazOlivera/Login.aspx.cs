@@ -24,10 +24,13 @@ namespace TPC_DiazOlivera
             user.contrasenia = txtContraseña.Text;
 
             user = negocio.login(user);
+          
 
-            if (user.tipoUsuario.ID == 1)
+            if (user.tipoUsuario.ID == 3 || user.tipoUsuario.ID == 1)
+                //cargar usuario en la session
                 Response.Redirect("Inquilino.aspx");
-                    else if (user.tipoUsuario.ID == 2)
+                    else if (user.tipoUsuario.ID == 2 || user.tipoUsuario.ID == 1)
+                //cargar usuario en la session
                 Response.Redirect("Administrador.aspx");
             else
                 Response.Redirect("Login.aspx");

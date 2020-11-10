@@ -19,7 +19,7 @@ namespace Negocio
                 TelefonoNegocio negocio = new TelefonoNegocio();
                 AccesoDatos datos = new AccesoDatos();
 
-                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,tp.Nombre,dp.Nombres,dp.Apellidos,dp.Genero,dp.DNI,dp.Mail,dp.Nacimiento from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo");
+                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,tp.Nombre,dp.Nombres,dp.Apellidos,dp.Genero,dp.DNI,dp.email,dp.Nacimiento from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo");
                 datos.ejecutarReader();
 
                 while (datos.reader.Read())
@@ -59,11 +59,16 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                    
-                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo");
-                datos.ejecutarReader();
 
-                
+                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.Mail = @parametro");
+                datos.agregarParametro("@parametro", user.email);
+                //datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.Mail = 'hanslanda@gmail.com'");
+                //datos.agregarParametro("@parametro", "hanslanda@gmail.com");
+                datos.ejecutarReader();
+                datos.reader.Read();
+                user.ID = Convert.ToInt64(datos.reader[0]);
+                user.tipoUsuario = new TipoUsuario();
+                user.tipoUsuario.ID= Convert.ToInt32(datos.reader[2]);
                 datos.cerrarConexion();
                 return user;
 
