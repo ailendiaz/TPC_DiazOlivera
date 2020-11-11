@@ -47,5 +47,27 @@ namespace Negocio
             }
             
         }
+
+        public void cargar (Reclamos reclamos)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearQuery("Insert into RECLAMOS(IDEstado, IDUsuario,Asunto, Detalle)values (@IDEstado, @IDUsuario, @Asunto, @Detalle)");
+                datos.agregarParametro("@IDEstado", reclamos.estado.ID);
+                datos.agregarParametro("@IDUsuario", reclamos.IDUsuario);
+                datos.agregarParametro("@Asunto", reclamos.titulo);
+                datos.agregarParametro("@Detalle", reclamos.detalle);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }

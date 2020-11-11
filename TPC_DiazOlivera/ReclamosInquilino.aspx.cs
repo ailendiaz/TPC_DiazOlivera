@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,11 +18,22 @@ namespace TPC_DiazOlivera
 
         protected void btCancelar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Inquilino.aspx");
         }
 
         protected void btEnviar_Click(object sender, EventArgs e)
         {
+            Dominio.Reclamos reclamo = new Dominio.Reclamos();
+            Dominio.Persona persona = new Persona();
+         
+            ReclamoNegocio negocio = new ReclamoNegocio();
+
+            reclamo.estado.ID = Convert.ToInt32(1);
+            reclamo.IDUsuario = persona.ID;
+            reclamo.titulo = txtAsunto.Text;
+            reclamo.detalle = txtDetalle.Text;
+            
+            negocio.cargar(reclamo);
 
         }
     }
