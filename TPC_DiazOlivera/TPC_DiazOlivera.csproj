@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="Estilo\Administrador.css" />
     <Content Include="Estilo\Login.css" />
+    <Content Include="Estilo\ReclamosInquilino.css" />
     <Content Include="Login.aspx" />
     <Content Include="Inquilino.aspx" />
     <Content Include="Administrador.aspx" />
@@ -127,6 +128,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Reclamos.aspx" />
+    <Content Include="ReclamosInquilino.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -202,6 +204,13 @@
     </Compile>
     <Compile Include="Reclamos.aspx.designer.cs">
       <DependentUpon>Reclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReclamosInquilino.aspx.cs">
+      <DependentUpon>ReclamosInquilino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReclamosInquilino.aspx.designer.cs">
+      <DependentUpon>ReclamosInquilino.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

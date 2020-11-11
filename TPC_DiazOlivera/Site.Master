@@ -20,10 +20,15 @@
        
 </head>
 <body>
+    
     <form runat="server">
         <asp:ScriptManager runat="server">
            
         </asp:ScriptManager>
+
+        <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
+           <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />
+       </asp:ContentPlaceHolder>
 
         <%--Segun el formato que nosotros pensamos no haria falta el menu del Site Master pero lo dejo, aunque desalineado, para que podamos movernos en la pagina--%>
 
@@ -47,7 +52,7 @@
             </div>
         </div>--%>
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
             </asp:ContentPlaceHolder>
             <hr />
             <footer>

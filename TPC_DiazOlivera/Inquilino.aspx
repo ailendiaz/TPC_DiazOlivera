@@ -46,7 +46,7 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Reclamos</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
+        <a href="Inquilino.aspx" class="btn btn-primary">Ingresar</a>
       </div>
     </div>
   </div>
