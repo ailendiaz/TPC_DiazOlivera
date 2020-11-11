@@ -3,22 +3,27 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheets" runat="server">
-      <%-- <link rel="stylesheet" href="../Estilo/ReclamosInquilino.css" type="text/css" />--%>
+      <link rel="stylesheet" href="../Estilo/ReclamosInquilino.css" type="text/css" />
 
-
-    <h1 style="color:antiquewhite">Realizar Reclamos:</h1>
     
-    <div>
-    <asp:Label ID="lblReclamos" runat="server" Text="Asunto:"></asp:Label> <asp:TextBox ID="txtReclamo" runat="server"></asp:TextBox>
-        </div>
-  <div>
-    <asp:Label ID="lblFechaHora" runat="server" Text="Fecha y Hora:"></asp:Label> 
-      </div>
-    <div>
-    <asp:Label ID="lblDetalle" runat="server" Text="Detalle:"></asp:Label> <asp:TextBox ID="txtDetalle" runat="server"></asp:TextBox>
-         </div>
+    <h1 style="color:antiquewhite">Realizar Reclamos:</h1>
+   
 
-    <asp:Button ID="btEnviar" runat="server" Text="Enviar" Onclick="btEnviar_Click" />
-    <asp:Button ID="btCancelar" runat="server" Text="Cancelar" Onclick="btCancelar_Click" />
-         
+    <div class="form-group">
+    <asp:Label ID="lblAsunto" runat="server" Text="Asunto:" CssClass="label">
+    </asp:Label> <asp:TextBox ID="txtAsunto" runat="server"></asp:TextBox>
+         </div> 
+    <div class="form-group">
+    <asp:Label ID="lblFechaHora" runat="server" Text="Fecha y Hora:" CssClass="label"></asp:Label>
+         </div>
+<div class="form-group">
+    <asp:Label ID="lblDetalle" runat="server" Text="Detalle:" CssClass="label"> </asp:Label> 
+    <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle"></asp:TextBox>
+      </div>
+  
+    <div class="form-group row">
+    <asp:Button ID="btEnviar" runat="server" Text="Enviar" Onclick="btEnviar_Click" CssClass="boton" />
+    <asp:Button ID="btCancelar" runat="server" Text="Cancelar" Onclick="btCancelar_Click" CssClass="boton" />
+          </div>
+      
 </asp:Content>
