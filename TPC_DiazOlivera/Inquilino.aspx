@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Inquilino" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inquilino.aspx.cs" Inherits="TPC_DiazOlivera.About" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Stylesheets" runat="server">
+     <link rel="stylesheet" href="../Estilo/Inquilino.css" type="text/css" />
     
     <ul class="nav justify-content-center">
   <li class="nav-item">
@@ -22,89 +23,221 @@
 
     
   <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Novedades</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
+    <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Novedades">
+        <figcaption>Novedades</figcaption>
+      </figure>
     </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Novedades">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+    </div>
+
   </div>
+</div>
+      </div>
 
     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Estado de Cuenta</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="EstCuenta">
+        <figcaption>Estado de Cuenta</figcaption>
+      </figure>
     </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="EstCuenta">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+
+    </div>
+
   </div>
+</div>
+ </div>
+
+     <div class="col mb-4">
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Reclamos">
+        <figcaption>Reclamos</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Reclamos">
+      </figure>
+
+        <%--<button >Ingresar</button>--%>
+        
+      <a href="ReclamosInquilino.aspx" class="button">Ingresar</a>
+        
+    </div>
+
+  </div>
+</div>
+ </div>
 
     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Reclamos</h5>
-        <a href="ReclamosInquilino.aspx" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
 
-     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Datos Utiles</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="DatUtiles">
+        <figcaption>Datos Utiles</figcaption>
+      </figure>
     </div>
-  </div>
 
-     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Invitados</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="DatUtiles">
+      </figure>
 
-      <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Reservas</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
-
-     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Clasificados</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
-
-     <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmpIs84Q97pyqEd00IQP2HFsERRCQLvvPX_g&usqp=CAU" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Carpooling</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
-       
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
 
     </div>
+
+  </div>
+</div>
+ </div>
+    <div class="col mb-4">
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Invitados">
+        <figcaption>Invitados</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Invitados">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+
+    </div>
+
+  </div>
+</div>
+ </div>
+
+    <div class="col mb-4">
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Reservas">
+        <figcaption>Reservas</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Reservas">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+
+    </div>
+
+  </div>
+</div>
+ </div>
+    <div class="col mb-4">
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Clas">
+        <figcaption>Clasificados</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Clas">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+
+    </div>
+
+  </div>
+</div>
+ </div>
+
+    <div class="col mb-4">
+     <div class="flip-card-container" style="--hue: 100">
+  <div class="flip-card">
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Carp">
+        <figcaption>Carpooling</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Carp">
+      </figure>
+
+        <button >Ingresar</button>
+      <%--<a href="ReclamosInquilino.aspx" class="button">Ingresar</a>--%>
+
+    </div>
+
+  </div>
+</div>
+ </div>
+
+      </div>
    
      </div>
-
 </asp:Content>
 

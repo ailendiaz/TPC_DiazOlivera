@@ -4,15 +4,11 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-.container-titulo h1
-{
 
-    background-color:beige;
-    font-size: 15px;
-}
-.body {
-    background-image: url(https://images.squarespace-cdn.com/content/v1/556788cbe4b00149409aa18c/1500916629316-TSKQCQKOVA3FCYUMICPU/ke17ZwdGBToddI8pDm48kN_ZoNdj1kv_gIvm4zjH76N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8AelHsSihC3tfiYK1eHEM7W3AVjJQSBul2wE-DqW7dygg/woking-modern-house-remodelling-architectural-photographer-surrey);
-}
+
+    .body {
+        background-image: url(https://images.squarespace-cdn.com/content/v1/556788cbe4b00149409aa18c/1500916629316-TSKQCQKOVA3FCYUMICPU/ke17ZwdGBToddI8pDm48kN_ZoNdj1kv_gIvm4zjH76N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8AelHsSihC3tfiYK1eHEM7W3AVjJQSBul2wE-DqW7dygg/woking-modern-house-remodelling-architectural-photographer-surrey);
+    }
 .body h1{
 
     font-size:40px;
@@ -20,6 +16,14 @@
     font-weight:800;
     border-top: 1px solid beige;
     padding-top: 20px;
+}
+
+.text-left {
+    /*font-size: 40px;*/
+    color: #ccc;
+}
+.lblAsunto {
+    color: aliceblue;
 }
 
 /*.label {
@@ -40,6 +44,18 @@
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+    position:center;
+}
+
+.txtAsunto {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    position: center;
 }
 .boton {
     width: 130px;

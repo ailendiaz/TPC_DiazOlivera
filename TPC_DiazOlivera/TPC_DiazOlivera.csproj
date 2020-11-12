@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilo\Administrador.css" />
+    <Content Include="Estilo\Inquilino.css" />
     <Content Include="Estilo\Login.css" />
     <Content Include="Estilo\ReclamosInquilino.css" />
     <Content Include="Login.aspx" />

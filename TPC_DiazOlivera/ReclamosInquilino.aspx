@@ -3,27 +3,39 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheets" runat="server">
-      <link rel="stylesheet" href="../Estilo/ReclamosInquilino.css" type="text/css" />
+    <link rel="stylesheet" href="../Estilo/ReclamosInquilino.css" type="text/css" />
 
-    
-    <h1 style="color:antiquewhite">Realizar Reclamos:</h1>
-   
+    <h3 class="text-left">Realizar Reclamos:</h3>
 
-    <div class="form-group">
-    <asp:Label ID="lblAsunto" runat="server" Text="Asunto:" CssClass="label">
-    </asp:Label> <asp:TextBox ID="txtAsunto" runat="server"></asp:TextBox>
-         </div> 
-    <div class="form-group">
-    <asp:Label ID="lblFechaHora" runat="server" Text="Fecha y Hora:" CssClass="label"></asp:Label>
-         </div>
-<div class="form-group">
-    <asp:Label ID="lblDetalle" runat="server" Text="Detalle:" CssClass="label"> </asp:Label> 
-    <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle"></asp:TextBox>
+    <div id="page" class="container" style="border:solid">
+  <div class="row" style="padding-top: 12px;"></div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <div class="form-group">
+        <div class="input-group">
+          <label for="lblAsunto" class="label">Asunto</label>  
+            <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto"></asp:TextBox>
+        </div>
       </div>
-  
-    <div class="form-group row">
-    <asp:Button ID="btEnviar" runat="server" Text="Enviar" Onclick="btEnviar_Click" CssClass="boton" />
-    <asp:Button ID="btCancelar" runat="server" Text="Cancelar" Onclick="btCancelar_Click" CssClass="boton" />
-          </div>
-      
+      <div class="form-group">
+        <div class="input-group">
+           <label for="lblFechaHora" class="label">Fecha y Hora:</label>
+        </div>
+      </div>
+        <div class="form-group">
+        <div class="input-group">
+           <label for="lblDetalle" class="label">Detalle:</label>
+            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle"></asp:TextBox>
+        </div>
+      </div>
+        <div class="form-group">
+        <div class="input-group">
+            <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" CssClass="boton" />
+            <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" CssClass="boton" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </asp:Content>

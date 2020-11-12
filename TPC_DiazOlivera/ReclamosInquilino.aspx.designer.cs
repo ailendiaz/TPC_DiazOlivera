@@ -15,15 +15,6 @@ namespace TPC_DiazOlivera
     {
 
         /// <summary>
-        /// lblAsunto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAsunto;
-
-        /// <summary>
         /// txtAsunto control.
         /// </summary>
         /// <remarks>
@@ -31,24 +22,6 @@ namespace TPC_DiazOlivera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAsunto;
-
-        /// <summary>
-        /// lblFechaHora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaHora;
-
-        /// <summary>
-        /// lblDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetalle;
 
         /// <summary>
         /// txtDetalle control.
