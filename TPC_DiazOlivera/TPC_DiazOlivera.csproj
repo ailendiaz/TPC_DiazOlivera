@@ -128,6 +128,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="NovedadesAdm.aspx" />
+    <Content Include="NovedadesInquilino.aspx" />
     <Content Include="Reclamos.aspx" />
     <Content Include="ReclamosInquilino.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -197,6 +199,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NovedadesAdm.aspx.cs">
+      <DependentUpon>NovedadesAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NovedadesAdm.aspx.designer.cs">
+      <DependentUpon>NovedadesAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NovedadesInquilino.aspx.cs">
+      <DependentUpon>NovedadesInquilino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NovedadesInquilino.aspx.designer.cs">
+      <DependentUpon>NovedadesInquilino.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reclamos.aspx.cs">
