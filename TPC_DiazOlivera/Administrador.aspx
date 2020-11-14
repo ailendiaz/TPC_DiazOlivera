@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Administrador" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrador.aspx.cs" Inherits="TPC_DiazOlivera.Contact" %>
+﻿<%@ Page Title="Administrador" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Administrador.aspx.cs" Inherits="TPC_DiazOlivera.Contact" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Estilo" runat="server">
  
-    <ul class="nav justify-content-center">
+   <%-- <ul class="nav justify-content-center">
   <li class="nav-item">
     <a class="nav-link active" href="Reclamos.aspx">Reclamos</a>
   </li>
@@ -12,7 +12,7 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Link</a>
   </li>
-</ul>
+</ul>--%>
 
     <h2><%: Title %>.</h2>
    

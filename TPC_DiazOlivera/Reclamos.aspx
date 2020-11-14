@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reclamos.aspx.cs" Inherits="TPC_DiazOlivera.Reclamos" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Reclamos.aspx.cs" Inherits="TPC_DiazOlivera.Reclamos" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Estilo" runat="server">
 
     <h3 style="color:antiquewhite">Gestión de Reclamos</h3>
     <asp:Button ID="Pendientes" runat="server" Text="Pendientes" OnClick="btnPendientes" class="btn btn-primary" BorderColor="" />

@@ -4,17 +4,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="Stylesheets" runat="server">
      <link rel="stylesheet" href="../Estilo/Inquilino.css" type="text/css" />
     
-    <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Reclamos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Expensas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-</ul>
 
     <h2><%: Title %>.</h2>
 
