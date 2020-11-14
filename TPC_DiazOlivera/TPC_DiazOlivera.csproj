@@ -131,7 +131,6 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="NovedadesAdm.aspx" />
     <Content Include="NovedadesInquilino.aspx" />
-    <Content Include="NovedadesInquilinos.aspx" />
     <Content Include="Reclamos.aspx" />
     <Content Include="ReclamosInquilino.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -222,13 +221,6 @@
     </Compile>
     <Compile Include="NovedadesInquilino.aspx.designer.cs">
       <DependentUpon>NovedadesInquilino.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NovedadesInquilinos.aspx.cs">
-      <DependentUpon>NovedadesInquilinos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NovedadesInquilinos.aspx.designer.cs">
-      <DependentUpon>NovedadesInquilinos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reclamos.aspx.cs">

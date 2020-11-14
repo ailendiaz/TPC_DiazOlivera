@@ -31,10 +31,15 @@
             <td style="font-size:15px"><% =item.detalle %> </td>
             <td style="font-size:15px">
                 
-                <asp:CheckBox ID="CheckBox1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Sin Revisar"></asp:Label>   
-                <asp:CheckBox ID="CheckBox2" runat="server" /><asp:Label ID="Label2" runat="server" Text="En Proceso"></asp:Label>    
+                <asp:CheckBox ID="CheckBox1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Sin Revisar"></asp:Label> 
+                <br />  
+                <asp:CheckBox ID="CheckBox2" runat="server" /><asp:Label ID="Label2" runat="server" Text="En Proceso"></asp:Label>  
+                <br />  
                 <asp:CheckBox ID="CheckBox3" runat="server" /><asp:Label ID="Label3" runat="server" Text="Solucionado"></asp:Label>
             </td>
+             <td style="font-size:15px">
+                <asp:Button ID="Modificar" Text="Modificar" OnClick="Modificar_Click" runat="server" />
+             </td> 
         </tr>
 
         <%} %>

@@ -16,25 +16,44 @@ namespace TPC_DiazOlivera
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            //validar el tipo de usuario
+            string aux = Request.QueryString["ID"];
+            if (aux == "Pendientes")
+            {
+                listaReclamos = new List<Dominio.Reclamos>();
+                ReclamoNegocio negocio = new ReclamoNegocio();
+                List<Dominio.Reclamos> listaAux = new List<Dominio.Reclamos>();
+                listaAux = negocio.Listar();
+                listaReclamos= listaAux.FindAll(x=> x.estado.estado=="Sin revisar"||x.estado.estado== "En proceso" );
 
-            listaReclamos = new List<Dominio.Reclamos>();
-            ReclamoNegocio negocio = new ReclamoNegocio();
-            listaReclamos = negocio.Listar();
+            }
+            else if (aux == "Finalizados")
+            {
+                listaReclamos = new List<Dominio.Reclamos>();
+                ReclamoNegocio negocio = new ReclamoNegocio();
+                List<Dominio.Reclamos> listaAux = new List<Dominio.Reclamos>();
+                listaAux = negocio.Listar();
+                listaReclamos = listaAux.FindAll(x => x.estado.estado == "Solucionado");
+            }
+            else
+            {
+                listaReclamos = new List<Dominio.Reclamos>();
+                ReclamoNegocio negocio = new ReclamoNegocio();
+                listaReclamos = negocio.Listar();
+            }
+
+          
         }
 
         protected void btnPendientes(object sender, EventArgs e)
         {
-            listaReclamos = new List<Dominio.Reclamos>();
-            ReclamoNegocio negocio = new ReclamoNegocio(); 
-            listaReclamos = negocio.Listar();
+            Response.Redirect("/Reclamos.aspx?ID=Pendientes");
             //aca lista todo, hay que filtrar
         }
 
         protected void btnFinalizados(object sender, EventArgs e)
         {
-            listaReclamos = new List<Dominio.Reclamos>();
-            ReclamoNegocio negocio = new ReclamoNegocio();
-            listaReclamos = negocio.Listar();
+            Response.Redirect("/Reclamos.aspx?ID=Finalizados");
             // aca lista todo, hay que filtrar
         }
 
@@ -50,6 +69,22 @@ namespace TPC_DiazOlivera
             Response.Redirect("Administrador.aspx");
         }
 
+        protected void Modificar_Click(object sender, EventArgs e)
+        {
 
+            if (CheckBox1.Checked)
+            {
+                
+                //List<Dominio.Reclamos> aux = new List<Dominio.Reclamos>();
+                //aux = listaReclamos;
+                //foreach (Dominio.Reclamos items in aux)
+                //{
+                //    if (items.ID ==)
+                //    {
+                //        items.estado.ID = 1;
+                //    }
+                //}
+            }
+        }
     }
 }
