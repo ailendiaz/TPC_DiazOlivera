@@ -1,14 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NovedadesInquilino.aspx.cs" Inherits="TPC_DiazOlivera.NovedadesInquilino" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NovedadesInquilinos.aspx.cs" Inherits="TPC_DiazOlivera.NovedadesInquilinos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheets" runat="server">
-      
-   
-   
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-     <%int con = 0; %>
-  <%foreach (Dominio.Novedades item in lista)     
+
+         <%int con = 0; %>
+  <%foreach (Dominio.Novedades item in listaNovedades)     
         {%>
         <%con++;%>
 
@@ -20,6 +17,5 @@
         </div>
     </div>
    <%} %>
-    
 
 </asp:Content>

@@ -127,9 +127,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="MasterAdmin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="NovedadesAdm.aspx" />
     <Content Include="NovedadesInquilino.aspx" />
+    <Content Include="NovedadesInquilinos.aspx" />
     <Content Include="Reclamos.aspx" />
     <Content Include="ReclamosInquilino.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -200,6 +202,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterAdmin.Master.cs">
+      <DependentUpon>MasterAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterAdmin.Master.designer.cs">
+      <DependentUpon>MasterAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="NovedadesAdm.aspx.cs">
       <DependentUpon>NovedadesAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +222,13 @@
     </Compile>
     <Compile Include="NovedadesInquilino.aspx.designer.cs">
       <DependentUpon>NovedadesInquilino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NovedadesInquilinos.aspx.cs">
+      <DependentUpon>NovedadesInquilinos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NovedadesInquilinos.aspx.designer.cs">
+      <DependentUpon>NovedadesInquilinos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reclamos.aspx.cs">
