@@ -11,11 +11,10 @@
   <%foreach (Dominio.Novedades item in listaNovedades)     
         {%>
         <%con++;%>
-
+    
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-header"><%=item.fechaHora%></div>
+        <div class="card-header"><%=con %> <%=item.fechaHora%></div>
         <div class="card-body">
-            <%--<h5 class="card-title"><%item.titulo%></h5>--%>
             <p class="card-text"><%=item.detalle%></p>
         </div>
     </div>

@@ -19,13 +19,14 @@
       </div>
       <div class="form-group">
         <div class="input-group">
-           <label for="lblFechaHora" class="label">Fecha y Hora:</label>
+            <% DateTime ahora = DateTime.Now; %>
+           <label for="lblFechaHora" class="label">Fecha y Hora: <% =ahora %></label>
         </div>
       </div>
         <div class="form-group">
         <div class="input-group">
-           <label for="lblDetalle" class="label">Detalle:</label>
-            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle"></asp:TextBox>
+           <label for="lblDetalle"  class="label">Detalle:</label>
+            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine"></asp:TextBox>
         </div>
       </div>
         <div class="form-group">

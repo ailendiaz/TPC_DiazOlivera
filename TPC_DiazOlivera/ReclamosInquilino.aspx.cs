@@ -13,7 +13,15 @@ namespace TPC_DiazOlivera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Persona p = new Persona();
+            p = (Dominio.Persona)Session["Usuario"];
+            
+            if ( p.tipoUsuario.ID!= 1)
+            {
+                string error = "Solo los usuarios de tipo inquilino pueden ingresar a esta seccion";
+                Response.Redirect("ErrorInquilino.aspx?Error="+error);
+                
+            }
         }
 
         protected void btCancelar_Click(object sender, EventArgs e)

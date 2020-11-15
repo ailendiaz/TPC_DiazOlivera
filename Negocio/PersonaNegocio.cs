@@ -62,8 +62,7 @@ namespace Negocio
 
                 datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.Mail = @parametro");
                 datos.agregarParametro("@parametro", user.email);
-                //datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.Mail = 'hanslanda@gmail.com'");
-                //datos.agregarParametro("@parametro", "hanslanda@gmail.com");
+                
                 datos.ejecutarReader();
                 datos.reader.Read();
                 user.ID = Convert.ToInt64(datos.reader[0]);

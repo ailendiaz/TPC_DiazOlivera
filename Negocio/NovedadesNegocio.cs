@@ -13,16 +13,19 @@ namespace Negocio
         {
             try
             {
-                Novedades novedades = new Novedades();
+                
                 List<Novedades> lista = new List<Novedades>();
                 AccesoDatos datos = new AccesoDatos();
                 datos.setearQuery("Select detalle, FechaHora From Novedades");
                 datos.ejecutarReader();
+                int con = 0;
                 while (datos.reader.Read())
                 {
+                    Novedades novedades = new Novedades();
                     novedades.detalle = Convert.ToString(datos.reader[0]);
                     novedades.fechaHora = Convert.ToDateTime(datos.reader[1]);
                     lista.Add(novedades);
+                    con++;
 
                 }
                 datos.cerrarConexion();
