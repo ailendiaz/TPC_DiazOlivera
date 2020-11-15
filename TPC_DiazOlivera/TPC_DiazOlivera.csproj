@@ -108,6 +108,7 @@
     <Content Include="Estilo\Inquilino.css" />
     <Content Include="Estilo\Login.css" />
     <Content Include="Estilo\ReclamosInquilino.css" />
+    <Content Include="ExpensasAdmin.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Inquilino.aspx" />
     <Content Include="Administrador.aspx" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="ErrorInquilino.aspx.designer.cs">
       <DependentUpon>ErrorInquilino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpensasAdmin.aspx.cs">
+      <DependentUpon>ExpensasAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpensasAdmin.aspx.designer.cs">
+      <DependentUpon>ExpensasAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inquilino.aspx.cs">
       <DependentUpon>Inquilino.aspx</DependentUpon>

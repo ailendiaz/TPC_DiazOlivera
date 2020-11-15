@@ -30,5 +30,43 @@ namespace Negocio
                 throw ex;
             }
         }
+        public List<Tipo> ListarTipoGasto()
+        {
+            try
+            {
+                List<Tipo> lista = new List<Tipo>();
+                AccesoDatos datos = new AccesoDatos();
+
+                datos.setearQuery("select * from Tipo_Gasto");
+                datos.ejecutarReader();
+                while (datos.reader.Read())
+                {
+                    lista.Add(new Tipo(Convert.ToInt32(datos.reader[0]), Convert.ToString(datos.reader[1])));
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void AgregarTipoGasto(Tipo aux)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_GuardarTipoGasto");
+                datos.agregarParametro("@Nombre", aux.tipo);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

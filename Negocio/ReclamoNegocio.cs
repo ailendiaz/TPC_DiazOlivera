@@ -63,9 +63,8 @@ namespace Negocio
                 datos.agregarParametro("@Asunto", reclamos.titulo);
                 datos.agregarParametro("@Detalle", reclamos.detalle);
                 datos.ejecutarAccion();
-                   
-
-
+                datos.cerrarConexion();
+                 
             }
             catch (Exception ex)
             {
