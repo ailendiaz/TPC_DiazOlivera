@@ -12,7 +12,7 @@ namespace TPC_DiazOlivera
 {
     public partial class ExpensasAdmin : System.Web.UI.Page
     {
-        List<Gastos> listaGastos = null;
+        public List<Gastos> listaGastos = null;
         public void Page_Load(object sender, EventArgs e)
         {
             
@@ -38,26 +38,32 @@ namespace TPC_DiazOlivera
             ddlTipoGasto.DataTextField = "tipo";
             ddlTipoGasto.DataValueField = "ID";
             ddlTipoGasto.DataBind();
-            txtImporte.Text = "Importe";
+          
 
-            aux.fechaHora = Convert.ToDateTime(txtFecha.Text);
-            aux.tipo.ID = Convert.ToInt32(ddlTipoGasto.SelectedValue);
-            aux.importe = Convert.ToDecimal(txtImporte.Text);
-            
-            
-
+             
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Gastos aux= new Gastos();
+            aux.tipo = new Tipo();
+            aux.fechaHora = Convert.ToDateTime(txtFecha.Text);
+            string a = ddlTipoGasto.SelectedValue;
+            //aux.tipo.ID = a;
+            aux.importe = Convert.ToDecimal(txtImporte.Text);
+            //aux.importe = SqlMoney.Parse(txtImporte.Text);
+
+            listaGastos.Add(aux);
+
             if (listaGastos != null)
             {
                 Session["listaGastos"] = listaGastos;
             }
+
             Response.Redirect("ExpensasAdmin.aspx");
 
             //Session.Add("listagastos", listaGastos);
-
+           
         }
 
         protected void btnAgregarTipoGasto_Click(object sender, EventArgs e)

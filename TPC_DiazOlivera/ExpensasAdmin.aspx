@@ -16,7 +16,7 @@
   
     
     <% int con = 0;%>
-    <% Decimal acu = 0;%>
+    <% System.Data.SqlTypes.SqlMoney acu = 0;%>
 
     <% foreach (Dominio.Gastos item in listaGastos)
         {%>
@@ -24,18 +24,19 @@
             
             
               <tr>
-              <th scope="row">1</th>
-                  <td><%=con %></td>
+              <th scope="row"><%=con %></th>
+             
                   <td><%=item.fechaHora %></td>
-                  <td><%=item.tipo.tipo %></td>
+                  <td><%= item.tipo.ID%></td>
                   <td><%=item.importe %></td>
              </tr>
-                <% acu+=Convert.ToDecimal(item.importe);%>
+      
+                <% acu+= item.importe;%>
             
 
         <%} %>
-        <th colspan="3" style="text-align:right"> Total </th>
-        <th><%=acu %></th>
+        <th colspan="3" style="text-align:right"> Total: $</th>
+        <th><%=acu.ToString()%></th>
      </tbody>
     </table>
     <br />  
