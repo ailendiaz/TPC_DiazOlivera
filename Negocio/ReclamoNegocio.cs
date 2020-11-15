@@ -24,9 +24,12 @@ namespace Negocio
                 while (datos.reader.Read())
                 {
                     Reclamos aux = new Reclamos();
+                    aux.inquilino = new Inquilino();
+                    InquilinoNegocio auxNegocio = new InquilinoNegocio();
                     //Persona auxper = new Persona();
                     aux.ID = Convert.ToInt64(datos.reader[0]);
-                    aux.IDUsuario = Convert.ToInt64(datos.reader[1]);
+                    aux.inquilino = auxNegocio.Buscar(Convert.ToInt64(aux.ID));
+                    //aux.IDUsuario = Convert.ToInt64(datos.reader[1]);
                     aux.fechaHora = Convert.ToDateTime(datos.reader[2]);
                     aux.titulo = Convert.ToString(datos.reader[3]);
                     aux.detalle = Convert.ToString(datos.reader[4]);
@@ -48,17 +51,19 @@ namespace Negocio
             
         }
 
-        public void cargar (Reclamos reclamos)
+        public void Guardar (Reclamos reclamos)
         {
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearQuery("Insert into RECLAMOS(IDEstado, IDUsuario,Asunto, Detalle)values (@IDEstado, @IDUsuario, @Asunto, @Detalle)");
+                datos.setearSP("sp_GuardarReclamo");
+                //datos.setearQuery("Insert into RECLAMOS(IDEstado, IDUsuario,Asunto, Detalle)values (@IDEstado, @IDUsuario, @Asunto, @Detalle)");
                 datos.agregarParametro("@IDEstado", reclamos.estado.ID);
-                datos.agregarParametro("@IDUsuario", reclamos.IDUsuario);
+                datos.agregarParametro("@IDUsuario", reclamos.inquilino.ID);
                 datos.agregarParametro("@Asunto", reclamos.titulo);
                 datos.agregarParametro("@Detalle", reclamos.detalle);
                 datos.ejecutarAccion();
+                   
 
 
             }

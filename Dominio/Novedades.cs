@@ -8,6 +8,6 @@ namespace Dominio
 {
     public class Novedades:Publicaciones
     {
-
+        public Administrador administrador { get; set; }
     }
 }

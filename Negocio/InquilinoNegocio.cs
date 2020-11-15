@@ -9,6 +9,38 @@ namespace Negocio
 {
     public class InquilinoNegocio
     {
+        public Inquilino Buscar(Int64 ID)
+        {
+            Inquilino aux = new Inquilino();
+            aux.tipoUsuario = new TipoUsuario();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("Select u.ID, u.IDTipo, tp.Nombre, dp.Nombres, dp.Apellidos, dp.DNI, dp.Mail, uf.ID from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join Unidad_Funcional as uf on uf.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where u.ID = @ID");
+                datos.agregarParametro("@ID", ID);
+                
+                datos.ejecutarReader();
+                datos.reader.Read();
+                aux.ID = Convert.ToInt64(datos.reader[0]);
+                aux.tipoUsuario.ID = Convert.ToInt32(datos.reader[1]);
+                aux.tipoUsuario.tipoUsuario = Convert.ToString(datos.reader[2]);
+                aux.nombre = Convert.ToString(datos.reader[3]);
+                aux.apellido = Convert.ToString(datos.reader[4]);
+                //aux.DNI = Convert.ToString(datos.reader[5]);
+                aux.DNI = Convert.ToInt32(datos.reader[5]);
+                aux.email = Convert.ToString(datos.reader[6]);
+                //aux.UF.ID = Convert.ToInt64(datos.reader[7]);
+                datos.cerrarConexion();
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
         //public List<Inquilino> Listar()
         //{
         //    try
@@ -49,5 +81,7 @@ namespace Negocio
         //    }
 
         //}
+
+
     }
 }

@@ -35,13 +35,15 @@ namespace TPC_DiazOlivera
             Dominio.Persona persona = new Persona();
          
             ReclamoNegocio negocio = new ReclamoNegocio();
-
-            reclamo.estado.ID = Convert.ToInt32(1);
-            reclamo.IDUsuario = persona.ID;
+            persona = (Dominio.Persona)Session["Usuario"];
+            reclamo.estado = new Estado();
+            reclamo.estado.ID = 1;
+            reclamo.inquilino.ID = persona.ID;
             reclamo.titulo = txtAsunto.Text;
             reclamo.detalle = txtDetalle.Text;
             
-            negocio.cargar(reclamo);
+            negocio.Guardar(reclamo);
+            Response.Redirect("/Inquilino.aspx");
 
         }
     }

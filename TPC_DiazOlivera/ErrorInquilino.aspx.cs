@@ -15,6 +15,7 @@ namespace TPC_DiazOlivera
         {
             string error;
             error = Request.QueryString["Error"];
+            lblError.Text = error;
         }
     }
 }

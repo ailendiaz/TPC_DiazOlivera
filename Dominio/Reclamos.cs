@@ -9,6 +9,6 @@ namespace Dominio
 {
     public class Reclamos:Publicaciones
     {
-
+        public Inquilino inquilino { get; set; }
     }
 }
