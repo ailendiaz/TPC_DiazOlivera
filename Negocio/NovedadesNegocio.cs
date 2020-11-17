@@ -38,5 +38,25 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void Guardar(Novedades guardar)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_GuardarNovedades"); 
+                datos.agregarParametro("@Detalle", guardar.detalle);
+                datos.agregarParametro("@FechaHora", guardar.fechaHora);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }

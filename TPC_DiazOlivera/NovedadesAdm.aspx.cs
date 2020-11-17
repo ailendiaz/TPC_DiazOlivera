@@ -14,11 +14,28 @@ namespace TPC_DiazOlivera
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
            
 
 
 
+        }
+
+        protected void btnPublicar_Click(object sender, EventArgs e)
+        {
+            Dominio.Novedades novedades = new Dominio.Novedades();
+            NovedadesNegocio negocio = new NovedadesNegocio();
+
+            novedades.detalle = txtDetalle.Text;
+            novedades.fechaHora = Convert.ToDateTime(txtFechaHora.Text);
+            negocio.Guardar(novedades);
+            Response.Redirect("NovedadesAdm.aspx");
+
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administrador.aspx");
         }
     }
 }
