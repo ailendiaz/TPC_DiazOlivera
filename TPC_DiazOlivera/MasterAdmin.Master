@@ -14,7 +14,7 @@
     <a class="nav-link active" href="Reclamos.aspx">Reclamos</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Expensas</a>
+    <a class="nav-link" href="ExpensasAdmin.aspx">Expensas</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="NovedadesAdm.aspx">Novedades</a>

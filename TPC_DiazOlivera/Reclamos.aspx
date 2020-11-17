@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Estilo" runat="server">
 
     <h3 style="color:antiquewhite">Gestión de Reclamos</h3>
-    <asp:Button ID="Pendientes" runat="server" Text="Pendientes" OnClick="btnPendientes" class="btn btn-primary" BorderColor="" />
-    <asp:Button ID="Finalizados" runat="server" Text="Finalizados" OnClick="btnFinalizados" class="btn btn-primary" BorderColor="" />
+    <asp:Button ID="Pendientes" runat="server" Text="Pendientes" OnClick="btnPendientes"  class="btn btn-primary" BorderColor="" />
+    <asp:Button ID="Finalizados" runat="server" Text="Finalizados" OnClick="btnFinalizados"  class="btn btn-primary" BorderColor="" />
 
     <table class="table table-dark">
   <thead>
@@ -41,13 +41,13 @@
                 <asp:CheckBox ID="CheckBox3" runat="server" /><asp:Label ID="Label3" runat="server" Text="Solucionado"></asp:Label>
             </td>
              <td style="font-size:15px">
-                <asp:Button ID="Modificar" Text="Modificar" OnClick="Modificar_Click" runat="server" />
+                <asp:Button ID="Modificar" Text="Modificar" OnClick="Modificar_Click" runat="server" class="btn btn-primary"/>
              </td> 
         </tr>
 
         <%} %>
   </tbody>
 </table>
-    <asp:Button ID="Aceptar" runat="server" Text="Aceptar" OnClick="btnAceptar" class="btn btn-primary" BorderColor="" />
-    <asp:Button ID="Cancelar" runat="server" Text="Cancelar" OnClick="btnCancelar" class="btn btn-primary" BorderColor="" />
+    <asp:Button ID="Aceptar" runat="server" Text="Aceptar" OnClick="btnAceptar"  class="btn btn-primary" BorderColor="" />
+    <asp:Button ID="Cancelar" runat="server" Text="Cancelar" OnClick="btnCancelar"  class="btn btn-primary" BorderColor="" />
 </asp:Content>
