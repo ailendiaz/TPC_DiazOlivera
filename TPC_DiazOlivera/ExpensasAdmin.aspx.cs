@@ -13,9 +13,22 @@ namespace TPC_DiazOlivera
     public partial class ExpensasAdmin : System.Web.UI.Page
     {
         public List<Gastos> listaGastos = null;
+        Administrador admin = null;
         public void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            try
+            {
+                admin = (Administrador)Session["Usuario"];
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Inquilino.aspx");
+            }
+
             if (Session["listaGastos"] == null)
             {
                 listaGastos = new List<Gastos>();
@@ -32,13 +45,14 @@ namespace TPC_DiazOlivera
                 TipoNegocio negocio = new TipoNegocio();
                 tiposGasto = negocio.ListarTipoGasto();
 
-
-            txtFecha.Text = Convert.ToString(DateTime.Now);
-            ddlTipoGasto.DataSource = tiposGasto;
-            ddlTipoGasto.DataTextField = "tipo";
-            ddlTipoGasto.DataValueField = "ID";
-            ddlTipoGasto.DataBind();
-             
+            if (!IsPostBack) 
+            { 
+                txtFecha.Text = Convert.ToString(DateTime.Now);
+                ddlTipoGasto.DataSource = tiposGasto;
+                ddlTipoGasto.DataTextField = "tipo";
+                ddlTipoGasto.DataValueField = "ID";
+                ddlTipoGasto.DataBind();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -51,8 +65,6 @@ namespace TPC_DiazOlivera
             aux.tipo.ID = Convert.ToInt32(ddlTipoGasto.SelectedItem.Value);
             aux.tipo.tipo = ddlTipoGasto.SelectedItem.Text;
             
-            
-
 
             listaGastos.Add(aux);
 

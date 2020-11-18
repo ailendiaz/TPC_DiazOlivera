@@ -11,12 +11,26 @@ namespace TPC_DiazOlivera
 {
     public partial class Reclamos : System.Web.UI.Page
     {
+        
         public List<Dominio.Reclamos> listaReclamos = null;
         public List<Telefono> listaTelefonos = null;
-        
+        public Administrador admin = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //validar el tipo de usuario
+            if (Session["Usuario"]==null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            try
+            {
+                admin = (Administrador)Session["Usuario"];
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Inquilino.aspx");
+            }
+
             string aux = Request.QueryString["ID"];
             if (aux == "Pendientes")
             {

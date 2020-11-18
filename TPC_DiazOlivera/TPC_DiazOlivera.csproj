@@ -103,6 +103,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltaUsuario.aspx" />
     <Content Include="ErrorInquilino.aspx" />
     <Content Include="Estilo\Administrador.css" />
     <Content Include="Estilo\Inquilino.css" />
@@ -170,6 +171,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaUsuario.aspx.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.designer.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="ErrorInquilino.aspx.cs">
       <DependentUpon>ErrorInquilino.aspx</DependentUpon>

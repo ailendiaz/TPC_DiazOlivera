@@ -11,7 +11,8 @@
         <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:antiquewhite"/>
         <asp:TextBox ID="txtFecha" ReadOnly="true" Class="form-control" runat="server" />  
     </div>
-    <div class="form-group col-md-4">
+    <%--<div class="form-group col-md-4">--%>
+    <div class="form-group">
         <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:antiquewhite"/>
         <asp:DropDownList ID="ddlTipoGasto" CssClass="form-control" runat="server">
             
@@ -73,7 +74,7 @@
 
         <%} %>
         <th colspan="3" style="text-align:right"> Total: $</th>
-        <th><%=acu.ToString();%></th>
+        <th><%=acu.ToString()%></th>
      </tbody>
     </table>
     <br />  

@@ -9,6 +9,28 @@ namespace Negocio
 {
     public class TipoNegocio
     {
+        public List<Tipo> ListarTipoUsuario()
+        {
+            try
+            {
+                List<Tipo> lista = new List<Tipo>();
+                AccesoDatos datos = new AccesoDatos();
+
+                datos.setearQuery("select * from Tipo_Usuario");
+                datos.ejecutarReader();
+                while (datos.reader.Read())
+                {
+                   //if(Convert.ToInt32(datos.reader[0])!=3)
+                    lista.Add(new Tipo(Convert.ToInt32(datos.reader[0]), Convert.ToString(datos.reader[1])));
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public List<Tipo> ListarTipoUF()
         {
             try
