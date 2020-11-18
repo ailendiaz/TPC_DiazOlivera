@@ -20,7 +20,7 @@ namespace Negocio
                 datos.ejecutarReader();
                 while (datos.reader.Read())
                 {
-                   //if(Convert.ToInt32(datos.reader[0])!=3)
+                   if(Convert.ToInt32(datos.reader[0])!=3)
                     lista.Add(new Tipo(Convert.ToInt32(datos.reader[0]), Convert.ToString(datos.reader[1])));
                 }
                 return lista;

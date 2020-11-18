@@ -14,16 +14,16 @@ namespace TPC_DiazOlivera
         public Persona user = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["Logout"] == "1")
+            {
+                Session["Usuario"] = null;
+            }
         }
 
        protected void btnIngresar (object sender, EventArgs e)
         {
             
-            if(Request.QueryString["Logout"]=="1")
-            {
-                Session["Usuario"]=null;
-            }
+            
             user = new Persona();
             PersonaNegocio negocio = new PersonaNegocio();
             user.tipoUsuario = new Tipo();
@@ -33,6 +33,7 @@ namespace TPC_DiazOlivera
             user = negocio.Login(user);
             if (user.ID == 0)
             {
+                //Insertar mensaje de que no encontro el usuario
                 Response.Redirect("Login.aspx");
             }
 
