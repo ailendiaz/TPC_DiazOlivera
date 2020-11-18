@@ -26,13 +26,13 @@
                     <h1>BIENVENIDO</h1>
                     <form id="form1"  runat="server">
                         <div class="form-group-nombre">
-                            <label for="NombredeUsuario">Usuario</label>
-                            <asp:TextBox ID="txtUsuario" runat="server" placeholder="Usuario"></asp:TextBox> 
+                            <label for="NombredeUsuario">DNI</label>
+                            <asp:TextBox ID="txtUsuario" runat="server" placeholder="DNI..."></asp:TextBox> 
                            
                         </div>
                         <div class="form-group">
                             <label for="ContraseñaUsuario">Contraseña</label>
-                            <asp:TextBox ID="txtContraseña" runat="server" placeholder="Usuario"></asp:TextBox>
+                            <asp:TextBox ID="txtContraseña" runat="server" placeholder="Contraseña..."></asp:TextBox>
                         </div>
                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-primary" BorderColor="" />
                         

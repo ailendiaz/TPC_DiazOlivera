@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AdministradorNegocio.cs" />
+    <Compile Include="DeptoNegocio.cs" />
     <Compile Include="GastosNegocio.cs" />
     <Compile Include="InquilinoNegocio.cs" />
     <Compile Include="NovedadesNegocio.cs" />
@@ -50,7 +52,6 @@
     <Compile Include="ReclamoNegocio.cs" />
     <Compile Include="TelefonoNegocio.cs" />
     <Compile Include="TipoNegocio.cs" />
-    <Compile Include="TipoUsuarioNegocio.cs" />
     <Compile Include="UnidadFuncionalNegocio.cs" />
   </ItemGroup>
   <ItemGroup>

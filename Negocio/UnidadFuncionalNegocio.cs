@@ -9,7 +9,7 @@ namespace Negocio
 {
     public class UnidadFuncionalNegocio
     {
-        public List<UnidadFuncional> Listar()
+        public List<UnidadFuncional> ListarUF()
         {
             try
             {

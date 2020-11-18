@@ -64,7 +64,7 @@
               <th scope="row"><%=con %></th>
              
                   <td><%=item.fechaHora %></td>
-                  <td><%= item.tipo.ID%></td>
+                  <td><%=item.tipo.tipo%></td>
                   <td><%=item.importe %></td>
              </tr>
       
@@ -73,7 +73,7 @@
 
         <%} %>
         <th colspan="3" style="text-align:right"> Total: $</th>
-        <th><%=acu.ToString()%></th>
+        <th><%=acu.ToString();%></th>
      </tbody>
     </table>
     <br />  

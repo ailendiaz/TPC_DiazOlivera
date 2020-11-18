@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class Inquilino:Persona
     {
-
+        public Depto departamento { get; set; }
+        
     }
 }

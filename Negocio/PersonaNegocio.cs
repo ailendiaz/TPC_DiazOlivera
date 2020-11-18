@@ -26,14 +26,14 @@ namespace Negocio
                 {
                     Persona aux = new Persona();
                     aux.ID = Convert.ToInt64(datos.reader[0]);
-                    aux.contrasenia = (string)datos.reader[1];
-                    aux.tipoUsuario = new TipoUsuario();
+                    aux.contraseña = (string)datos.reader[1];
+                    aux.tipoUsuario = new Tipo();
                     aux.tipoUsuario.ID = (int)datos.reader[2];
-                    aux.tipoUsuario.tipoUsuario = (string)datos.reader[3];
+                    aux.tipoUsuario.tipo = (string)datos.reader[3];
                     aux.nombre = (string)datos.reader[4];
                     aux.apellido = (string)datos.reader[5];
                     aux.genero = (char)datos.reader[6];
-                    aux.DNI = Convert.ToInt32(datos.reader[7]);
+                    aux.DNI = Convert.ToString(datos.reader[7]);
                     aux.email = (string)datos.reader[8];
                     aux.fechaNac = Convert.ToDateTime(datos.reader[9]);
                     aux.telefonos = new List<Telefono>();
@@ -53,30 +53,38 @@ namespace Negocio
         }
 
         
-        public Persona login (Persona user)
+        public Persona Login (Persona user)
         {
-            
+
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-
-                datos.setearQuery("select u.ID,u.Contraseña,u.IDTipo,dp.Mail from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.Mail = @parametro");
-                datos.agregarParametro("@parametro", user.email);
-                
+                Persona aux = new Persona();
+                datos.setearQuery("select dp.DNI, u.Contraseña,u.IDTipo ,u.ID  from Usuarios as u inner join Datos_Personales as dp on dp.IDUsuario = u.ID where DNI = @DNI and u.Contraseña = @Contraseña");
+                datos.agregarParametro("@DNI",user.DNI);
+                datos.agregarParametro("@Contraseña", user.contraseña);
                 datos.ejecutarReader();
-                datos.reader.Read();
-                user.ID = Convert.ToInt64(datos.reader[0]);
-                user.tipoUsuario = new TipoUsuario();
-                user.tipoUsuario.ID= Convert.ToInt32(datos.reader[2]);
+
+                if (!datos.reader.Read())
+                {
+                    return aux;
+                }
+                aux.DNI = Convert.ToString(datos.reader[0]);
+                aux.contraseña = Convert.ToString(datos.reader[1]);
+                aux.tipoUsuario = new Tipo();
+                aux.tipoUsuario.ID = Convert.ToInt32(datos.reader[2]);
+                aux.ID = Convert.ToInt32(datos.reader[3]);
+
                 datos.cerrarConexion();
-                return user;
+                return aux;
 
             }
             catch (Exception ex)
-            {
-
-                throw ex;
+            { 
+               throw ex;
             }
+            
+
         }
     }
 }

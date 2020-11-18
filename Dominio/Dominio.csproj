@@ -62,7 +62,6 @@
     <Compile Include="Reserva.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="Tipo.cs" />
-    <Compile Include="TipoUsuario.cs" />
     <Compile Include="UnidadFuncional.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

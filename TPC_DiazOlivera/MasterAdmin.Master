@@ -19,6 +19,9 @@
   <li class="nav-item">
     <a class="nav-link" href="NovedadesAdm.aspx">Novedades</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Login.aspx?Logout=1">Cerrar sesion</a>
+  </li>
 </ul>
  
       <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />

@@ -9,28 +9,35 @@ namespace Negocio
 {
     public class InquilinoNegocio
     {
-        public Inquilino Buscar(Int64 ID)
+        public Inquilino BuscarInquilino(Int64 ID)
         {
-            Inquilino aux = new Inquilino();
-            aux.tipoUsuario = new TipoUsuario();
             AccesoDatos datos = new AccesoDatos();
+            Inquilino aux = new Inquilino();
+            aux.tipoUsuario = new Tipo();
+            TelefonoNegocio negocioTelefono = new TelefonoNegocio();
+            DeptoNegocio negocioDepto = new DeptoNegocio();
 
             try
             {
-                datos.setearQuery("Select u.ID, u.IDTipo, tp.Nombre, dp.Nombres, dp.Apellidos, dp.DNI, dp.Mail, uf.ID from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join Unidad_Funcional as uf on uf.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where u.ID = @ID");
+                datos.setearQuery("Select u.ID,u.IDTipo,tp.Nombre,dp.Nombres,dp.Apellidos,dp.Genero,dp.DNI,dp.mail,dp.Nacimiento,uf.ID,uf.Numero,uf.torre,uf.Piso from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join Usuarios_x_UnidadFuncional as uxu on uxu.IDUsuario = dp.IDUsuario inner join Unidad_Funcional as uf on uf.ID = uxu.IDUF inner join tipo_Usuario as tp on tp.id = u.idtipo");
                 datos.agregarParametro("@ID", ID);
                 
                 datos.ejecutarReader();
                 datos.reader.Read();
+
+                aux.tipoUsuario = new Tipo();
                 aux.ID = Convert.ToInt64(datos.reader[0]);
                 aux.tipoUsuario.ID = Convert.ToInt32(datos.reader[1]);
-                aux.tipoUsuario.tipoUsuario = Convert.ToString(datos.reader[2]);
+                aux.tipoUsuario.tipo = Convert.ToString(datos.reader[2]);
                 aux.nombre = Convert.ToString(datos.reader[3]);
                 aux.apellido = Convert.ToString(datos.reader[4]);
-                //aux.DNI = Convert.ToString(datos.reader[5]);
-                aux.DNI = Convert.ToInt32(datos.reader[5]);
-                aux.email = Convert.ToString(datos.reader[6]);
-                //aux.UF.ID = Convert.ToInt64(datos.reader[7]);
+                aux.genero = Convert.ToChar(datos.reader[5]);
+                aux.DNI = Convert.ToString(datos.reader[6]);
+                aux.email = Convert.ToString(datos.reader[7]);
+                aux.fechaNac = Convert.ToDateTime(datos.reader[8]);
+                aux.telefonos = negocioTelefono.Listar(aux.ID);
+                aux.departamento = negocioDepto.Buscar(aux.ID);
+
                 datos.cerrarConexion();
                 return aux;
             }

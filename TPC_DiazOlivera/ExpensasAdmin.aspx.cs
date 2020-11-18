@@ -38,8 +38,6 @@ namespace TPC_DiazOlivera
             ddlTipoGasto.DataTextField = "tipo";
             ddlTipoGasto.DataValueField = "ID";
             ddlTipoGasto.DataBind();
-          
-
              
         }
 
@@ -48,10 +46,13 @@ namespace TPC_DiazOlivera
             Gastos aux= new Gastos();
             aux.tipo = new Tipo();
             aux.fechaHora = Convert.ToDateTime(txtFecha.Text);
-            string a = ddlTipoGasto.SelectedValue;
-            //aux.tipo.ID = a;
             aux.importe = Convert.ToDecimal(txtImporte.Text);
-            //aux.importe = SqlMoney.Parse(txtImporte.Text);
+
+            aux.tipo.ID = Convert.ToInt32(ddlTipoGasto.SelectedItem.Value);
+            aux.tipo.tipo = ddlTipoGasto.SelectedItem.Text;
+            
+            
+
 
             listaGastos.Add(aux);
 

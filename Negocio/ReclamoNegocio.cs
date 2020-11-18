@@ -28,7 +28,7 @@ namespace Negocio
                     InquilinoNegocio auxNegocio = new InquilinoNegocio();
                     //Persona auxper = new Persona();
                     aux.ID = Convert.ToInt64(datos.reader[0]);
-                    aux.inquilino = auxNegocio.Buscar(Convert.ToInt64(aux.ID));
+                    aux.inquilino = auxNegocio.BuscarInquilino(Convert.ToInt64(aux.ID));
                     //aux.IDUsuario = Convert.ToInt64(datos.reader[1]);
                     aux.fechaHora = Convert.ToDateTime(datos.reader[2]);
                     aux.titulo = Convert.ToString(datos.reader[3]);
