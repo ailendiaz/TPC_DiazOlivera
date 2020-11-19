@@ -11,6 +11,7 @@ namespace Dominio
     {
         public int ID { get; set; }
         public DateTime fechaHora { get; set; }
+
         public SqlMoney importe { get; set; }
         public Tipo tipo { get; set; }
     }

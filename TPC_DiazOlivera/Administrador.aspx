@@ -23,7 +23,7 @@
       <img src="https://obsbusiness.school/sites/default/files/styles/blog_post/public/post/istock-518311294_1.jpg?itok=LJ3Jd_Kz" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Expensas</h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
+        <a href="ExpensasAdmin.aspx" class="btn btn-primary">Ingresar</a>
       </div>
     </div>
   </div>

@@ -91,5 +91,13 @@ namespace TPC_DiazOlivera
             
 
         }
+
+        protected void Confeccionar_Click(object sender, EventArgs e)
+        {
+            GastosNegocio negocio = new GastosNegocio();
+            listaGastos = (List<Gastos>)Session["listaGastos"];
+            negocio.GuardarGastos(listaGastos);
+
+        }
     }
 }

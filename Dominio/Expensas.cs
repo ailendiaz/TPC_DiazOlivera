@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class Expensas
     {
+        public Int32 ID { get; set; }
         public List<Gastos> gastos { get; set; }
         public DateTime fechaHora { get; set; }
     }

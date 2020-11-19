@@ -79,5 +79,6 @@
     </table>
     <br />  
 
+     <asp:Button ID="Confeccionar" Text="Confeccionar Expensa" runat="server" Onclick="Confeccionar_Click" class="btn btn-secondary"/>
 
 </asp:Content>
