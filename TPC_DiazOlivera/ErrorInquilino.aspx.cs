@@ -15,17 +15,19 @@ namespace TPC_DiazOlivera
         public Inquilino inquilino { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            
             try
             {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 inquilino = (Inquilino)Session["Usuario"];
             }
-            catch (Exception)
+            catch (Exception )
             {
                 Response.Redirect("Administrador.aspx");
+                
             }
 
             string error;

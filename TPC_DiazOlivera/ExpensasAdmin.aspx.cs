@@ -94,10 +94,52 @@ namespace TPC_DiazOlivera
 
         protected void Confeccionar_Click(object sender, EventArgs e)
         {
-            GastosNegocio negocio = new GastosNegocio();
-            listaGastos = (List<Gastos>)Session["listaGastos"];
-            negocio.GuardarGastos(listaGastos);
+            try
+            {
+                if (listaGastos == null)
+                {
+                    Response.Redirect("/ExpensasAdmin.aspx.cs");
+                }
+                //GUARDAMOS LA EXPENSA
+                ExpensasNegocio negocioExpensas = new ExpensasNegocio();
+                Expensas expensa = new Expensas();
+                SqlMoney acuExpensa = 0;
+                foreach (Gastos item in listaGastos)
+                {
+                    acuExpensa += item.importe;
+                }
+                expensa.fecha = Convert.ToDateTime(txtFecha.Text);
+                expensa.total = acuExpensa;
+                negocioExpensas.GuardarExpensa(expensa);
+                Int64 IDExpensa = negocioExpensas.UltimoID();
+                expensa.ID = IDExpensa;
 
+                //GUARDAMOS LOS GASTOS
+                foreach (Gastos item in listaGastos)
+                {
+                    GastosNegocio negocioGastos = new GastosNegocio();
+                    negocioGastos.GuardarGastos(item, IDExpensa);
+                }
+
+                //GENERAMOS LA EXPENSA INDIVIDUAL
+                UnidadFuncionalNegocio UFNegocio = new UnidadFuncionalNegocio();
+                List<UnidadFuncional> listaUF = new List<UnidadFuncional>();
+                listaUF = UFNegocio.ListarUF();
+                foreach (UnidadFuncional item in listaUF)
+                {
+                    negocioExpensas.GuardarExpensaIndividual(expensa,item.ID);
+                }
+
+                Response.Redirect("Administrador.aspx");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+            
+            
         }
     }
 }

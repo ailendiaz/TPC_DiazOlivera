@@ -15,14 +15,14 @@ namespace TPC_DiazOlivera
         public List<Dominio.Opciones> listaOpciones { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            
             try
             {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 inquilino = (Inquilino)Session["Usuario"];
-
                 listaOpciones = new List<Dominio.Opciones>();
                 OpcionesNegocio negocio = new OpcionesNegocio();
                 listaOpciones = negocio.listar();

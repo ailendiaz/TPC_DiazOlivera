@@ -25,6 +25,7 @@ namespace Negocio
                     aux.tipo.ID = Convert.ToInt32(datos.reader[1]);
                     aux.tipo.tipo = Convert.ToString(datos.reader[2]);
                     aux.numero = Convert.ToInt32(datos.reader[3]);
+                    lista.Add(aux);
                 }
 
                 return lista;

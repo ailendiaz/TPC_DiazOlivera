@@ -15,12 +15,13 @@ namespace TPC_DiazOlivera
         Administrador admin = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            
             try
             {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 admin = (Administrador)Session["Usuario"];
             }
             catch (Exception)

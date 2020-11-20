@@ -6,7 +6,7 @@
     <h2><%: Title %>.</h2>
 
 
-     <div class="row">
+<%--     <div class="row">
         <%foreach (Dominio.Opciones item in listaOpciones)
             {%>
         <%if (item.tipo.ID == 1)
@@ -30,13 +30,13 @@
         <%} %>
 
         <% } %>
-    </div>
+    </div>--%>
 
 
 
 
 
-  <%-- 
+   
  <div class="container-Administrador">
 <div class="row row-cols-1 row-cols-md-3">
  
@@ -113,5 +113,5 @@
 
     </div>
    
-     </div>--%>
+     </div>
 </asp:Content>

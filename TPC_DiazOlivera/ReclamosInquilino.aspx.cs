@@ -11,16 +11,21 @@ namespace TPC_DiazOlivera
 {
     public partial class ReclamosInquilino : System.Web.UI.Page
     {
+        public Inquilino inquilino { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Persona p = new Persona();
-            p = (Dominio.Persona)Session["Usuario"];
-            
-            if ( p.tipoUsuario.ID!= 1)
+            try
             {
-                string error = "Solo los usuarios de tipo inquilino pueden ingresar a esta seccion";
-                Response.Redirect("ErrorInquilino.aspx?Error="+error);
-                
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                inquilino = (Inquilino)Session["Usuario"];
+
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Administrador.aspx");
             }
         }
 
