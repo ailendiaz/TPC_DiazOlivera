@@ -44,5 +44,30 @@ namespace Negocio
             }
         }
 
+        public void AltaAdministrador(Administrador administrador)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_AltaAdministrador");
+                datos.agregarParametro("@IDTipo", administrador.tipoUsuario.ID);
+                datos.agregarParametro("@Mail", administrador.email);
+                datos.agregarParametro("@Nombre", administrador.nombre);
+                datos.agregarParametro("@Apellido", administrador.apellido);
+                datos.agregarParametro("@DNI", administrador.DNI);
+                datos.agregarParametro("@Genero", administrador.genero);
+                datos.agregarParametro("@Nacimiento", administrador.fechaNac);
+                
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
     }
 }

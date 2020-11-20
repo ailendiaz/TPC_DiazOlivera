@@ -16,6 +16,14 @@
                 </asp:DropDownList>
                               
                 </div>
+    <asp:Label ID="lblABM" style="color:white; font-weight: bold" Text="Tipo de Operación" runat="server" />
+     <div class="form-group" >
+                     
+                <%--<asp:DropDownList ID="ddlTipos" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipos_SelectedIndexChanged">--%>
+                <asp:DropDownList ID="ddlABM" runat="server" AutoPostBack="true">
+                </asp:DropDownList>
+                              
+                </div>
             
     <br />
         <asp:Label ID="lblDNI" style="color:white; font-weight: bold" Text="DNI" runat="server" />
@@ -28,7 +36,12 @@
         <asp:TextBox ID="txtApellidos" runat="server" /> 
     <br />
         <asp:Label ID="lblGenero" style="color:white; font-weight: bold" Text="Genero" runat="server" />
-        <p style="color:white; font-weight: bold" >radiobuttonlist para elegir entre femenino y masculino</p>
+        <%--<p style="color:white; font-weight: bold" >radiobuttonlist para elegir entre femenino y masculino</p>--%>
+         
+         <%--<asp:RadioButtonList id="Genero" runat="server">
+            <asp:ListItem>Femenino</asp:ListItem>
+            <asp:ListItem>Masculino</asp:ListItem>
+          </asp:RadioButtonList>--%>
     <br />
         <asp:Label ID="lblNacimiento" style="color:white; font-weight: bold" Text="Fecha Nacimiento" runat="server" />
         <asp:TextBox ID="txtNacimiento" runat="server" /> 

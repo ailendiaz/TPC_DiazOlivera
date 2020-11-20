@@ -86,5 +86,48 @@ namespace Negocio
             
 
         }
+
+
+        public void BajaUsuario (Persona persona)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_BajaUsuario");
+                datos.agregarParametro("@DNI", persona.DNI);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public void ModificacionUsuario(Persona persona)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_Modificar_Usuario");
+                datos.agregarParametro("@Mail", persona.email);
+                datos.agregarParametro("@Apellido", persona.apellido);
+                datos.agregarParametro("@Nombre", persona.nombre);
+                datos.agregarParametro("@DNI", persona.DNI);
+                //datos.agregarParametro("@Genero", persona.genero);
+                datos.agregarParametro("@Nacimiento", persona.fechaNac);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }

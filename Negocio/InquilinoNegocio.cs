@@ -48,6 +48,44 @@ namespace Negocio
             }
             
         }
+
+        public void AltaInquilino (Inquilino inquilino)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_AltaInquilino");
+                datos.agregarParametro("@IDTipo", inquilino.tipoUsuario.ID);
+                datos.agregarParametro("@Mail", inquilino.email);
+                datos.agregarParametro("@Nombre", inquilino.nombre);
+                datos.agregarParametro("@Apellido", inquilino.apellido);
+                datos.agregarParametro("@DNI", inquilino.DNI);
+                datos.agregarParametro("@Nacimiento", inquilino.fechaNac);
+                datos.agregarParametro("@Genero", inquilino.genero);
+                datos.agregarParametro("@Torre", inquilino.departamento.torre);
+                datos.agregarParametro("@Piso", inquilino.departamento.piso);
+                datos.agregarParametro("@Numero", inquilino.departamento.numero);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();  
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
         //public List<Inquilino> Listar()
         //{
         //    try

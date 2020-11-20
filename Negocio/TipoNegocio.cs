@@ -31,6 +31,34 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<Tipo>ListarTipoABM()
+        {
+
+            try
+            {
+                List<Tipo> lista = new List<Tipo>();
+                AccesoDatos datos = new AccesoDatos();
+
+                datos.setearQuery("select * from Tipo_Operacion");
+                datos.ejecutarReader();
+                while (datos.reader.Read())
+                {
+                    if (Convert.ToInt32(datos.reader[0]) != 4)
+                        lista.Add(new Tipo(Convert.ToInt32(datos.reader[0]), Convert.ToString(datos.reader[1])));
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
+
+        }
         public List<Tipo> ListarTipoUF()
         {
             try
