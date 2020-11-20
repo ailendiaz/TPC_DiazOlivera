@@ -10,6 +10,6 @@ namespace Dominio
     {
         public Int64 ID { get; set; }
         public SqlMoney total { get; set; }
-    public DateTime fecha { get; set; }
+        public DateTime fecha { get; set; }
     }
 }

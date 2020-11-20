@@ -130,6 +130,7 @@ namespace TPC_DiazOlivera
                     negocioExpensas.GuardarExpensaIndividual(expensa,item.ID);
                 }
 
+                Session["listaGastos"] = null;
                 Response.Redirect("Administrador.aspx");
             }
             catch (Exception ex)

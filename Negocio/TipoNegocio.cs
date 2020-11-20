@@ -89,5 +89,26 @@ namespace Negocio
 
             }
         }
+        public Tipo buscarTipoUF(int ID)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearQuery("select*from Tipo_Unidad_Funcional where ID=@ID");
+                datos.agregarParametro("@ID",ID);
+                datos.ejecutarReader();
+                datos.reader.Read();
+                Tipo aux = new Tipo();
+                aux.ID = Convert.ToInt32(datos.reader[0]);
+                aux.tipo = Convert.ToString(datos.reader[1]);
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        
     }
 }

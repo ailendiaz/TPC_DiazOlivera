@@ -47,6 +47,7 @@
     <Compile Include="Clasificados.cs" />
     <Compile Include="Depto.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="ExpensaIndividual.cs" />
     <Compile Include="Expensas.cs" />
     <Compile Include="Gastos.cs" />
     <Compile Include="Inquilino.cs" />
