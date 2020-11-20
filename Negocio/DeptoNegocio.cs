@@ -34,7 +34,7 @@ namespace Negocio
             
         }
 
-        public Depto Buscar(Int64 ID)
+        public Depto BuscarxUsuario(Int64 ID)
         {
             try
             {
@@ -45,6 +45,74 @@ namespace Negocio
                 datos.ejecutarReader();
                 datos.reader.Read();
                 aux = new Depto(Convert.ToInt64(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToInt32(datos.reader[3]));
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+        public void Guardar(Depto depto)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                Depto aux = new Depto();
+
+                datos.setearSP("sp_AltaDepto");
+                datos.agregarParametro("@TORRE", depto.torre);
+                datos.agregarParametro("@PISO", depto.piso);
+                datos.agregarParametro("@NUMERO", depto.numero);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
+        public void Eliminar(Depto depto)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                Depto aux = new Depto();
+
+                datos.setearSP("sp_BajaDepto");
+                datos.agregarParametro("@TORRE", depto.torre);
+                datos.agregarParametro("@PISO", depto.piso);
+                datos.agregarParametro("@NUMERO", depto.numero);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
+        public Depto BuscarxID(Int64 ID)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                Depto aux = new Depto();
+                datos.setearQuery("select ID, numero, torre, piso from Unidad_Funcional as uf inner join Usuarios_x_UnidadFuncional as uxu on uxu.IDUF=uf.ID where uf.ID=@IDUF");
+                datos.agregarParametro("@IDUF", ID);
+                datos.ejecutarReader();
+                if (!datos.reader.Read())
+                {
+                    aux = new Depto();
+                    datos.cerrarConexion();
+                    return aux;
+                }
+                aux = new Depto(Convert.ToInt64(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToInt32(datos.reader[3]));
+                datos.cerrarConexion();
                 return aux;
             }
             catch (Exception ex)

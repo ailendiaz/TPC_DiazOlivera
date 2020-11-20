@@ -24,7 +24,7 @@ namespace Negocio
                     EstadoNegocio negocioEstado = new EstadoNegocio();
                     aux.ID = Convert.ToInt64(datos.reader[0]);
                     aux.depto = new Depto();
-                    aux.depto = negocioDepto.Buscar(Convert.ToInt64(datos.reader[1]));
+                    aux.depto = negocioDepto.BuscarxUsuario(Convert.ToInt64(datos.reader[1]));
                     aux.estado = new Estado();
                     aux.estado = negocioEstado.BuscarEstadoExpensa(Convert.ToInt32(datos.reader[2]));
                     aux.fecha = Convert.ToDateTime(datos.reader[3]);
@@ -58,7 +58,7 @@ namespace Negocio
                         EstadoNegocio negocioEstado = new EstadoNegocio();
                         aux.ID = Convert.ToInt64(datos.reader[0]);
                         aux.depto = new Depto();
-                        aux.depto = negocioDepto.Buscar(Convert.ToInt64(datos.reader[1]));
+                        aux.depto = negocioDepto.BuscarxUsuario(Convert.ToInt64(datos.reader[1]));
                         aux.estado = new Estado();
                         aux.estado = negocioEstado.BuscarEstadoExpensa(Convert.ToInt32(datos.reader[2]));
                         aux.fecha = Convert.ToDateTime(datos.reader[3]);

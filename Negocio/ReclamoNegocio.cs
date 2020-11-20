@@ -18,7 +18,6 @@ namespace Negocio
                 AccesoDatos datos = new AccesoDatos();
 
                 datos.setearQuery("select r.ID, r.IDUsuario,r.FechaHora, r.Asunto, r.Detalle,er.ID, er.Nombre from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado");
-                //datos.setearQuery("select r.ID, r.IDUsuario, r.FechaHora, r.Asunto, r.Detalle, er.ID, er.Nombre, dat.Nombres + dat.Apellidos as 'Nombre y Apellido' from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado inner join Datos_Personales as dat ON r.IDUsuario = dat.IDUsuario");
                 datos.ejecutarReader();
 
                 while (datos.reader.Read())
