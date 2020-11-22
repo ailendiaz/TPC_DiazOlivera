@@ -21,7 +21,7 @@ namespace Negocio
                 Estado aux = new Estado();
                 aux.ID = Convert.ToInt32(datos.reader[0]);
                 aux.estado = Convert.ToString(datos.reader[1]);
-             
+                datos.cerrarConexion();
                 return aux;
             }
             catch (Exception ex)

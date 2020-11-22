@@ -15,13 +15,14 @@ namespace TPC_DiazOlivera
         public Exception exception = null;
         public Administrador admin = null;
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             try
             {
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                }
+                
                 admin = (Administrador)Session["Usuario"];
             }
             catch (Exception ex)
@@ -30,7 +31,6 @@ namespace TPC_DiazOlivera
                 Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
                 Response.Redirect("ErrorInquilino.aspx");
             }
-            Error a;
 
             exception = (Exception)Session["Error"];
             mensajeError = (string)Session["MensajeError"];

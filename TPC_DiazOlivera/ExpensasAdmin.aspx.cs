@@ -13,24 +13,25 @@ namespace TPC_DiazOlivera
     public partial class ExpensasAdmin : System.Web.UI.Page
     {
         public List<Gastos> listaGastos = null;
-        Administrador admin = null;
+        public List<ExpensaIndividual> listaExpensas=null;
+        public Administrador admin = null;
         public string ver = null;
         public void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (Session["Usuario"] == null)
-            //    {
-            //        Response.Redirect("Login.aspx");
-            //    }
-            //    admin = (Administrador)Session["Usuario"];
-            //}
-            //catch (Exception ex)
-            //{
-            //    Session.Add("Error", ex);
-            //    Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
-            //    Response.Redirect("ErrorInquilino.aspx");
-            //}
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            try
+            {
+                admin = (Administrador)Session["Usuario"];
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorInquilino.aspx");
+            }
 
             if (Session["listaGastos"] == null)
             {
@@ -43,13 +44,36 @@ namespace TPC_DiazOlivera
             }
 
             ver = Request.QueryString["ver"];
-           
 
+            if (ver=="pagos")
+            {
+                listaExpensas = new List<ExpensaIndividual>();
+                ExpensaIndividualNegocio negocioExpensa = new ExpensaIndividualNegocio();
+
+                if (Request.QueryString["ID"]!=null && Request.QueryString["estado"] != null)
+                {
+                    
+                    try
+                    {
+                        negocioExpensa.ModificarEstado(Convert.ToInt32(Request.QueryString["ID"]), Request.QueryString["estado"].ToLower());
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+                }
+                listaExpensas = negocioExpensa.Listar();
+            }
+            else { 
                 Gastos aux = new Gastos();
                 List<Tipo> tiposGasto = new List<Tipo>();
                 TipoNegocio negocio = new TipoNegocio();
                 tiposGasto = negocio.ListarTipoGasto();
-                
+            
+
 
             if (!IsPostBack) 
             { 
@@ -58,6 +82,7 @@ namespace TPC_DiazOlivera
                 ddlTipoGasto.DataTextField = "tipo";
                 ddlTipoGasto.DataValueField = "ID";
                 ddlTipoGasto.DataBind();
+            }
             }
         }
 

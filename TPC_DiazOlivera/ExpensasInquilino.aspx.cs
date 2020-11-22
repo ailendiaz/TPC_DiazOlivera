@@ -15,12 +15,13 @@ namespace TPC_DiazOlivera
         public List<ExpensaIndividual> listaExpensas = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             try
             {
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                }
+                
                 inquilino = (Inquilino)Session["Usuario"];
             }
             catch (Exception ex)

@@ -12,7 +12,7 @@
     <br />  
    <div class="Container"> 
        <div class="row">
-    <%foreach (Dominio.Expensas item in listaExpensas)
+    <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
         {%>
             
               

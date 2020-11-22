@@ -2,12 +2,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Estilo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h5 style="color:antiquewhite">Gestion de expensas Ordinarias</h5>
+    <%if (ver == null)
+        { %>
+        <a href="ExpensasAdmin.aspx?ver=pagos" class="btn btn-secondary">Verificacion de pagos</a>
+        <a href="ExpensasAdmin.aspx?ver=gestion" class="btn btn-secondary">Gestion de expensas</a>
+
+    <%} %>
+    <% if (ver == "pagos")
+        {%>
     <br />
-    
-    
-    <br />
-    <%if(ver=="Incorporar"||ver==null){ %>
+            <div class="Container"> 
+       <div class="row">
+    <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
+        {%>
+            
+             <%if (item.estado.estado == "Informada")
+                 { %> 
+             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                 <div class="card-header">Expensa ID: <%=item.ID %></div>
+                    <div class="card-body">
+                       <h5 class="card-title"><% =item.fecha.Date %></h5>
+                         <p class="card-text"><% =item.total %></p>
+                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impago" %>">Rechazar Pago</a>
+                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
+                    </div>
+            </div>
+           <%} %>
+        <%} %>
+            </div>
+    </div>
+    <%} %>
+    <%if (ver == "Incorporar"||ver=="gestion")
+        { %>
     <h5 style="color:antiquewhite">Confeccion de Gastos</h5>
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
     <div class="form-row">
@@ -74,7 +100,7 @@
                   <td><%=item.importe %></td>
              </tr>
       
-                <% acu+= item.importe;%>
+                <% acu += item.importe;%>
             
 
         <%} %>
@@ -82,10 +108,13 @@
         <th><%=acu.ToString()%></th>
      </tbody>
     </table>
+    <a href="ExpensasAdmin.aspx" class="btn btn-secondary">Volver</a>
+
     <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Confeccionar">Siguiente</a>
     <br />  
     <% }%>
-    <% if(ver=="Confeccionar"){ %>
+    <% if (ver == "Confeccionar")
+        { %>
      <asp:Label Text="Lista de gastos" runat="server" style="color:antiquewhite"></asp:Label>
     <table class="table table-dark">
   <thead>
@@ -115,7 +144,7 @@
                   <td><%=item.importe %></td>
              </tr>
       
-                <% acu+= item.importe;%>
+                <% acu += item.importe;%>
             
 
         <%} %>
@@ -123,10 +152,12 @@
         <th><%=acu.ToString()%></th>
      </tbody>
     </table>
+    <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Incorporar">Atras</a>
      <asp:Button ID="Confeccionar" Text="Confeccionar Expensa" runat="server" Onclick="Confeccionar_Click" class="btn btn-secondary"/>
-    <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Incorporar">Volver</a>
+    
     <br />  
     <% }%>
+<%--    <%} %>--%>
 
     
 

@@ -50,6 +50,7 @@ namespace Negocio
                 datos.reader.Read();
                 aux = new Depto(Convert.ToInt32(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToInt32(datos.reader[3]), Convert.ToInt32(datos.reader[4]), Convert.ToDecimal(datos.reader[5]));
                 //aux = new Depto(Convert.ToInt64(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToInt32(datos.reader[3]));
+                datos.cerrarConexion();
                 return aux;
             }
             catch (Exception ex)
@@ -118,6 +119,7 @@ namespace Negocio
                     return aux;
                 }
                 aux = new Depto(Convert.ToInt32(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToInt32(datos.reader[3]), Convert.ToInt32(datos.reader[4]), Convert.ToDecimal(datos.reader[5])); datos.cerrarConexion();
+                datos.cerrarConexion();
                 return aux;
             }
             catch (Exception ex)
