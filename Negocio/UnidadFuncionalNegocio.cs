@@ -15,16 +15,11 @@ namespace Negocio
             {
                 List<UnidadFuncional> lista = new List<UnidadFuncional>();
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearQuery("select uf.ID,tp.id,tp.nombre,uf.numero from Unidad_Funcional as uf inner join Tipo_Unidad_Funcional as tp on tp.id=uf.IDTipo");
+                datos.setearQuery("select ID,numero, impagas,saldo from vw_GeneralUF");
                 datos.ejecutarReader();
                 while (datos.reader.Read())
                 {
-                    UnidadFuncional aux = new UnidadFuncional();
-                    aux.ID = Convert.ToInt64(datos.reader[0]);
-                    aux.tipo = new Tipo();
-                    aux.tipo.ID = Convert.ToInt32(datos.reader[1]);
-                    aux.tipo.tipo = Convert.ToString(datos.reader[2]);
-                    aux.numero = Convert.ToInt32(datos.reader[3]);
+                    UnidadFuncional aux = new UnidadFuncional(Convert.ToInt64(datos.reader[0]), Convert.ToInt32(datos.reader[1]), Convert.ToInt32(datos.reader[2]), Convert.ToDecimal(datos.reader[3]));
                     lista.Add(aux);
                 }
 

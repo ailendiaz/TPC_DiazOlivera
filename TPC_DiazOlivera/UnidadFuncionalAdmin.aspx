@@ -9,6 +9,7 @@
     <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Alta">Alta</a>
     <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Baja">Baja</a>
     <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Listar">Listar</a>
+    <br />
     <%--<a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Modificacion">Modificacion</a>--%>
     <br /> 
     <%if (ver == "Alta")
@@ -36,26 +37,15 @@
             <asp:Button class="btn btn-secondary" ID="btnAceptarBaja" Text="Aceptar" OnClick="btnAceptarBaja_Click" runat="server" />
 
     <%} %>
-   <%-- <%else if (ver == "Modificacion")
-    { %>
-        <h3 style="color:white;">Modificacion</h3>
-            <asp:TextBox ID="txtIDModificacion" placeholder="ID de departamento" runat="server" />  
-        <br />
-            <asp:Button class="btn btn-secondary" ID="btnBuscarModificacion" Text="Buscar" OnClick="btnBuscarModificacion_Click" runat="server" />
-        <br />
-             <asp:TextBox ID="txtTorreModificacion" placeholder="Torre" runat="server" />  
-         <br /> 
-             <asp:TextBox ID="txtPisoModificacion" placeholder="Piso" runat="server" />  
-         <br /> 
-             <asp:TextBox ID="txtNumeroModificacion" placeholder="Numero" runat="server" /> 
-         <br />
-             <asp:Button class="btn btn-secondary" ID="btnAceptarModificacion" Text="Aceptar" Onclick="btnAceptarModificacion_Click" runat="server" />
-
-    
-    <%} %>--%>
+   
     <% else if (ver == "Listar")
     { %>
         <h3 style="color:white;">Lista de Unidad Funcionales</h3>
+    <br />
+    <asp:Label ID="lblIDUF" style="color:white;font-weight:bold" Text="ID de Unidad Funcional" runat="server" />
+    <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged="txtBuscar_TextChanged"/>
+    <asp:Button ID="btnBuscar" Class="btn btn-secondary" Text="Buscar" runat="server" OnClick="btnBuscar_Click"/>
+    <br />
          <table class="table table-dark">
              <thead>
                <tr>
@@ -63,6 +53,8 @@
                  <th scope="col">Torre</th>
                  <th scope="col">Piso</th>
                  <th scope="col">Numero</th>
+                 <th scope="col">Expensas Impagas</th>
+                 <th scope="col">Saldo</th>
                </tr>
              </thead>
              <tbody>
@@ -73,6 +65,8 @@
                      <td><%=item.torre %></td>
                      <td><%=item.piso %></td>
                      <td><%=item.numero %></td>
+                     <td><%=item.impagas %></td>
+                     <td><%=item.saldo %></td>
                  </tr>
                  <%} %>
              </tbody>

@@ -17,29 +17,25 @@ namespace TPC_DiazOlivera
         public List<Depto> listaDepto = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            //if (Session["Usuario"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //try
-            //{
-            //    admin = (Administrador)Session["Usuario"];
-            //}
-            //catch (Exception)
-            //{
-            //    Response.Redirect("Inquilino.aspx");
-            //}
+
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            try
+            {
+                admin = (Administrador)Session["Usuario"];
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Inquilino.aspx");
+            }
 
             try
             {
                 DeptoNegocio negocio = new DeptoNegocio();
-                if (!IsPostBack)
-                {
-                    ver = Request.QueryString["ver"];
-                    listaDepto = negocio.ListarDepto();
-                }
-                //listaDepto= negocio.ListarDepto().FindAll(x=>x.torre==)
+                ver = Request.QueryString["ver"];
+                listaDepto = negocio.ListarDepto();
             }
             catch (Exception ex)
             {
@@ -98,17 +94,15 @@ namespace TPC_DiazOlivera
             
         }
 
-        //protected void btnBuscarModificacion_Click(object sender, EventArgs e)
+        //protected void txtBuscar_TextChanged(object sender, EventArgs e)
         //{
-        //    DeptoNegocio negocio = new DeptoNegocio();
-        //    depto = new Depto();
-        //    depto = negocio.BuscarxIDUF(Convert.ToInt64(txtIDModificacion.Text));
-        //    if(depto)
+            
         //}
 
-        //protected void btnAceptarModificacion_Click(object sender, EventArgs e)
-        //{
-
-        //}
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DeptoNegocio Negocio = new DeptoNegocio();
+            listaDepto = Negocio.ListarDepto().FindAll(x => x.ID == Convert.ToInt64(txtBuscar.Text));
+        }
     }
 }
