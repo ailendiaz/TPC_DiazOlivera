@@ -4,9 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Incio</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="Estilo/Login.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <%--<form id="form1" runat="server">--%>
         <header>
@@ -24,15 +31,19 @@
             <div class="container-details">
                 <div class="details">
                     <h1>BIENVENIDO</h1>
-                    <form id="form1"  runat="server">
-                        <div class="form-group-nombre">
-                            <label for="NombredeUsuario">DNI</label>
-                            <asp:TextBox ID="txtUsuario" runat="server" placeholder="DNI..."></asp:TextBox> 
-                           
+                     <form id="form1"  runat="server">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                    <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
+                                     <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..."></asp:TextBox>
+                             <div>
                         </div>
-                        <div class="form-group">
-                            <label for="ContraseñaUsuario">Contraseña</label>
-                            <asp:TextBox ID="txtContraseña" runat="server" placeholder="Contraseña..."></asp:TextBox>
+                    
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                     <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
+                                    <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..."></asp:TextBox>
+                            </div>
                         </div>
                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-primary" BorderColor="" />
                         

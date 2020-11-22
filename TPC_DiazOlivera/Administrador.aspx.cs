@@ -26,9 +26,12 @@ namespace TPC_DiazOlivera
                 OpcionesNegocio negocio = new OpcionesNegocio();
                 listaOpciones = negocio.listar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Inquilino.aspx");
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorInquilino.aspx");
+                
             }
         }
     }

@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AltaUsuario.aspx" />
+    <Content Include="ErrorAdmin.aspx" />
     <Content Include="ErrorInquilino.aspx" />
     <Content Include="Estilo\Administrador.css" />
     <Content Include="Estilo\Inquilino.css" />
@@ -181,6 +182,13 @@
       <DependentUpon>AltaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="ErrorAdmin.aspx.cs">
+      <DependentUpon>ErrorAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorAdmin.aspx.designer.cs">
+      <DependentUpon>ErrorAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorInquilino.aspx.cs">
       <DependentUpon>ErrorInquilino.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

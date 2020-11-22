@@ -11,7 +11,7 @@ namespace TPC_DiazOlivera
 {
 
 
-    public partial class Error
+    public partial class ErrorAdmin
     {
     }
 }

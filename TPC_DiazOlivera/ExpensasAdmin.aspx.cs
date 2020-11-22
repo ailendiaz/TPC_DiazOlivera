@@ -16,17 +16,19 @@ namespace TPC_DiazOlivera
         Administrador admin = null;
         public void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
             try
             {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 admin = (Administrador)Session["Usuario"];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Inquilino.aspx");
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorInquilino.aspx");
             }
 
             if (Session["listaGastos"] == null)

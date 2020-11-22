@@ -23,9 +23,11 @@ namespace TPC_DiazOlivera
                 inquilino = (Inquilino)Session["Usuario"];
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Administrador.aspx");
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorAdmin.aspx");
             }
         }
 

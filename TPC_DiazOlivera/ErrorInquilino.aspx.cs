@@ -11,8 +11,10 @@ namespace TPC_DiazOlivera
 {
     public partial class Error : System.Web.UI.Page
     {
-        public string detalleErro { get; set; }
-        public Inquilino inquilino { get; set; }
+        public Exception exception = null;
+        public Inquilino inquilino = null;
+
+        public string mensajeError { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -24,15 +26,15 @@ namespace TPC_DiazOlivera
                 }
                 inquilino = (Inquilino)Session["Usuario"];
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-                Response.Redirect("Administrador.aspx");
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorAdmin.aspx");
                 
             }
-
-            string error;
-            error = Request.QueryString["Error"];
-            lblError.Text = error;
+            exception = (Exception)Session["Error"];
+            mensajeError = (string)Session["MensajeError"];
         }
     }
 }
