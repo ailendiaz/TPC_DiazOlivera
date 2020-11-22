@@ -2,9 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Estilo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h5 style="color:antiquewhite">Gestion de expensas</h5>
-        
+    <h5 style="color:antiquewhite">Gestion de expensas Ordinarias</h5>
+    <br />
     
+    
+    <br />
+    <%if(ver=="Incorporar"||ver==null){ %>
+    <h5 style="color:antiquewhite">Confeccion de Gastos</h5>
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
     <div class="form-row">
     <div class="form-group col-md-2">
@@ -26,6 +30,7 @@
     <div class="form-group col-md-2">
         <asp:Button ID="btnAgregar" Text="Cargar" runat="server" Onclick="btnAgregar_Click" class="btn btn-secondary"/>
     </div>
+
 
 <%--    INPUT PARA INGRESAR UN NUEVO TIPO DE GASTO--%>
 
@@ -77,8 +82,52 @@
         <th><%=acu.ToString()%></th>
      </tbody>
     </table>
+    <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Confeccionar">Siguiente</a>
     <br />  
+    <% }%>
+    <% if(ver=="Confeccionar"){ %>
+     <asp:Label Text="Lista de gastos" runat="server" style="color:antiquewhite"></asp:Label>
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Tipo de Gasto</th>
+      <th scope="col">Importe</th>
+    </tr>
+  </thead>
+            <tbody>
+  
+    
+    <% int con = 0;%>
+    <% System.Data.SqlTypes.SqlMoney acu = 0;%>
 
+    <% foreach (Dominio.Gastos item in listaGastos)
+        {%>
+            <% con++;%>
+            
+            
+              <tr>
+              <th scope="row"><%=con %></th>
+             
+                  <td><%=item.fechaHora %></td>
+                  <td><%=item.tipo.tipo%></td>
+                  <td><%=item.importe %></td>
+             </tr>
+      
+                <% acu+= item.importe;%>
+            
+
+        <%} %>
+        <th colspan="3" style="text-align:right"> Total: $</th>
+        <th><%=acu.ToString()%></th>
+     </tbody>
+    </table>
      <asp:Button ID="Confeccionar" Text="Confeccionar Expensa" runat="server" Onclick="Confeccionar_Click" class="btn btn-secondary"/>
+    <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Incorporar">Volver</a>
+    <br />  
+    <% }%>
+
+    
 
 </asp:Content>

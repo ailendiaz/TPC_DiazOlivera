@@ -18,20 +18,20 @@ namespace TPC_DiazOlivera
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["Usuario"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            try
-            {
-                admin = (Administrador)Session["Usuario"];
-            }
-            catch (Exception ex)
-            {
-                Session.Add("Error", ex);
-                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
-                Response.Redirect("ErrorInquilino.aspx");
-            }
+            //if (Session["Usuario"] == null)
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
+            //try
+            //{
+            //    admin = (Administrador)Session["Usuario"];
+            //}
+            //catch (Exception ex)
+            //{
+            //    Session.Add("Error", ex);
+            //    Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+            //    Response.Redirect("ErrorInquilino.aspx");
+            //}
 
             try
             {
@@ -96,10 +96,10 @@ namespace TPC_DiazOlivera
             
         }
 
-        //protected void txtBuscar_TextChanged(object sender, EventArgs e)
-        //{
-            
-        //}
+        protected void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {

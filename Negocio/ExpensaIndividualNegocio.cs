@@ -32,6 +32,7 @@ namespace Negocio
                     lista.Add(aux);
 
                 }
+                datos.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
@@ -66,6 +67,7 @@ namespace Negocio
                         lista.Add(aux);
                     }
                 }
+                datos.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
@@ -74,6 +76,23 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+        public void ModificarEstado(Int64 ID,string estado)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_ModificarEstadoExpensaIndividual");
+                datos.agregarParametro("@ID", ID);
+                datos.agregarParametro("@ESTADO", estado);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

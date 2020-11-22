@@ -21,7 +21,8 @@
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
                          <p class="card-text"><% =item.total %></p>
-                        <a class="btn btn-light" href="#">Informar Pago</a>
+<%--                        <asp:Button ID="txtInformar" class="btn btn-secondary" Text="Informar Pago" Onclick="txtInformar_Click" runat="server" />--%>
+                        <a href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
                     </div>
                 
             </div>

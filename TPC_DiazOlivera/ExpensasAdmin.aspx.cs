@@ -14,22 +14,23 @@ namespace TPC_DiazOlivera
     {
         public List<Gastos> listaGastos = null;
         Administrador admin = null;
+        public string ver = null;
         public void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                }
-                admin = (Administrador)Session["Usuario"];
-            }
-            catch (Exception ex)
-            {
-                Session.Add("Error", ex);
-                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
-                Response.Redirect("ErrorInquilino.aspx");
-            }
+            //try
+            //{
+            //    if (Session["Usuario"] == null)
+            //    {
+            //        Response.Redirect("Login.aspx");
+            //    }
+            //    admin = (Administrador)Session["Usuario"];
+            //}
+            //catch (Exception ex)
+            //{
+            //    Session.Add("Error", ex);
+            //    Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+            //    Response.Redirect("ErrorInquilino.aspx");
+            //}
 
             if (Session["listaGastos"] == null)
             {
@@ -41,11 +42,14 @@ namespace TPC_DiazOlivera
                 listaGastos = (List<Gastos>)Session["listaGastos"];
             }
 
-            
+            ver = Request.QueryString["ver"];
+           
+
                 Gastos aux = new Gastos();
                 List<Tipo> tiposGasto = new List<Tipo>();
                 TipoNegocio negocio = new TipoNegocio();
                 tiposGasto = negocio.ListarTipoGasto();
+                
 
             if (!IsPostBack) 
             { 

@@ -32,16 +32,26 @@ namespace TPC_DiazOlivera
 
             try
             {
-                ExpensaIndividualNegocio negocio = new ExpensaIndividualNegocio();
+                
+
+                if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
+                {
+                    int ID = Convert.ToInt32(Request.QueryString["ID"]);
+                    string estadoExp = Request.QueryString["estado"];
+                    ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();
+                    negocioExp.ModificarEstado(ID, estadoExp.ToLower());
+                }
+                
+                ExpensaIndividualNegocio negocio = new ExpensaIndividualNegocio();               
                 if (Request.QueryString["ver"] == "impagas")
                 {
-                    listaExpensas = negocio.Listar(inquilino.departamento.ID).FindAll(x=>x.estado.estado.ToLower()=="impaga".ToLower());
+                    listaExpensas = negocio.Listar(inquilino.departamento.ID).FindAll(x=>x.estado.estado.ToLower()!="paga".ToLower());
                 }
                 else 
                 {
                     listaExpensas = negocio.Listar(inquilino.departamento.ID);
                 }
-
+                
 
             }
             catch (Exception ex)
@@ -52,5 +62,14 @@ namespace TPC_DiazOlivera
             
 
         }
+
+        //protected void txtInformar_Click(object sender, EventArgs e)
+        //{
+        //    ExpensaIndividualNegocio negocio = new ExpensaIndividualNegocio();
+        //    ExpensaIndividual aux = new ExpensaIndividual();
+
+        //    negocio.ModificarEstado(aux,2);
+        //    Response.Redirect("Inquilino.aspx");
+        //}
     }
 }
