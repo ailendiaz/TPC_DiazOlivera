@@ -20,9 +20,14 @@
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
-                         <p class="card-text"><% =item.total %></p>
-<%--                        <asp:Button ID="txtInformar" class="btn btn-secondary" Text="Informar Pago" Onclick="txtInformar_Click" runat="server" />--%>
-                        <a href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
+                         <p class="card-text">$<% =item.total %></p>
+
+                        <%if (item.estado.estado == "Impaga")
+                            {%>
+                              <a href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
+                            <%}
+                                %>
+                        
                     </div>
                 
             </div>

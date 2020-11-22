@@ -23,7 +23,7 @@
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
                          <p class="card-text"><% =item.total %></p>
-                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impago" %>">Rechazar Pago</a>
+                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
                         <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
                     </div>
             </div>
