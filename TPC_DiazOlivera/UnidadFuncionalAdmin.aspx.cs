@@ -54,15 +54,15 @@ namespace TPC_DiazOlivera
                 DeptoNegocio negocioDepto = new DeptoNegocio();
                 Inquilino inquilino = new Inquilino();
                 InquilinoNegocio negocioInquilino = new InquilinoNegocio();
-                depto = new Depto();
-
-                depto.torre = Convert.ToInt32(txtTorreAlta.Text);
-                depto.piso = Convert.ToInt32(txtPisoAlta.Text);
-                depto.numero = Convert.ToInt32(txtNumeroAlta.Text);
-                negocioDepto.Guardar(depto);
 
                 inquilino = negocioInquilino.BuscarInquilinoXDNI(txtDNIAlta.Text);
-                negocioInquilino.AsignarDepto(inquilino, depto);
+                inquilino.departamento = new Depto();
+                inquilino.departamento.torre = Convert.ToInt32(txtTorreAlta.Text);
+                inquilino.departamento.piso = Convert.ToInt32(txtPisoAlta.Text);
+                inquilino.departamento.numero = Convert.ToInt32(txtNumeroAlta.Text);
+                negocioDepto.Guardar(inquilino.departamento) ;
+
+                negocioInquilino.AsignarDepto(inquilino);
 
                 Response.Redirect("Administrador.aspx");
             }

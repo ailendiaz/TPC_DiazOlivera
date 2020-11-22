@@ -54,7 +54,7 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearSP("sp_AltaInquilino");
+                datos.setearSP("sp_AltaUsuario");
                 datos.agregarParametro("@IDTipo", inquilino.tipoUsuario.ID);
                 datos.agregarParametro("@Mail", inquilino.email);
                 datos.agregarParametro("@Nombre", inquilino.nombre);
@@ -62,9 +62,8 @@ namespace Negocio
                 datos.agregarParametro("@DNI", inquilino.DNI);
                 datos.agregarParametro("@Nacimiento", inquilino.fechaNac);
                 datos.agregarParametro("@Genero", inquilino.genero);
-                datos.agregarParametro("@Torre", inquilino.departamento.torre);
-                datos.agregarParametro("@Piso", inquilino.departamento.piso);
-                datos.agregarParametro("@Numero", inquilino.departamento.numero);
+                datos.agregarParametro("@Telefono", inquilino.telefonos[0].telefono);
+
                 datos.ejecutarAccion();
                 datos.cerrarConexion();  
             }
@@ -75,6 +74,7 @@ namespace Negocio
             }
 
         }
+       
         public Inquilino BuscarInquilinoXDNI(string DNI)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -115,16 +115,16 @@ namespace Negocio
 
         }
 
-        public void AsignarDepto(Inquilino inquilino,Depto depto)
+        public void AsignarDepto(Inquilino inquilino)
         {
             
             try
             {
                 AccesoDatos datos = new AccesoDatos();
                 datos.setearSP("sp_AsignarDepto");
-                datos.agregarParametro("@TORRE", depto.torre);
-                datos.agregarParametro("@PISO", depto.piso);
-                datos.agregarParametro("@NUMERO", depto.numero);
+                datos.agregarParametro("@TORRE", inquilino.departamento.torre);
+                datos.agregarParametro("@PISO", inquilino.departamento.piso);
+                datos.agregarParametro("@NUMERO", inquilino.departamento.numero);
                 datos.agregarParametro("@DNI", inquilino.DNI);
                 datos.ejecutarAccion();
                 datos.cerrarConexion();

@@ -51,8 +51,44 @@ namespace Negocio
             }
            
         }
+        public Persona BuscarPersonaXDNI(string DNI)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Persona aux = new Persona();
+            aux.tipoUsuario = new Tipo();
+            TelefonoNegocio negocioTelefono = new TelefonoNegocio();
 
-        
+            try
+            {
+                datos.setearQuery("Select u.ID,u.IDTipo,tp.Nombre,dp.Nombres,dp.Apellidos,dp.Genero,dp.DNI,dp.mail,dp.Nacimiento from Usuarios as u inner join datos_personales as dp on dp.IDUsuario = u.ID inner join tipo_Usuario as tp on tp.id = u.idtipo where dp.DNI = @DNI");
+                datos.agregarParametro("@DNI", DNI);
+
+                datos.ejecutarReader();
+                datos.reader.Read();
+
+                aux.tipoUsuario = new Tipo();
+                aux.ID = Convert.ToInt64(datos.reader[0]);
+                aux.tipoUsuario.ID = Convert.ToInt32(datos.reader[1]);
+                aux.tipoUsuario.tipo = Convert.ToString(datos.reader[2]);
+                aux.nombre = Convert.ToString(datos.reader[3]);
+                aux.apellido = Convert.ToString(datos.reader[4]);
+                aux.genero = Convert.ToChar(datos.reader[5]);
+                aux.DNI = Convert.ToString(datos.reader[6]);
+                aux.email = Convert.ToString(datos.reader[7]);
+                aux.fechaNac = Convert.ToDateTime(datos.reader[8]);
+                aux.telefonos = negocioTelefono.Listar(aux.ID);
+
+                datos.cerrarConexion();
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public Persona Login (Persona user)
         {
 
@@ -111,12 +147,12 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearSP("sp_Modificar_Usuario");
+                datos.setearSP("sp_ModificarUsuario");
                 datos.agregarParametro("@Mail", persona.email);
                 datos.agregarParametro("@Apellido", persona.apellido);
                 datos.agregarParametro("@Nombre", persona.nombre);
                 datos.agregarParametro("@DNI", persona.DNI);
-                //datos.agregarParametro("@Genero", persona.genero);
+                datos.agregarParametro("@Genero", persona.genero);
                 datos.agregarParametro("@Nacimiento", persona.fechaNac);
                 datos.ejecutarAccion();
                 datos.cerrarConexion();

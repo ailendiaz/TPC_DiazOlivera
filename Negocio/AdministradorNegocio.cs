@@ -49,7 +49,7 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearSP("sp_AltaAdministrador");
+                datos.setearSP("sp_AltaUsuario");
                 datos.agregarParametro("@IDTipo", administrador.tipoUsuario.ID);
                 datos.agregarParametro("@Mail", administrador.email);
                 datos.agregarParametro("@Nombre", administrador.nombre);
@@ -57,7 +57,8 @@ namespace Negocio
                 datos.agregarParametro("@DNI", administrador.DNI);
                 datos.agregarParametro("@Genero", administrador.genero);
                 datos.agregarParametro("@Nacimiento", administrador.fechaNac);
-                
+                datos.agregarParametro("@Telefono", administrador.telefonos[0].telefono);
+
                 datos.ejecutarAccion();
                 datos.cerrarConexion();
             }

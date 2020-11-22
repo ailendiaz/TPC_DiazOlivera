@@ -27,7 +27,7 @@
             
     <br />
         <asp:Label ID="lblDNI" style="color:white; font-weight: bold" Text="DNI" runat="server" />
-        <asp:TextBox ID="txtDNI" runat="server" /> 
+        <asp:TextBox ID="txtDNI" AutoPostBack="true" OnTextChanged="txtDNI_TextChanged" runat ="server" /> 
     <br />
         <asp:Label ID="lblNombres" style="color:white; font-weight: bold" Text="Nombre" runat="server" />
         <asp:TextBox ID="txtNombres" runat="server" /> 

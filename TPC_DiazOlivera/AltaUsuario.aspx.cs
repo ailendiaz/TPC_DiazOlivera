@@ -55,6 +55,7 @@ namespace TPC_DiazOlivera
                     ddlABM.DataBind();
 
                 }
+                
                 if (ddlTipos.SelectedItem.Value == "2")
                 {
                     txtPiso.ReadOnly = false;
@@ -70,6 +71,20 @@ namespace TPC_DiazOlivera
                     txtTorre.Text = "";
                     txtNumero.Text = "";
                 }
+                if (ddlABM.SelectedValue == "1")
+                {
+                    //txtDNI.Text = "";
+                    //txtApellidos.Text = "";
+                    //txtNombres.Text = "";
+                    //txtNacimiento.Text = "";
+                    //txtMail.Text = "";
+
+                }
+                    
+
+
+                
+
             }
             catch (Exception ex)
             {
@@ -87,6 +102,8 @@ namespace TPC_DiazOlivera
                 
                 if (ddlABM.SelectedValue == "1")
                 {
+                    
+                    
                     if (ddlTipos.SelectedValue == "2")
                     {
                         Inquilino inquilino = new Inquilino();
@@ -99,10 +116,16 @@ namespace TPC_DiazOlivera
                         inquilino.nombre = txtNombres.Text;
                         inquilino.apellido = txtApellidos.Text;
                         inquilino.email = txtMail.Text;
+                        inquilino.genero = 'F';
+                        inquilino.telefonos = new List<Telefono>();
+                        Telefono aux = new Telefono();
+                        aux.telefono = txtTelefono.Text;
+                        inquilino.telefonos.Add(aux);
                         inquilino.fechaNac = Convert.ToDateTime(txtNacimiento.Text);
                         inquilino.tipoUsuario = new Tipo();
                         inquilino.tipoUsuario.ID = 2;
                         negocio.AltaInquilino(inquilino);
+                        negocio.AsignarDepto(inquilino);
                         
                     }
                     else
@@ -113,8 +136,13 @@ namespace TPC_DiazOlivera
                         administrador.apellido= txtApellidos.Text;
                         administrador.email = txtMail.Text;
                         administrador.fechaNac = Convert.ToDateTime(txtNacimiento.Text);
-                        //administrador.telefonos = new Telefono();
-                        //administrador.telefonos = txtTelefono.Text;
+                        //administrador.genero = Convert.ToChar('F'); //CAMBIAR A TEXTBOX
+                        administrador.genero = 'F'; //CAMBIAR A TEXTBOX
+
+                        administrador.telefonos = new List<Telefono>();
+                        Telefono aux = new Telefono();
+                        aux.telefono = txtTelefono.Text;
+                        administrador.telefonos.Add(aux);
                         administrador.tipoUsuario = new Tipo();
                         administrador.tipoUsuario.ID = 1;
                         AdministradorNegocio negocio = new AdministradorNegocio();
@@ -140,7 +168,11 @@ namespace TPC_DiazOlivera
                           persona.apellido = txtApellidos.Text;
                           persona.nombre = txtNombres.Text;
                           persona.email = txtMail.Text;
-                          //persona.genero = Convert.ToString(Genero.SelectedItem.Text);
+                          persona.genero = 'F'; //CAMBIAR A TEXTBOX
+                          persona.telefonos = new List<Telefono>();
+                          Telefono aux = new Telefono();
+                          aux.telefono = txtTelefono.Text;
+                          persona.telefonos.Add(aux);
                           persona.fechaNac = Convert.ToDateTime(txtNacimiento.Text);
                           negocio.ModificacionUsuario(persona);
                           Response.Redirect("Administrador.aspx");
@@ -168,6 +200,29 @@ namespace TPC_DiazOlivera
 
             //}
         }
+
+        protected void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+            Persona persona = new Persona();
+            PersonaNegocio negocio = new PersonaNegocio();
+            if (txtDNI.Text !=""&& ddlABM.SelectedValue!="1" )
+            { 
+            persona = negocio.BuscarPersonaXDNI(txtDNI.Text);
+            txtApellidos.Text = persona.apellido;
+            txtNombres.Text = persona.nombre;
+            txtMail.Text = persona.email;
+            txtNacimiento.Text = persona.fechaNac.ToShortDateString();
+            txtTelefono.ReadOnly = true;
+            txtPiso.ReadOnly = true;
+            txtTorre.ReadOnly = true;
+            txtNumero.ReadOnly = true;
+            txtPiso.Text = "";
+            txtTorre.Text = "";
+            txtNumero.Text = "";
+            }
+        
+
+    }
 
         //protected void ddlTipos_SelectedIndexChanged1(object sender, EventArgs e)
         //{
