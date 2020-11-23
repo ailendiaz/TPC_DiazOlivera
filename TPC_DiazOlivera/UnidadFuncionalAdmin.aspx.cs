@@ -18,20 +18,20 @@ namespace TPC_DiazOlivera
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (Session["Usuario"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //try
-            //{
-            //    admin = (Administrador)Session["Usuario"];
-            //}
-            //catch (Exception ex)
-            //{
-            //    Session.Add("Error", ex);
-            //    Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
-            //    Response.Redirect("ErrorInquilino.aspx");
-            //}
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            try
+            {
+                admin = (Administrador)Session["Usuario"];
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+                Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
+                Response.Redirect("ErrorInquilino.aspx");
+            }
 
             try
             {
@@ -60,9 +60,10 @@ namespace TPC_DiazOlivera
                 inquilino.departamento.torre = Convert.ToInt32(txtTorreAlta.Text);
                 inquilino.departamento.piso = Convert.ToInt32(txtPisoAlta.Text);
                 inquilino.departamento.numero = Convert.ToInt32(txtNumeroAlta.Text);
-                negocioDepto.Guardar(inquilino.departamento) ;
+                //negocioDepto.Guardar(inquilino.departamento) ;
+                negocioDepto.Guardar(inquilino);
 
-                negocioInquilino.AsignarDepto(inquilino);
+                //negocioInquilino.AsignarDepto(inquilino);
 
                 Response.Redirect("Administrador.aspx");
             }
