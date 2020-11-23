@@ -55,13 +55,13 @@ namespace TPC_DiazOlivera
                 Inquilino inquilino = new Inquilino();
                 InquilinoNegocio negocioInquilino = new InquilinoNegocio();
 
-                inquilino = negocioInquilino.BuscarInquilinoXDNI(txtDNIAlta.Text);
+                //inquilino = negocioInquilino.BuscarInquilinoXDNI(txtDNIAlta.Text);
                 inquilino.departamento = new Depto();
                 inquilino.departamento.torre = Convert.ToInt32(txtTorreAlta.Text);
                 inquilino.departamento.piso = Convert.ToInt32(txtPisoAlta.Text);
                 inquilino.departamento.numero = Convert.ToInt32(txtNumeroAlta.Text);
-                //negocioDepto.Guardar(inquilino.departamento) ;
-                negocioDepto.Guardar(inquilino);
+                negocioDepto.Guardar(inquilino.departamento);
+                //negocioDepto.Guardar(inquilino);
 
                 //negocioInquilino.AsignarDepto(inquilino);
 

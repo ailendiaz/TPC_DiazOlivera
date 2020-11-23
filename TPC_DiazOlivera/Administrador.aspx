@@ -80,13 +80,13 @@
     <div class="card h-100">
       <img src="https://obsbusiness.school/sites/default/files/styles/blog_post/public/post/istock-518311294_1.jpg?itok=LJ3Jd_Kz" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">ABM Inquilino</h5>
-        <a href="#" class="btn btn-primary">ABM Reserva</a>
+        <h5 class="card-title">Unidad Funcional</h5>
+        <a href="#" class="btn btn-primary">Ingresar</a>
       </div>
     </div>
   </div>
 
-      <div class="col mb-4">
+<%--      <div class="col mb-4">
     <div class="card h-100">
       <img src="https://obsbusiness.school/sites/default/files/styles/blog_post/public/post/istock-518311294_1.jpg?itok=LJ3Jd_Kz" class="card-img-top" alt="...">
       <div class="card-body">
@@ -104,7 +104,7 @@
         <a href="#" class="btn btn-primary">Configuracion</a>
       </div>
     </div>
-  </div>
+  </div>--%>
        
 
     </div>

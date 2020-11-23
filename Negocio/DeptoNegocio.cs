@@ -60,29 +60,7 @@ namespace Negocio
             }
 
         }
-        public void Guardar(Inquilino inquilino)
-        {
-            try
-            {
-                AccesoDatos datos = new AccesoDatos();
-                Depto aux = new Depto();
-
-                datos.setearSP("sp_AltaDepto");
-                datos.agregarParametro("@TORRE", inquilino.departamento.torre);
-                datos.agregarParametro("@PISO", inquilino.departamento.piso);
-                datos.agregarParametro("@NUMERO", inquilino.departamento.numero);
-                datos.agregarParametro("@DNI", inquilino.DNI);
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-
-        }
-        //public void Guardar(Depto depto)
+        //public void Guardar(Inquilino inquilino)
         //{
         //    try
         //    {
@@ -90,9 +68,10 @@ namespace Negocio
         //        Depto aux = new Depto();
 
         //        datos.setearSP("sp_AltaDepto");
-        //        datos.agregarParametro("@TORRE", depto.torre);
-        //        datos.agregarParametro("@PISO", depto.piso);
-        //        datos.agregarParametro("@NUMERO", depto.numero);
+        //        datos.agregarParametro("@TORRE", inquilino.departamento.torre);
+        //        datos.agregarParametro("@PISO", inquilino.departamento.piso);
+        //        datos.agregarParametro("@NUMERO", inquilino.departamento.numero);
+        //        datos.agregarParametro("@DNI", inquilino.DNI);
         //        datos.ejecutarAccion();
         //    }
         //    catch (Exception ex)
@@ -103,6 +82,27 @@ namespace Negocio
 
 
         //}
+        public void Guardar(Depto depto)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                Depto aux = new Depto();
+
+                datos.setearSP("sp_AltaDepto");
+                datos.agregarParametro("@TORRE", depto.torre);
+                datos.agregarParametro("@PISO", depto.piso);
+                datos.agregarParametro("@NUMERO", depto.numero);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
         public void Eliminar(Depto depto)
         {
             try

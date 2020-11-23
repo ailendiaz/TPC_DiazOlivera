@@ -21,7 +21,7 @@
          <br /> 
              <asp:TextBox ID="txtNumeroAlta" placeholder="Numero" runat="server" /> 
          <br />
-             <asp:TextBox ID="txtDNIAlta" placeholder="DNI del Inquilino" runat="server" /> 
+<%--             <asp:TextBox ID="txtDNIAlta" placeholder="DNI del Inquilino" runat="server" /> --%>
          <br />
             <asp:Button class="btn btn-secondary" ID="btnAceptarAlta" Text="Aceptar" OnClick="btnAceptarAlta_Click" runat="server" />
     <% } %>
