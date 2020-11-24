@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="AltaUsuario.aspx.cs" Inherits="TPC_DiazOlivera.AltaUsuario" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="Estilo" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
     <h1 style="color:white;">Ingreso de Usuario</h1>

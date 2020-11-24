@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Administrador" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Administrador.aspx.cs" Inherits="TPC_DiazOlivera.Contact" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="Estilo" runat="server">
- 
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Stylesheet" runat="server">
+ <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />
 
-    <h2><%: Title %>.</h2>
+    <h2 style="color:grey"><%: Title %></h2>
 
 
 <%--     <div class="row">

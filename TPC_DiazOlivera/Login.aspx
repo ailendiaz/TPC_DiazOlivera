@@ -17,13 +17,23 @@
 <body>
     <%--<form id="form1" runat="server">--%>
         <header>
-        <div class="container-header">
+
+            <nav class="navbar navbar-light black">
+  <a class="navbar-brand" href="#" style="color:gray">
+    <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    HabitApp
+  </a>
+</nav>
+
+
+
+        <%--<div class="container-header">
             <div class="logo-title">
-                <img src="https://image.freepik.com/vector-gratis/isometrica-3d-edificio-icono-vector_95561-31.jpg" />
+                <img src="C:\Users\ailen\OneDrive\Desktop\UTN\PROG III\TPC_DiazOlivera\TPC_DiazOlivera\LogoHabitApp" />
                 <h4>HabitApp</h4>
             </div>
 
-        </div>
+        </div>--%>
    <%-- </form>--%>
      </header>
     <div class="container-portada" >
@@ -35,14 +45,14 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                     <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
-                                     <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..."></asp:TextBox>
-                             <div>
+                                     <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
+                             </div>
                         </div>
                     
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                      <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
-                                    <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..."></asp:TextBox>
+                                    <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
                             </div>
                         </div>
                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-primary" BorderColor="" />
