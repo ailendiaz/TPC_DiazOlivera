@@ -55,7 +55,7 @@
                                     <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
                             </div>
                         </div>
-                        <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-primary" BorderColor="" />
+                        <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
                         
                     </form>
                 </div>

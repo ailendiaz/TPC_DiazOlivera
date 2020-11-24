@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headInquilino" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheets" runat="server">
+    
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -17,7 +19,7 @@
             
               
              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                 <div class="card-header">Expensa ID: <%=item.ID %></div>
+                 <div class="card-header">Expensa ID: <%=item.ID %>
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
                          <p class="card-text">$<% =item.total %></p>
@@ -29,10 +31,9 @@
                                 %>
                         
                     </div>
-                
+                </div>
             </div>
         <%} %>
             </div>
     </div>
-
 </asp:Content>

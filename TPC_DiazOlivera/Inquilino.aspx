@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="../Estilo/Inquilino.css" type="text/css" />
     
 
-    <h2><%: Title %>.</h2>
+    <h2 style="color:antiquewhite"><%: Title %>.</h2>
 
 
     <div class="row">

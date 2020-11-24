@@ -1,5 +1,6 @@
 ﻿body {
     background-image: url(https://images.squarespace-cdn.com/content/v1/556788cbe4b00149409aa18c/1500916629316-TSKQCQKOVA3FCYUMICPU/ke17ZwdGBToddI8pDm48kN_ZoNdj1kv_gIvm4zjH76N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8AelHsSihC3tfiYK1eHEM7W3AVjJQSBul2wE-DqW7dygg/woking-modern-house-remodelling-architectural-photographer-surrey);
+    background-repeat:no-repeat;
 }
 .flip-card-container {
     --hue: 150;
@@ -129,29 +130,6 @@ figcaption {
 }
 
 
-button {
-    font-family: inherit;
-    font-weight: bold;
-    color: var(--white-1);
-    letter-spacing: 2px;
-    padding: 9px 20px;
-    border: 1px solid var(--grey);
-    border-radius: 1000px;
-    background: transparent;
-    transition: .3s;
-    cursor: pointer;
-}
-
-    button:hover,
-    button:focus {
-        color: var(--primary);
-        background: hsla(var(--hue), 25%, 10%, .2);
-        border-color: currentColor;
-    }
-
-    button:active {
-        transform: translate(2px);
-    }
 
 /* .design-container */
 .design-container {

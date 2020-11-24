@@ -10,6 +10,7 @@
     <link rel="Stylesheet" href="../Estilo/Administrador.css" type="text/css" />
     
  <asp:ContentPlaceHolder ID="headAdministrador" runat="server">
+
         <ul class="nav justify-content-center ">
             <li class="nav-item">
     <a class="nav-link active" href="Administrador.aspx">Home</a>
@@ -23,6 +24,10 @@
   <li class="nav-item">
     <a class="nav-link" href="NovedadesAdm.aspx">Novedades</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="AltaUsuario.aspx">Gestión Usuarios</a>
+  </li>
+
   <li class="nav-item">
     <a class="nav-link" href="Login.aspx?Logout=1">Cerrar sesion</a>
   </li>

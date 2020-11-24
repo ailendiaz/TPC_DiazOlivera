@@ -8,32 +8,32 @@
     <h3 class="text-left">Realizar Reclamos:</h3>
 
     <div id="page" class="container" style="border:solid">
-  <div class="row" style="padding-top: 12px;"></div>
+ 
   <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
       <div class="form-group">
-        <div class="input-group">
+       
           <label for="lblAsunto" class="label">Asunto</label>  
             <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto"></asp:TextBox>
-        </div>
+        
       </div>
       <div class="form-group">
-        <div class="input-group">
+       
             <% DateTime ahora = DateTime.Now; %>
            <label for="lblFechaHora" class="label">Fecha y Hora: <% =ahora %></label>
-        </div>
+      
       </div>
         <div class="form-group">
-        <div class="input-group">
+       
            <label for="lblDetalle"  class="label">Detalle:</label>
             <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine"></asp:TextBox>
-        </div>
+    
       </div>
         <div class="form-group">
-        <div class="input-group">
-            <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" CssClass="boton" />
-            <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" CssClass="boton" />
-        </div>
+      
+            <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
+            <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
+       
       </div>
     </div>
   </div>

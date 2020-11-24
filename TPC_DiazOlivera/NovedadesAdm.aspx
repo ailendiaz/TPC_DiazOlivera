@@ -17,8 +17,8 @@
         <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" />  
     </div>
    
-         <asp:Button ID="btnPublicar" Text="Publicar" runat="server" Onclick="btnPublicar_Click" class="btn btn-primary"/>
-         <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Onclick="btnCancelar_Click" class="btn btn-primary"/>
+         <asp:Button ID="btnPublicar" Text="Publicar" runat="server" Onclick="btnPublicar_Click" class="btn btn-secondary "/>
+         <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Onclick="btnCancelar_Click" class="btn btn-secondary"/>
 
         </div>
 
