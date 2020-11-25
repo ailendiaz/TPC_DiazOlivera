@@ -5,11 +5,14 @@
     box-sizing:border-box;
     font-family: sans-serif;
 }
-header{
-    width:100%;
+header {
+    /*width:100%;
     height: 60px;
-    background:black;
+    background:black;*/
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px 0;
 }
+
 
 .containet-header {
     width: 100%;
@@ -38,10 +41,11 @@ header{
 .container-portada {
     width: 100%;
     height: 600px;
-    background-image: url(https://lh3.googleusercontent.com/proxy/eq_vXvP3iB0d28Uy0dfeCaVE7mfLmc2-jSOxud8KpnSol50x8pFk8sPteq1XQCErIqRdJB8N_XRMC_WfAKWAIVCfhjwO1deWrNFTkFQCnxFWIaJJusLz6yTO);
+    background-image: url(https://s3.amazonaws.com/codecademy-content/projects/2/milford-school/bg.jpg);
     background-size: cover;
     animation: movimiento 10s infinite linear alternate;
     background-repeat: no-repeat;
+    
 }
 
 
