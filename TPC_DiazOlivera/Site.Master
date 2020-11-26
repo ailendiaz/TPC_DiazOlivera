@@ -16,7 +16,7 @@
     <%--Bootstrap 3--%>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />
+    <link rel="stylesheet" href="../Estilo/Inquilino.css" type="text/css" />
 
     <asp:ContentPlaceHolder ID="headInquilino" runat="server">
 
