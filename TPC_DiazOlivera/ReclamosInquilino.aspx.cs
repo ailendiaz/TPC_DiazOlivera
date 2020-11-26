@@ -71,6 +71,7 @@ namespace TPC_DiazOlivera
             persona = (Dominio.Persona)Session["Usuario"];
             reclamo.estado = new Estado();
             reclamo.estado.ID = 1;
+            reclamo.inquilino = new Inquilino();
             reclamo.inquilino.ID = persona.ID;
             reclamo.titulo = txtAsunto.Text;
             reclamo.detalle = txtDetalle.Text;

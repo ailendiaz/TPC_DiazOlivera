@@ -8,14 +8,17 @@
     <br />
     <a class="btn btn-secondary" href="/ReclamosInquilino.aspx?ver=Reclamos">Ver Reclamos</a>
     <a class="btn btn-secondary" href="/ReclamosInquilino.aspx">Realizar Reclamo</a>
+    <br />
+    <div class="row">
     <%if (ver == "Reclamos")
         { %>
             <% foreach (Dominio.Reclamos item in listaReclamos)
                 {%>
+             
                     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                       <div class="card-header"><%=item.fechaHora.ToShortDateString() %></div>
                         <div class="card-body">
-                         <h5 class="card-title"><%=item.titulo %></h5>
+                         <h4 style="font-weight:bold" class="card-title"><%=item.titulo %></h4>
                          <p class="card-text"><%=item.detalle %></p>
                             <%if (item.estado.ID == 1)
                                 { %>
@@ -34,7 +37,10 @@
                     </div>
                    
               <% } %>
+            </div>
+      
     <%} %>
+        
     <%else
         { %>
     <div id="page" class="container" style="border:solid">

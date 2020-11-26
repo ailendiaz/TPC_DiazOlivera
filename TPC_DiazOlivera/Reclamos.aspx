@@ -32,7 +32,7 @@
 <%--            <th scope="row"><%=item.ID %></th>--%>
          
             <td style="font-size:15px"><% =item.fechaHora %> </td>  
-            <td style="font-size:15px"><% =item.inquilino.nombre+item.inquilino.apellido %> </td>
+            <td style="font-size:15px"><% =item.inquilino.nombre+" "+item.inquilino.apellido %> </td>
             <td style="font-size:15px"><% =item.titulo %> </td>
             <td style="font-size:15px"><% =item.detalle %> </td>
             <%if (item.estado.ID == 1)
