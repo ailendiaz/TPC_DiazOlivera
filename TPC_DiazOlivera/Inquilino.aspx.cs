@@ -11,7 +11,7 @@ namespace TPC_DiazOlivera
 {
     public partial class About : Page
     {
-        Inquilino inquilino = null;
+        public Inquilino inquilino = null;
         public List<Dominio.Opciones> listaOpciones { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
