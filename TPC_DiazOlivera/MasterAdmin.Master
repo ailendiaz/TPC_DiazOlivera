@@ -10,8 +10,7 @@
     <link rel="Stylesheet" href="../Estilo/Administrador.css" type="text/css" />
     
  <asp:ContentPlaceHolder ID="headAdministrador" runat="server">
-
-
+     <div class="sidebar">
      <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
   <ul class="navbar-nav">
     <li class="nav-item active">
@@ -34,6 +33,7 @@
     </li>
   </ul>
 </nav>
+    </div>
 
   </asp:ContentPlaceHolder>
       
@@ -41,6 +41,7 @@
 <body>
     <form id="form1" runat="server">
          <asp:ContentPlaceHolder ID="Stylesheet" runat="server">
+             
        </asp:ContentPlaceHolder>
         
 
