@@ -15,6 +15,7 @@ namespace TPC_DiazOlivera
         public List<Dominio.Reclamos> listaReclamos = null;
         public List<Telefono> listaTelefonos = null;
         public Administrador admin = null;
+        public string ver;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -32,74 +33,44 @@ namespace TPC_DiazOlivera
                 Response.Redirect("ErrorInquilino.aspx");
             }
 
-            string aux = Request.QueryString["ID"];
-            if (aux == "Pendientes")
+            //SE MODIFICA EL ESTADO DEL RECLAMO SELECCIONADO
+            ver = Request.QueryString["ver"];
+            ReclamoNegocio negocio = new ReclamoNegocio();
+            if (Request.QueryString["ID"]!=null && Request.QueryString["Estado"]!=null)
             {
-                listaReclamos = new List<Dominio.Reclamos>();
-                ReclamoNegocio negocio = new ReclamoNegocio();
-                List<Dominio.Reclamos> listaAux = new List<Dominio.Reclamos>();
+                Dominio.Reclamos reclamo = new Dominio.Reclamos();
+                reclamo = negocio.Listar().Find(x => x.ID == Convert.ToInt64(Request.QueryString["ID"]));
+                
+                if (Request.QueryString["Estado"] == "EnProceso")
+                {
+                    negocio.Modificar(reclamo, 2);
+                }
+                else if(Request.QueryString["Estado"] == "Solucionado")
+                {
+                    negocio.Modificar(reclamo, 3);
+                }
+            }
+
+            //SE LISTAN LOS RECLAMO SEGUN FILTRANDO POR PENDIENTES O SOLUCIONADOS
+            listaReclamos = new List<Dominio.Reclamos>();
+            List<Dominio.Reclamos> listaAux = new List<Dominio.Reclamos>();
+            if (ver == "Pendientes")
+            {
                 listaAux = negocio.Listar();
                 listaReclamos= listaAux.FindAll(x=> x.estado.estado=="Sin revisar"||x.estado.estado== "En proceso" );
-
             }
-            else if (aux == "Finalizados")
+            else if (ver == "Finalizados")
             {
-                listaReclamos = new List<Dominio.Reclamos>();
-                ReclamoNegocio negocio = new ReclamoNegocio();
-                List<Dominio.Reclamos> listaAux = new List<Dominio.Reclamos>();
                 listaAux = negocio.Listar();
                 listaReclamos = listaAux.FindAll(x => x.estado.estado == "Solucionado");
             }
             else
             {
-                listaReclamos = new List<Dominio.Reclamos>();
-                ReclamoNegocio negocio = new ReclamoNegocio();
                 listaReclamos = negocio.Listar();
             }
 
           
         }
 
-        protected void btnPendientes(object sender, EventArgs e)
-        {
-            Response.Redirect("/Reclamos.aspx?ID=Pendientes");
-            //aca lista todo, hay que filtrar
-        }
-
-        protected void btnFinalizados(object sender, EventArgs e)
-        {
-            Response.Redirect("/Reclamos.aspx?ID=Finalizados");
-            // aca lista todo, hay que filtrar
-        }
-
-        protected void btnAceptar(object sender, EventArgs e)
-        {
-            
-            //hacer funcion para que cambie de estado
-        }
-
-        protected void btnCancelar(object sender, EventArgs e)
-        {
-
-            Response.Redirect("Administrador.aspx");
-        }
-
-        protected void Modificar_Click(object sender, EventArgs e)
-        {
-
-            if (CheckBox1.Checked)
-            {
-                
-                //List<Dominio.Reclamos> aux = new List<Dominio.Reclamos>();
-                //aux = listaReclamos;
-                //foreach (Dominio.Reclamos items in aux)
-                //{
-                //    if (items.ID ==)
-                //    {
-                //        items.estado.ID = 1;
-                //    }
-                //}
-            }
-        }
     }
 }

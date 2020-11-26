@@ -12,6 +12,9 @@ namespace TPC_DiazOlivera
     public partial class ReclamosInquilino : System.Web.UI.Page
     {
         public Inquilino inquilino { get; set; }
+        public Dominio.Reclamos reclamo { get; set; }
+        public List<Dominio.Reclamos> listaReclamos=null;
+        public string ver { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -29,6 +32,31 @@ namespace TPC_DiazOlivera
                 Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
                 Response.Redirect("ErrorAdmin.aspx");
             }
+            
+            ver = Request.QueryString["ver"];
+            ReclamoNegocio negocio = new ReclamoNegocio();
+            reclamo = new Dominio.Reclamos();
+
+
+            if (ver == "Reclamos")
+            {
+                try
+                {
+                    listaReclamos = new List<Dominio.Reclamos>();
+                    listaReclamos = negocio.Listar().FindAll(x => x.inquilino.ID == inquilino.ID);
+                    if (listaReclamos == null)
+                    {
+                        listaReclamos= new List<Dominio.Reclamos>();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            
         }
 
         protected void btCancelar_Click(object sender, EventArgs e)
@@ -38,9 +66,7 @@ namespace TPC_DiazOlivera
 
         protected void btEnviar_Click(object sender, EventArgs e)
         {
-            Dominio.Reclamos reclamo = new Dominio.Reclamos();
             Dominio.Persona persona = new Persona();
-         
             ReclamoNegocio negocio = new ReclamoNegocio();
             persona = (Dominio.Persona)Session["Usuario"];
             reclamo.estado = new Estado();

@@ -57,6 +57,7 @@ namespace TPC_DiazOlivera
                     {
                         negocioExpensa.ModificarEstado(Convert.ToInt32(Request.QueryString["ID"]), Request.QueryString["estado"].ToLower());
 
+
                     }
                     catch (Exception ex)
                     {
@@ -104,7 +105,7 @@ namespace TPC_DiazOlivera
                 Session["listaGastos"] = listaGastos;
             }
 
-            Response.Redirect("ExpensasAdmin.aspx");
+            Response.Redirect("ExpensasAdmin?ver=gestion");
 
             //Session.Add("listagastos", listaGastos);
            
@@ -129,7 +130,7 @@ namespace TPC_DiazOlivera
             {
                 if (listaGastos == null)
                 {
-                    Response.Redirect("/ExpensasAdmin.aspx.cs");
+                    Response.Redirect("/ExpensasAdmin.aspx");
                 }
                 //GUARDAMOS LA EXPENSA
                 ExpensasNegocio negocioExpensas = new ExpensasNegocio();

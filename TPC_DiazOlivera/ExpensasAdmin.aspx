@@ -2,39 +2,46 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
+    <h1 style="color:white;font-weight:bold;">Expensas</h1>
+    <br />
     <%if (ver == null)
         { %>
         <a href="ExpensasAdmin.aspx?ver=pagos" class="btn btn-secondary">Verificacion de pagos</a>
         <a href="ExpensasAdmin.aspx?ver=gestion" class="btn btn-secondary">Gestion de expensas</a>
-
+    <br />  
     <%} %>
     <% if (ver == "pagos")
         {%>
-    <br />
-            <div class="Container"> 
-       <div class="row">
-    <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
-        {%>
+
+        <div class="Container"> 
+            <div class="row">
+     <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
+         {%>
             
              <%if (item.estado.estado == "Informada")
                  { %> 
              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
                     <div class="card-body">
-                       <h5 class="card-title"><% =item.fecha.Date %></h5>
-                         <p class="card-text"><% =item.total %></p>
-                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
-                        <a href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
+                       <h5 class="card-title"><% =item.fecha.ToShortDateString() %></h5>
+                         <p class="card-text">$<% =item.total %></p>
+                        <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
+                        <br />
+                        <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
                     </div>
+                  </div>
             </div>
            <%} %>
         <%} %>
-            </div>
+            
+            <br />
+            <a href="ExpensasAdmin.aspx" class="btn btn-secondary">Atras</a>
     </div>
     <%} %>
     <%if (ver == "Incorporar"||ver=="gestion")
         { %>
     <h5 style="color:antiquewhite">Confeccion de Gastos</h5>
+    <br />
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
     <div class="form-row">
     <div class="form-group col-md-2">

@@ -22,11 +22,20 @@
                  <div class="card-header">Expensa ID: <%=item.ID %>
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
-                         <p class="card-text">$<% =item.total %></p>
+                         <p class="card-text">$<% =item.total%></p>
+                        <%if (item.estado.estado == "Paga")
+                            { %>
+                             <p class="card-text"  style="text-align:center; font-size:15px;background-color:green;color:white;font-weight:bold"><% =item.estado.estado%></p>
 
-                        <%if (item.estado.estado == "Impaga")
-                            {%>
-                              <a href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
+                        <%}
+                            else if (item.estado.estado == "Informada")
+                             {%>
+                             <p class="card-text" style="text-align:center;font-size:15px;background-color:yellow;color:black;font-weight:bold"><% =item.estado.estado%></p>
+                             <%} %>
+                          <%else if (item.estado.estado == "Impaga")
+                             {%>
+                              <p class="card-text" style="text-align:center;font-size:15px;background-color:indianred;color:white;font-weight:bold"><% =item.estado.estado%></p>
+                              <a class="btn btn-secondary" href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
                             <%}
                                 %>
                         
@@ -35,5 +44,6 @@
             </div>
         <%} %>
             </div>
+       <a class="btn btn-secondary" href="Inquilino.aspx">Atras</a>
     </div>
 </asp:Content>

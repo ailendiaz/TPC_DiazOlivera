@@ -5,29 +5,24 @@
 
     <h2 style="color:antiquewhite"><%: Title %></h2>
 
-   
-
     <div class="row">
         <%foreach (Dominio.Opciones item in listaOpciones)
             {%>
         <%if (item.tipo.ID == 1)
             { %>
-
-         <div class="container-Administrador">
-<div class="row row-cols-1 row-cols-md-3">
- 
-  <div class="col mb-4">
-    <div class="card h-100">
-      <img src="https://www.muylinux.com/wp-content/uploads/2018/07/Komorebi.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%=item.nombre %></h5>
-        <a href="#" class="btn btn-primary">Ingresar</a>
-      </div>
-    </div>
-  </div>
-    </div>
-            </div>
-             
+<%--           <div class="container-Administrador">
+             <div class="row row-cols-1 row-cols-md-3">--%>
+                <div class="col mb-4">
+                 <div class="card h-100">
+                    <img src="https://www.muylinux.com/wp-content/uploads/2018/07/Komorebi.jpg" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title"><%=item.nombre %></h5>
+                        <a href="#" class="btn btn-primary">Ingresar</a>
+                      </div>
+                     </div>
+                 </div>
+<%--             </div>
+           </div>   --%>
         <%} %>
 
         <% } %>     

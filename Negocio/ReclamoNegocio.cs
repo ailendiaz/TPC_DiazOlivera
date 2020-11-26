@@ -72,5 +72,21 @@ namespace Negocio
             }
 
         }
+        public void Modificar(Reclamos reclamo, int IDEstado)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_ModificarReclamo");
+                datos.agregarParametro("@ID", reclamo.ID);
+                datos.agregarParametro("@IDEstado", IDEstado);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
