@@ -49,16 +49,18 @@
          <div class="col-md-6 col-md-offset-3 text-center">
              <div class="form-group">
        
-                 <label for="lblAsunto" class="label">Asunto</label>  
-                 <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto"></asp:TextBox>
+                 <label for="lblAsunto" class="label" style=font-size:medium >Asunto</label> 
+                 <br />
+                 <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" BorderColor="Black"></asp:TextBox>
             </div>
          <div class="form-group">
             <% DateTime ahora = DateTime.Now; %>
-           <label for="lblFechaHora" class="label">Fecha y Hora: <% =ahora %></label>
+           <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
         </div>
         <div class="form-group">
-           <label for="lblDetalle"  class="label">Detalle:</label>
-            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine"></asp:TextBox>
+           <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
+            <br />
+            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine" BorderColor="Black"></asp:TextBox>
       </div>
         <div class="form-group">
       

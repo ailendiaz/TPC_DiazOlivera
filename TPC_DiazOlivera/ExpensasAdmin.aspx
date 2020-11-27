@@ -3,7 +3,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h1 style="color:white;font-weight:bold;">Expensas</h1>
+    <h3 style="color:white">Expensas</h3>
     <br />
     <%if (ver == null)
         { %>
@@ -68,7 +68,7 @@
 
 <%--    INPUT PARA INGRESAR UN NUEVO TIPO DE GASTO--%>
 
-    <div class="container">   
+    <div class="form-row">   
         <div class="form-group col-md-2">
              <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:antiquewhite"/>
              <asp:TextBox ID="txtAgregarTipoGasto" Class="form-control" runat="server" />

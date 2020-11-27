@@ -39,14 +39,10 @@
         <asp:Label ID="lblApellidos" style="color:white; font-weight: bold" Text="Apellido" runat="server" />
         <asp:TextBox ID="txtApellidos" runat="server" /> 
         </div>
-    
+    <div class="form-group">
         <asp:Label ID="lblGenero" style="color:white; font-weight: bold" Text="Genero" runat="server" />
-        <%--<p style="color:white; font-weight: bold" >radiobuttonlist para elegir entre femenino y masculino</p>--%>
-         
-         <%--<asp:RadioButtonList id="Genero" runat="server">
-            <asp:ListItem>Femenino</asp:ListItem>
-            <asp:ListItem>Masculino</asp:ListItem>
-          </asp:RadioButtonList>--%>
+         <%--<asp:TextBox ID="TextGenero" runat="server" /> --%>
+        </div>
     
     <div class="form-group">
         <asp:Label ID="lblNacimiento" style="color:white; font-weight: bold" Text="Fecha Nacimiento" runat="server" />
@@ -80,7 +76,7 @@
      
         <asp:Button ID="btnAceptar" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btn btn-secondary" runat="server" />
         <asp:Button ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="btn btn-secondary" runat="server" />
-    
+     <br />
       
        </div>
 

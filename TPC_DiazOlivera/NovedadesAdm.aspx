@@ -5,15 +5,15 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-  <h3 style="color:antiquewhite">Cargar Novedades: </h3>
+  <h3 style="color:white">Cargar Novedades: </h3>
 
     <div class="container-center">
       <div class="form-group col-md-2">
-        <asp:Label ID="Label1"  Text="Fecha y Hora:" runat="server" style="color:antiquewhite"/>
+        <asp:Label ID="Label1"  Text="Fecha y Hora:" runat="server" style="color:white"/>
         <asp:TextBox ID="txtFechaHora" Class="form-control" runat="server" />  
     </div>
     <div class="form-group col-md-4 ">
-        <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:antiquewhite" />
+        <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:white" />
         <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" />  
     </div>
    
