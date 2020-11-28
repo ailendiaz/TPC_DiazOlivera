@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1 style="color:white;">Expensas</h1>
+    <h2 style="color:lavender;">Expensas</h2>
     <br /> 
     <a  href="ExpensasInquilino.aspx?ver=todas" class="btn btn-secondary">Todas</a>
     <a  href="ExpensasInquilino.aspx?ver=impagas" class="btn btn-secondary">Impagas</a>
@@ -26,12 +26,12 @@
                          <p class="card-text">$<% =item.total%></p>
                         <%if (item.estado.estado == "Paga")
                             { %>
-                             <p class="card-text"  style="text-align:center; font-size:15px;background-color:green;color:white;font-weight:bold"><% =item.estado.estado%></p>
+                             <p class="card-text"  style="text-align:center; font-size:15px;background-color:darkseagreen;color:white;font-weight:bold"><% =item.estado.estado%></p>
 
                         <%}
                             else if (item.estado.estado == "Informada")
                              {%>
-                             <p class="card-text" style="text-align:center;font-size:15px;background-color:yellow;color:black;font-weight:bold"><% =item.estado.estado%></p>
+                             <p class="card-text" style="text-align:center;font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold"><% =item.estado.estado%></p>
                              <%} %>
                           <%else if (item.estado.estado == "Impaga")
                              {%>

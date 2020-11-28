@@ -42,30 +42,35 @@
                 <div class="details">
                     <h1>BIENVENIDO</h1>
                     
-                        <div id="page" class="container" style="border:solid">
+                        <%--<div id="page" class="container" style="border:solid">
                      <form id="form1" runat="server">
                          
-                        <div class="col-sm-10 ">
-                            
+                        <div class="col-sm-10 ">--%>
+                             <div class="contenedorAcceso" id="contenedorlogin">
+                                 <form id="form1" runat="server">
+                             <div id="page" class="container" style="align-content:center">
+                                 <div>
                                     <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
                                      <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
                             
                         </div>
-                        <div class="col-sm-10 ">
+                        <div <%--class="col-sm-10 --%>">
                         
                                      <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
                                     <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
                             </div>
-                        <div class="col-sm-10 ">
+                        <div <%--class="col-sm-10 "--%>>
                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
                             </div>
-                        
-                    </form>
-                            </div>
+                                 </div>
+                                     </form>
+                        </div>
+                   <%-- </form>--%>
+                          </div>
                         </div>
                         </div>
                 </div>
-                    </div>
+                    
             
    
 </body>

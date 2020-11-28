@@ -1,4 +1,4 @@
-﻿* {
+﻿/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,19 +18,19 @@
     padding-top: 20px;
 }
 
-.text-left {
+.text-left {*/
     /*font-size: 40px;*/
-    color: #ccc;
+    /*color: #ccc;
 }
 .lblAsunto {
     color: aliceblue;
-}
+}*/
 
 /*.label {
     display: inline-block;
     width: 80px;
 }*/
-.label.txtDetalle
+/*.label.txtDetalle
 {
     display:block;
 }
@@ -107,4 +107,17 @@
 .boton:hover:before {
     width: 210px;
     height: 20px;
+}*/
+body {
+    background-image: url (https://www.arquitecturaydiseno.es/medio/2018/09/17/casas-que-imitan-la-naturaleza_08_846c6168_1500x1000_2.jpg);
+}
+
+.contenedorReclamo {
+    background-color: rgb(128,128,128,08);
+    width: 20%;
+    height: 60%;
+    margin-left: 5%;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    padding-left: 30px;
 }

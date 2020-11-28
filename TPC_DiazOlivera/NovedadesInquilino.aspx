@@ -5,6 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
+    <h3 style="color:lavender; padding:1%">Novedades</h3>
+    <br />
     <div class="row">
      <%int con = 0; %>
   <%foreach (Dominio.Novedades item in listaNovedades)     

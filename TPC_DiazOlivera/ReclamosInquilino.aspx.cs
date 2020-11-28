@@ -14,7 +14,7 @@ namespace TPC_DiazOlivera
         public Inquilino inquilino { get; set; }
         public Dominio.Reclamos reclamo { get; set; }
         public List<Dominio.Reclamos> listaReclamos=null;
-        public string ver { get; set; }
+        public string ver = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             try

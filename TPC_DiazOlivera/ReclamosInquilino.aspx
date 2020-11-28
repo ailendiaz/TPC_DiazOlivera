@@ -4,12 +4,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheets" runat="server">
     <link rel="stylesheet" href="../Estilo/ReclamosInquilino.css" type="text/css" />
-    <h1 style="color:white;">Reclamos</h1>
+
+    <h3 style="color:lavender; padding:1%">Reclamos</h3>
     <br />
-    <a class="btn btn-secondary" href="/ReclamosInquilino.aspx?ver=Reclamos">Ver Reclamos</a>
-    <a class="btn btn-secondary" href="/ReclamosInquilino.aspx">Realizar Reclamo</a>
-    <br />
-    <div class="row">
+    <div class="contenedorbotones" style="padding:2%">
+     <%if (ver == null)
+                      { %>
+    <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=Reclamos">Ver Reclamos</a>
+    <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=RealiazarReclamo">Realizar Reclamo</a>
+    <br />  
+    <%} %>
+        </div>
+
+    <div class="row" style="padding:1%">
     <%if (ver == "Reclamos")
         { %>
             <% foreach (Dominio.Reclamos item in listaReclamos)
@@ -37,27 +44,30 @@
                     </div>
                    
               <% } %>
+              
             </div>
       
     <%} %>
         
-    <%else
+    <%if (ver=="RealiazarReclamo")
         { %>
-    <div id="page" class="container" style="border:solid">
+    <%--<div id="page" class="container" style="border:solid">
  
      <div class="row">
          <div class="col-md-6 col-md-offset-3 text-center">
-             <div class="form-group">
-       
+             <div class="form-group">--%>
+       <div class="contenedorReclamo">
+   <div id="page" class="container" style="align-content:center">
+       <div>
                  <label for="lblAsunto" class="label" style=font-size:medium >Asunto</label> 
                  <br />
                  <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" BorderColor="Black"></asp:TextBox>
             </div>
-         <div class="form-group">
+         <div>
             <% DateTime ahora = DateTime.Now; %>
            <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
         </div>
-        <div class="form-group">
+        <div>
            <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
             <br />
             <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine" BorderColor="Black"></asp:TextBox>
@@ -70,7 +80,7 @@
       </div>
     </div>
   </div>
-</div>
+
 <%} %>
 
 </asp:Content>

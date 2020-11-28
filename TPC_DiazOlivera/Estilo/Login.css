@@ -52,6 +52,18 @@ header {
     
 }
 
+    #contenedorlogin {
+        background-color: rgb(128,128,128,08);
+        opacity: 0.6;
+        width: 20%;
+        height: 60%;
+        margin-left: 5%;
+        border-radius: 5px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+    }
+
+
 
 @keyframes movimiento{
 
@@ -65,5 +77,4 @@ header {
 }
 
 
-  
 
