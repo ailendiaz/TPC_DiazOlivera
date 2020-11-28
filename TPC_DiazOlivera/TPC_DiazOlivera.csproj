@@ -106,6 +106,7 @@
     <Content Include="AltaUsuario.aspx" />
     <Content Include="ErrorAdmin.aspx" />
     <Content Include="ErrorInquilino.aspx" />
+    <Content Include="Estilo\ABMUsuario.css" />
     <Content Include="Estilo\Administrador.css" />
     <Content Include="Estilo\Inquilino.css" />
     <Content Include="Estilo\Login.css" />
