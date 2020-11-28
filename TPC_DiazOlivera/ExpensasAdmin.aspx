@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="ExpensasAdmin.aspx.cs" Inherits="TPC_DiazOlivera.ExpensasAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
-
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h3 style="color:white">Expensas</h3>
+    <h3 style="color:lavender; padding:1%"">Expensas</h3>
     <br />
     <%if (ver == null)
         { %>
@@ -41,23 +41,25 @@
     <%} %>
     <%if (ver == "Incorporar"||ver=="gestion")
         { %>
-    <h5 style="color:antiquewhite">Confeccion de Gastos</h5>
+    <div class="contenedor">
+    <h5 style="color:lavender">Confeccion de Gastos</h5>
+        </div>
     <br />
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
     <div class="form-row">
     <div class="form-group col-md-2">
-        <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:antiquewhite"/>
+        <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:lavender"/>
         <asp:TextBox ID="txtFecha" ReadOnly="true" Class="form-control" runat="server" />  
     </div>
     <%--<div class="form-group col-md-4">--%>
     <div class="form-group">
-        <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:antiquewhite"/>
+        <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:lavender"/>
         <asp:DropDownList ID="ddlTipoGasto" CssClass="form-control" runat="server">
             
         </asp:DropDownList>
     </div>
     <div class="form-group col-md-2">
-      <asp:Label ID="lblImporte" Text="Importe" runat="server" style="color:antiquewhite" />
+      <asp:Label ID="lblImporte" Text="Importe" runat="server" style="color:lavender" />
       <asp:TextBox ID="txtImporte" Class="form-control" runat="server" />
     </div>
   </div>
@@ -70,7 +72,7 @@
 
     <div class="form-row">   
         <div class="form-group col-md-2">
-             <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:antiquewhite"/>
+             <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:lavender"/>
              <asp:TextBox ID="txtAgregarTipoGasto" Class="form-control" runat="server" />
          </div>
      </div>
@@ -79,7 +81,7 @@
     </div>
 
 <%--LISTA DE GASTOS INGRESADOS--%>
-    <asp:Label Text="Lista de gastos" runat="server" style="color:antiquewhite"></asp:Label>
+    <asp:Label Text="Lista de gastos" runat="server" style="color:lavender"></asp:Label>
     <table class="table table-dark">
   <thead>
     <tr>
@@ -123,7 +125,7 @@
     <% }%>
     <% if (ver == "Confeccionar")
         { %>
-     <asp:Label Text="Lista de gastos" runat="server" style="color:antiquewhite"></asp:Label>
+     <asp:Label Text="Lista de gastos" runat="server" style="color:lavender"></asp:Label>
     <table class="table table-dark">
   <thead>
     <tr>

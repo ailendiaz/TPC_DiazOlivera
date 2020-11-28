@@ -108,8 +108,10 @@
     <Content Include="ErrorInquilino.aspx" />
     <Content Include="Estilo\ABMUsuario.css" />
     <Content Include="Estilo\Administrador.css" />
+    <Content Include="Estilo\ExpensasAdmin.css" />
     <Content Include="Estilo\Inquilino.css" />
     <Content Include="Estilo\Login.css" />
+    <Content Include="Estilo\NovedadesAdm.css" />
     <Content Include="Estilo\ReclamosInquilino.css" />
     <Content Include="ExpensasAdmin.aspx" />
     <Content Include="ExpensasInquilino.aspx" />

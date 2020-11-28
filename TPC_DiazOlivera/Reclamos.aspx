@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Reclamos.aspx.cs" Inherits="TPC_DiazOlivera.Reclamos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 
-    <h3 style="color:white">Gestión de Reclamos</h3>
+    <h3 style="color:lavender; padding:1%">Gestión de Reclamos</h3>
     <br />  
     <a class="btn btn-secondary" href="/Reclamos.aspx">Todos</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Pendientes">En proceso</a>
@@ -37,15 +37,15 @@
             <td style="font-size:15px"><% =item.detalle %> </td>
             <%if (item.estado.ID == 1)
                 { %>
-                    <td style="font-size:15px;background-color:red;color:white;font-weight:bold"> <%= item.estado.estado %>
+                    <td style="font-size:15px;background-color:#ff6666;color:white;font-weight:bold"> <%= item.estado.estado %>
                 <%} %>
                 <%else if (item.estado.ID == 2)
                     {%>
-                        <td style="font-size:15px;background-color:yellow;color:black;font-weight:bold"> <%= item.estado.estado %>
+                        <td style="font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold"> <%= item.estado.estado %>
                     <%} %>
                        <%else
                          { %>
-                               <td style="font-size:15px;background-color:green;color:white;font-weight:bold"> <%= item.estado.estado %>
+                               <td style="font-size:15px;background-color:darkseagreen;color:white;font-weight:bold"> <%= item.estado.estado %>
                         <%} %>
                <%-- <asp:CheckBox ID="CheckBox1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Sin Revisar"></asp:Label> 
                 <br />  

@@ -51,9 +51,9 @@
             <asp:ContentPlaceHolder ID="MainAdm" runat="server"> 
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <%--<footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My HabitApp Application</p>
-            </footer>
+            </footer>--%>
         </div>
 
                

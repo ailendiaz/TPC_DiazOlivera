@@ -2,26 +2,32 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
+<link rel="stylesheet" href="../Estilo/NovedadesAdm.css" type="text/css" />
 
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-  <h3 style="color:white">Cargar Novedades: </h3>
+ <h3 style="color:lavender">Cargar Novedades: </h3>
 
-    <div class="container-center">
-      <div class="form-group col-md-2">
+<div class="contenedorAdm">
+   <div id="page" class="container" style="align-content:center">
+   
+
+      <div>
         <asp:Label ID="Label1"  Text="Fecha y Hora:" runat="server" style="color:white"/>
         <asp:TextBox ID="txtFechaHora" Class="form-control" runat="server" />  
     </div>
-    <div class="form-group col-md-4 ">
+    <div>
         <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:white" />
         <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" />  
     </div>
-   
+   <div>
+       <br />
          <asp:Button ID="btnPublicar" Text="Publicar" runat="server" Onclick="btnPublicar_Click" class="btn btn-secondary "/>
          <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Onclick="btnCancelar_Click" class="btn btn-secondary"/>
-
+       </div>
         </div>
-
-  
+       
+  </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
+ 
         
 </asp:Content>
