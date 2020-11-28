@@ -32,7 +32,7 @@ namespace Negocio
                     aux.tipoUsuario.tipo = (string)datos.reader[3];
                     aux.nombre = (string)datos.reader[4];
                     aux.apellido = (string)datos.reader[5];
-                    aux.genero = (char)datos.reader[6];
+                    aux.genero = (string)datos.reader[6];
                     aux.DNI = Convert.ToString(datos.reader[7]);
                     aux.email = (string)datos.reader[8];
                     aux.fechaNac = Convert.ToDateTime(datos.reader[9]);
@@ -72,7 +72,7 @@ namespace Negocio
                 aux.tipoUsuario.tipo = Convert.ToString(datos.reader[2]);
                 aux.nombre = Convert.ToString(datos.reader[3]);
                 aux.apellido = Convert.ToString(datos.reader[4]);
-                aux.genero = Convert.ToChar(datos.reader[5]);
+                aux.genero = Convert.ToString(datos.reader[5]);
                 aux.DNI = Convert.ToString(datos.reader[6]);
                 aux.email = Convert.ToString(datos.reader[7]);
                 aux.fechaNac = Convert.ToDateTime(datos.reader[8]);

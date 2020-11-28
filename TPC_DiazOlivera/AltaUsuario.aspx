@@ -41,7 +41,7 @@
         </div>
     <div class="form-group">
         <asp:Label ID="lblGenero" style="color:white; font-weight: bold" Text="Genero" runat="server" />
-         <%--<asp:TextBox ID="TextGenero" runat="server" /> --%>
+         <asp:TextBox ID="txtGenero" runat="server" />
         </div>
     
     <div class="form-group">

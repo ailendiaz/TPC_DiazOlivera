@@ -116,7 +116,8 @@ namespace TPC_DiazOlivera
                         inquilino.nombre = txtNombres.Text;
                         inquilino.apellido = txtApellidos.Text;
                         inquilino.email = txtMail.Text;
-                        inquilino.genero = 'F';
+                        inquilino.genero = Convert.ToString(txtGenero.Text);
+                        //inquilino.genero = 'F';
                         inquilino.telefonos = new List<Telefono>();
                         Telefono aux = new Telefono();
                         aux.telefono = txtTelefono.Text;
@@ -136,8 +137,8 @@ namespace TPC_DiazOlivera
                         administrador.apellido= txtApellidos.Text;
                         administrador.email = txtMail.Text;
                         administrador.fechaNac = Convert.ToDateTime(txtNacimiento.Text);
-                        //administrador.genero = Convert.ToChar('F'); //CAMBIAR A TEXTBOX
-                        administrador.genero = 'F'; //CAMBIAR A TEXTBOX
+                        administrador.genero = Convert.ToString(txtGenero.Text);
+                        //administrador.genero = 'F'; //CAMBIAR A TEXTBOX
 
                         administrador.telefonos = new List<Telefono>();
                         Telefono aux = new Telefono();
@@ -168,7 +169,7 @@ namespace TPC_DiazOlivera
                           persona.apellido = txtApellidos.Text;
                           persona.nombre = txtNombres.Text;
                           persona.email = txtMail.Text;
-                          persona.genero = 'F'; //CAMBIAR A TEXTBOX
+                          persona.genero = Convert.ToString(txtGenero.Text); 
                           persona.telefonos = new List<Telefono>();
                           Telefono aux = new Telefono();
                           aux.telefono = txtTelefono.Text;

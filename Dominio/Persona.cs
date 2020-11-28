@@ -14,7 +14,7 @@ namespace Dominio
         public Tipo tipoUsuario { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public char genero { get; set; }
+        public string genero { get; set; }
         public string DNI { get; set; }
         public string email { get; set; }
         public DateTime fechaNac { get; set; }

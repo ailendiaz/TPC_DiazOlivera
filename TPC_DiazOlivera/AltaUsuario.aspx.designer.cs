@@ -123,6 +123,15 @@ namespace TPC_DiazOlivera
         protected global::System.Web.UI.WebControls.Label lblGenero;
 
         /// <summary>
+        /// txtGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGenero;
+
+        /// <summary>
         /// lblNacimiento control.
         /// </summary>
         /// <remarks>
