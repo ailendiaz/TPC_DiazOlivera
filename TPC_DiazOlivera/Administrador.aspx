@@ -9,41 +9,49 @@
     <br />
   
     <div class="container align-content-center">
-<div class="row row-cols-2 row-cols-3">
-    <div class="col mb-4">
-   <div class="card border-secondary mb-3" style="max-width: 18rem;">
-  <div class="card-header text-secondary">Reclamos</div>
-  <div class="card-body text-secondary bg-light">
-    <a href="Reclamos.aspx" class="btn btn-secondary">Ingresar</a>
-  </div>
-</div>
+        <div class="row row-cols-2 row-cols-3">
+            <div class="col mb-4">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header text-secondary">Reclamos</div>
+                <div class="card-body text-secondary bg-light">
+                    <a href="Reclamos.aspx" class="btn btn-secondary">Ingresar</a>
+                </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header text-success">Expensas</div>
+                <div class="card-body text-success bg-light">
+                    <a href="ExpensasAdmin.aspx" class="btn btn-secondary">Ingresar</a>
+                </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header text-primary">Novedades</div>
+                <div class="card-body text-primary bg-light">
+                    <a href="NovedadesAdm.aspx" class="btn btn-secondary">Ingresar</a>
+                </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header text-danger">Gestion de Usuarios</div>
+                <div class="card-body text-danger bg-light">
+                    <a href="AltaUsuario.aspx" class="btn btn-secondary">Ingresar</a>
+                </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header text-danger">Unidad Funcional</div>
+                <div class="card-body text-danger bg-light">
+                    <a href="UnidadFuncionalAdmin.aspx" class="btn btn-secondary">Ingresar</a>
+                </div>
+                </div>
+            </div>
         </div>
-    <div class="col mb-4">
-    <div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header text-success">Expensas</div>
-  <div class="card-body text-success bg-light">
-      <a href="ExpensasAdmin.aspx" class="btn btn-secondary">Ingresar</a>
-  </div>
-</div>
     </div>
-<div class="col mb-4">
-<div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header text-primary">Novedades</div>
-  <div class="card-body text-primary bg-light">
-    <a href="NovedadesAdm.aspx" class="btn btn-secondary">Ingresar</a>
-  </div>
-</div>
-     </div>
-<div class="col mb-4">
-<div class="card border-danger mb-3" style="max-width: 18rem;">
-  <div class="card-header text-danger">Gestion de Usuarios</div>
-  <div class="card-body text-danger bg-light">
-    <a href="AltaUsuario.aspx" class="btn btn-secondary">Ingresar</a>
-  </div>
-</div>
-    </div>
-</div>
-        </div>
 
 
 

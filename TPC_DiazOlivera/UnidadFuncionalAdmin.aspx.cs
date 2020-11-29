@@ -36,7 +36,8 @@ namespace TPC_DiazOlivera
             try
             {
                 DeptoNegocio negocio = new DeptoNegocio();
-                ver = Request.QueryString["ver"];
+                //ver = Request.QueryString["ver"];
+                ver = ddlOpcion.SelectedValue;
                 listaDepto = negocio.ListarDepto();
             }
             catch (Exception ex)

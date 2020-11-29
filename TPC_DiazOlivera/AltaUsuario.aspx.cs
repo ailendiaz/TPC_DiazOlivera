@@ -53,7 +53,7 @@ namespace TPC_DiazOlivera
                     ddlABM.DataTextField = "tipo";
                     ddlABM.DataValueField = "ID";
                     ddlABM.DataBind();
-
+                    
                 }
                 
                 if (ddlTipos.SelectedItem.Value == "2")
