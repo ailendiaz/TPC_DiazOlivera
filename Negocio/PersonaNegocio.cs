@@ -165,5 +165,23 @@ namespace Negocio
             }
 
         }
+        public void ModificarContraseña(Persona User)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_Modificarcontraseña");
+                datos.agregarParametro("@DNI", User.DNI);
+                datos.agregarParametro("@CONTRASEÑA", User.contraseña);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

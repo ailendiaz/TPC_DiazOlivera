@@ -15,64 +15,69 @@
 </head>
 
 <body>
-    <%--<form id="form1" runat="server">--%>
-        <header>
+<header>
+    <nav class="navbar navbar-light black">
+        <a class="navbar-brand" href="#" style="color:gray"> HabitApp
+        <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="20" height="20" class="d-inline-block align-top" alt="" loading="lazy">
+        </a>
+    </nav>
 
-            <nav class="navbar navbar-light black">
-                <a class="navbar-brand" href="#" style="color:gray"> HabitApp
-                 <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="20" height="20" class="d-inline-block align-top" alt="" loading="lazy">
-               </a>
-</nav>
-
-
-
-
-        <%--<div class="container-header">
-            <div class="logo-title">
-                <img src="C:\Users\ailen\OneDrive\Desktop\UTN\PROG III\TPC_DiazOlivera\TPC_DiazOlivera\LogoHabitApp" />
-                <h4>HabitApp</h4>
-            </div>
-
-        </div>--%>
-   <%-- </form>--%>
-     </header>
+</header>
     <div class="container-portada" >
         <div class="capa-gradient">
             <div class="container-details">
                 <div class="details">
                     <h1>BIENVENIDO</h1>
-                    
-                        <%--<div id="page" class="container" style="border:solid">
-                     <form id="form1" runat="server">
-                         
-                        <div class="col-sm-10 ">--%>
-                             <div class="contenedorAcceso" id="contenedorlogin">
-                                 <form id="form1" runat="server">
-                             <div id="page" class="container" style="align-content:center">
-                                 <div>
-                                    <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
-                                     <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
-                            
+                    <% if (!PrimerLogin)
+                        {%>
+                        <div class="contenedorAcceso" id="contenedorlogin">
+                            <form id="form1" runat="server">
+                                <div id="page" class="container" style="align-content:center">
+                                    <div>
+                                        <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
+                                        <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
+                                    </div>
+                                    <div <%--class="col-sm-10 --%>">
+                                        <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
+                                        <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
+                                    </div>
+                                    <div <%--class="col-sm-10 "--%>>
+                                        <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div <%--class="col-sm-10 --%>">
-                        
-                                     <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
-                                    <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
-                            </div>
-                        <div <%--class="col-sm-10 "--%>>
-                        <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
-                            </div>
-                                 </div>
-                                     </form>
-                        </div>
-                   <%-- </form>--%>
-                          </div>
-                        </div>
-                        </div>
+                    <%} %>
+                    <% else
+                       { %>
+                          <div class="contenedorAcceso" id="contenedorPrimerLogin">
+                            <form id="formPrimerLogin" runat="server">
+                                <div id="PrimerLogin" class="container" style="align-content:center">
+                                    <div>
+                                        <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
+                                        <asp:TextBox ID="txtDNIPrimerLogin" class="form-control"  runat="server" readonly="true" CssClass="textbox "></asp:TextBox>
+                                    </div>
+                                    <div <%--class="col-sm-10 --%>">
+                                        <label for="ContraseñaUsuario" style="font-weight:bold;">Nueva Contraseña</label>
+                                        <asp:TextBox ID="txtContraseñaPrimerLogin" TextMode="Password" class="form-control" runat="server" placeholder="Nueva Contraseña..." CssClass="textbox "></asp:TextBox>
+                                    </div>
+                                    <div <%--class="col-sm-10 --%>">
+                                        <label for="ConfirmarContraseña" style="font-weight:bold;">Confirme Contraseña</label>
+                                        <asp:TextBox ID="txtConfirmarContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Confirme Contraseña..." CssClass="textbox "></asp:TextBox>
+                                    </div>
+
+                                    <div class="row" <%--class="col-sm-10 "--%>>
+                                        <asp:Button ID="btnAceptarNuevaContraseña" style="margin:5px;" runat="server" Text="Confirmar" OnClick="btnAceptarNuevaContraseña_Click" class="btn btn-secondary" BorderColor="" />
+                                        <a class="btn btn-secondary" style="margin:5px;" href="Login.aspx">Volver</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>  
+                     <%} %>
+                    </div>
                 </div>
-                    
-            
-   
-</body>
+            </div>
+        </div>
+    </body>
 </html>
  

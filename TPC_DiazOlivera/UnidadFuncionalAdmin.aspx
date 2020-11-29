@@ -6,11 +6,6 @@
     <br /> 
     <h3 style="color:white;">Elija una Operacion</h3>
     <br />       
-<%--    <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Alta">Alta</a>
-    <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Baja">Baja</a>
-    <a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Listar">Listar</a>
-    <br />--%>
-    <%--<a class="btn btn-secondary" href="UnidadFuncionalAdmin.aspx?ver=Modificacion">Modificacion</a>--%>
     <div class="form-group">
             <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true">
             <asp:ListItem text="Alta" value="1" />
@@ -21,7 +16,6 @@
 
     <br /> 
     <%if (ddlOpcion.SelectedValue == "1")%>
-<%--    <%if (ver == "Alta")--%>
        <% { %>
         <h3 style="color:white;">Alta</h3>  
             <asp:TextBox ID="txtTorreAlta" placeholder="Torre" runat="server" />  
@@ -30,34 +24,30 @@
          <br /> 
              <asp:TextBox ID="txtNumeroAlta" placeholder="Numero" runat="server" /> 
          <br />
-<%--             <asp:TextBox ID="txtDNIAlta" placeholder="DNI del Inquilino" runat="server" /> --%>
          <br />
-            <asp:Button class="btn btn-secondary" ID="btnAceptarAlta" Text="Aceptar" OnClick="btnAceptarAlta_Click" runat="server" />
+            <asp:Button class="btn btn-secondary" ID="btnAceptarAlta" Text="Aceptar" style="margin:5px;" OnClick="btnAceptarAlta_Click" runat="server" />
     <% } %>
      <%else if (ddlOpcion.SelectedValue == "2"){%>
-<%--    <% else if (ver == "Baja")
-    { %>--%>
-        <h3 style="color:white;">Baja</h3>
+         <h3 style="color:white;">Baja</h3>
              <asp:TextBox ID="txtTorreBaja" placeholder="Torre" runat="server" />  
          <br /> 
              <asp:TextBox ID="txtPisoBaja" placeholder="Piso" runat="server" />  
          <br /> 
              <asp:TextBox ID="txtNumeroBaja" placeholder="Numero" runat="server" /> 
          <br />
-            <asp:Button class="btn btn-secondary" ID="btnAceptarBaja" Text="Aceptar" OnClick="btnAceptarBaja_Click" runat="server" />
-
+         <br />
+            <asp:Button class="btn btn-secondary" style="margin:5px;" ID="btnAceptarBaja" Text="Aceptar" OnClick="btnAceptarBaja_Click" runat="server" />
+       
     <%} %>
    
     <%else if (ddlOpcion.SelectedValue == "3"){%>
-   <%-- <% else if (ver == "Listar")
-    { %>--%>
         <h3 style="color:white;">Lista de Unidad Funcionales</h3>
-    <br />
-    <asp:Label ID="lblIDUF" style="color:white;font-weight:bold" Text="ID de Unidad Funcional" runat="server" />
-    <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged="txtBuscar_TextChanged"/>
-    <asp:Button ID="btnBuscar" Class="btn btn-secondary" Text="Buscar" runat="server" OnClick="btnBuscar_Click"/>
-    <br />
-         <table class="table table-dark">
+        <br />
+        <asp:Label ID="lblIDUF" style="color:white;font-weight:bold" Text="ID de Unidad Funcional" runat="server" />
+        <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged="txtBuscar_TextChanged"/>
+        <asp:Button ID="btnBuscar" Class="btn btn-secondary" Text="Buscar" runat="server" OnClick="btnBuscar_Click"/>
+        <br />
+        <table class="table table-dark">
              <thead>
                <tr>
                  <th scope="col">ID</th>
@@ -83,8 +73,7 @@
              </tbody>
         </table>
     <%} %>
-    <br />
-    <a class="btn btn-secondary" href="Administrador.aspx">Atras</a>
+    <a class="btn btn-secondary" style="margin:5px;" href="Administrador.aspx">Atras</a>
 
   
 
