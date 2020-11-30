@@ -16,7 +16,7 @@ namespace Negocio
             {
                 List<ExpensaIndividual> lista = new List<ExpensaIndividual>();
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearQuery("select ei.ID,ei.IDUnidadFuncional,ei.IDEstadoExpensa,ei.Fecha,ei.Importe from Expensas_individuales as ei");
+                datos.setearQuery("select ei.ID,ei.IDUnidadFuncional,ei.IDEstadoExpensa,ei.Fecha,ei.Importe,ei.Transaccion from Expensas_individuales as ei");
                 datos.ejecutarReader();
                 while (datos.reader.Read())
                 {
@@ -30,6 +30,7 @@ namespace Negocio
                     aux.estado = negocioEstado.BuscarEstadoExpensa(Convert.ToInt32(datos.reader[2]));
                     aux.fecha = Convert.ToDateTime(datos.reader[3]);
                     aux.total = Convert.ToDecimal(datos.reader[4]);
+                    aux.transaccion = Convert.ToString(datos.reader[5]);
                     lista.Add(aux);
 
                 }

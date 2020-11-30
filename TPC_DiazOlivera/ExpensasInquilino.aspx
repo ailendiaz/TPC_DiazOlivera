@@ -19,7 +19,7 @@
         {%>
             
               
-             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+             <div class="card-deck text-white bg-dark mb-3" style="max-width: 18rem;">
                  <div class="card-header">Expensa ID: <%=item.ID %>
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.Date %></h5>
@@ -39,8 +39,8 @@
        
                               
                               <asp:Label text="Numero de Transaccion" runat="server" />
-                              <asp:TextBox ID="txtOperacion" runat="server" />
-                               
+                              <asp:TextBox ID="txtOperacion" runat="server"  style="max-width: 15rem"/>
+                               <br />
                               <a class="btn btn-secondary" href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
                               
                               

@@ -42,7 +42,7 @@ namespace TPC_DiazOlivera
 
                     ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();
                     ExpensaIndividual expensaInd = new ExpensaIndividual();
-                    expensaInd.transaccion = txtOperacion.Text;
+                    expensaInd.transaccion = txtOperacion.Text; // Si ingresas un numero manual funciona. Lo que no anda es el txtbox
                     negocioExp.CargarTransaccion(expensaInd, ID);
                     negocioExp.ModificarEstado(ID, estadoExp.ToLower());
                 }

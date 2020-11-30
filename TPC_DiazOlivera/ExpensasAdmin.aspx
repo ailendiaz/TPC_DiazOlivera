@@ -32,6 +32,7 @@
                          
                         <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
                         <br />
+                        <br />
                         <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
                     </div>
                   </div>
