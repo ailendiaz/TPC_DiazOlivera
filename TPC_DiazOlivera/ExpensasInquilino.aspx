@@ -36,7 +36,14 @@
                           <%else if (item.estado.estado == "Impaga")
                              {%>
                               <p class="card-text" style="text-align:center;font-size:15px;background-color:indianred;color:white;font-weight:bold"><% =item.estado.estado%></p>
+       
+                              
+                              <asp:Label text="Numero de Transaccion" runat="server" />
+                              <asp:TextBox ID="txtOperacion" runat="server" />
+                               
                               <a class="btn btn-secondary" href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
+                              
+                              
                             <%}
                                 %>
                         
@@ -45,6 +52,9 @@
             </div>
         <%} %>
             </div>
+       
        <a class="btn btn-secondary" href="Inquilino.aspx">Atras</a>
     </div>
+
+    
 </asp:Content>

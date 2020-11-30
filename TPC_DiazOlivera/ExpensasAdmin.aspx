@@ -25,7 +25,11 @@
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
                     <div class="card-body">
                        <h5 class="card-title"><% =item.fecha.ToShortDateString() %></h5>
-                         <p class="card-text">$<% =item.total %></p>
+                         <p class="card-text">$<% =item.total %>
+                             <p class="card-text">Nro. de transaccion:<% =item.transaccion%> 
+
+                         </p>
+                         
                         <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
                         <br />
                         <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>

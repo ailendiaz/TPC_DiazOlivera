@@ -9,6 +9,7 @@ namespace Negocio
 {
     public class ExpensaIndividualNegocio
     {
+        
         public List<ExpensaIndividual> Listar()
         {
             try
@@ -92,6 +93,26 @@ namespace Negocio
 
                 throw ex;
             }
+        }
+
+        public void CargarTransaccion (ExpensaIndividual expensaInd, int ID)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearSP("sp_CargarTransaccion");
+                datos.agregarParametro("@ID", ID);
+                datos.agregarParametro("@Numero", expensaInd.transaccion);
+
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }

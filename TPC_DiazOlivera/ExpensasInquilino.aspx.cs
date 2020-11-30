@@ -13,6 +13,7 @@ namespace TPC_DiazOlivera
     {
         public Inquilino inquilino { get; set; }
         public List<ExpensaIndividual> listaExpensas = null;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -34,14 +35,18 @@ namespace TPC_DiazOlivera
             try
             {
                 
-
-                if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
+                    if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
                 {
                     int ID = Convert.ToInt32(Request.QueryString["ID"]);
                     string estadoExp = Request.QueryString["estado"];
+
                     ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();
+                    ExpensaIndividual expensaInd = new ExpensaIndividual();
+                    expensaInd.transaccion = txtOperacion.Text;
+                    negocioExp.CargarTransaccion(expensaInd, ID);
                     negocioExp.ModificarEstado(ID, estadoExp.ToLower());
                 }
+                
                 
                 ExpensaIndividualNegocio negocio = new ExpensaIndividualNegocio();               
                 if (Request.QueryString["ver"] == "impagas")
@@ -52,8 +57,10 @@ namespace TPC_DiazOlivera
                 {
                     listaExpensas = negocio.Listar(inquilino.departamento.ID);
                 }
-                
 
+                
+                
+                
             }
             catch (Exception ex)
             {
@@ -64,13 +71,7 @@ namespace TPC_DiazOlivera
 
         }
 
-        //protected void txtInformar_Click(object sender, EventArgs e)
-        //{
-        //    ExpensaIndividualNegocio negocio = new ExpensaIndividualNegocio();
-        //    ExpensaIndividual aux = new ExpensaIndividual();
-
-        //    negocio.ModificarEstado(aux,2);
-        //    Response.Redirect("Inquilino.aspx");
-        //}
+       
+        
     }
 }
