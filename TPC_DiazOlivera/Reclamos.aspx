@@ -17,6 +17,7 @@
       <th scope="col">Detalle</th>
       <th scope="col">Estado</th>
       <th scope="col">Accion</th>
+      <th scope="col">Informar</th>
 
     </tr>
   </thead>
@@ -57,6 +58,7 @@
                  <%if(item.estado.ID==1)
                 { %>
                 <a class="btn btn-secondary" href="Reclamos.aspx?ID=<%=item.ID %>&Estado=EnProceso&ver=<%= ver %>">En proceso</a>
+                
             <%}%>
             <%else if (item.estado.ID == 2)
                 { %>
@@ -65,6 +67,11 @@
                 <%} %>
 <%--                <asp:Button ID="Modificar" Text="Modificar" OnClick="Modificar_Click" runat="server" class="btn btn-secondary"/>--%>
              </td> 
+            
+          <td style="font-size:15px">
+
+                <a class="btn btn-secondary" href="Mail.aspx?<%--Mail=<%=item.inquilino.email %>--%>ID=<%=item.ID %>">Enviar Mail</a>
+            </td>
         </tr>
 
         <%} %>

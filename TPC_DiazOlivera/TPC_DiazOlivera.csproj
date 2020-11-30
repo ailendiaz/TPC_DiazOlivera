@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Mail.aspx" />
     <Content Include="MasterAdmin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="NovedadesAdm.aspx" />
@@ -244,6 +245,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.aspx.cs">
+      <DependentUpon>Mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mail.aspx.designer.cs">
+      <DependentUpon>Mail.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterAdmin.Master.cs">
       <DependentUpon>MasterAdmin.Master</DependentUpon>
