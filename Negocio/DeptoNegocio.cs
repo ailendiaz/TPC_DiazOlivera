@@ -94,6 +94,7 @@ namespace Negocio
                 datos.agregarParametro("@PISO", depto.piso);
                 datos.agregarParametro("@NUMERO", depto.numero);
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
             }
             catch (Exception ex)
             {
@@ -115,6 +116,7 @@ namespace Negocio
                 datos.agregarParametro("@PISO", depto.piso);
                 datos.agregarParametro("@NUMERO", depto.numero);
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
             }
             catch (Exception ex)
             {

@@ -50,6 +50,7 @@
     <Compile Include="GastosNegocio.cs" />
     <Compile Include="Globales.cs" />
     <Compile Include="InquilinoNegocio.cs" />
+    <Compile Include="MensajeNegocio.cs" />
     <Compile Include="NovedadesNegocio.cs" />
     <Compile Include="OpcionesNegocio.cs" />
     <Compile Include="PersonaNegocio.cs" />

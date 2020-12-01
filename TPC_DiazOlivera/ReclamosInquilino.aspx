@@ -12,10 +12,11 @@
                       { %>
     <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=Reclamos">Ver Reclamos</a>
     <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=RealizarReclamo">Realizar Reclamo</a>
+    <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=Reportes">Reportes</a>
     <br />  
     <%} %>
         </div>
-
+    
     <div class="row" style="padding:1%;margin:auto;">
     <%if (ver == "Reclamos")
         { %>
@@ -50,7 +51,7 @@
             <a href="ReclamosInquilino.aspx" class="btn btn-secondary">Atras</a>
     <%} %>
         
-    <%if (ver=="RealizarReclamo")
+    <%else if (ver == "RealizarReclamo")
         { %>
     <%--<div id="page" class="container" style="border:solid">
  
@@ -83,5 +84,36 @@
   </div>
 
 <%} %>
+    <%else if (ver=="Reportes")
+        {%>
+    <div class="conteiner">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Fecha y Hora</th>
+                    <th scope="col">Administrador</th>
+                    <th scope="col">Reclamo</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Detalle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <%foreach (Dominio.Mensaje item in listaMensajes)
+                    { %>
+                    <tr>
+                        <td style="font-size:15px"><% =item.fechaHora %> </td>
+                        <td style="font-size:15px"><% =item.IDEmisor %> </td>
+                        <td style="font-size:15px"><% =item.IDReclamo %> </td>
+                        <td style="font-size:15px"><% =item.asunto %> </td>
+                        <td style="font-size:15px"><% =item.detalle %> </td>
+                    </tr>
+                <%} %>
+            </tbody>
+        </table>   
+        <br />
+        <a class="btn btn-secondary" href="ReclamosInquilino.aspx">Atras</a>
+    </div>
+        <%} %>
 
 </asp:Content>

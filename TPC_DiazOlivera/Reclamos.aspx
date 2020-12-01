@@ -6,6 +6,8 @@
     <a class="btn btn-secondary" href="/Reclamos.aspx">Todos</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Pendientes">En proceso</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Finalizados">Solucionados</a>
+    <a class="btn btn-secondary" href="/MailAdmin.aspx">Mensajes</a>
+
     <br />
     <table class="table table-dark">
   <thead>
@@ -32,7 +34,7 @@
         <tr>
 <%--            <th scope="row"><%=item.ID %></th>--%>
          
-            <td style="font-size:15px"><% =item.fechaHora %> </td>  
+            <td style="font-size:15px"><% =item.fechaHora.ToShortDateString() %> </td>  
             <td style="font-size:15px"><% =item.inquilino.nombre+" "+item.inquilino.apellido %> </td>
             <td style="font-size:15px"><% =item.titulo %> </td>
             <td style="font-size:15px"><% =item.detalle %> </td>
@@ -70,7 +72,7 @@
             
           <td style="font-size:15px">
 
-                <a class="btn btn-secondary" href="Mail.aspx?<%--Mail=<%=item.inquilino.email %>--%>ID=<%=item.inquilino.ID %>">Enviar Mail</a>
+                <a class="btn btn-secondary" href="MailAdmin.aspx?ID=<%=item.inquilino.ID %>&Reclamo=<%=item.ID %>">Enviar Mail</a>
             </td>
         </tr>
 

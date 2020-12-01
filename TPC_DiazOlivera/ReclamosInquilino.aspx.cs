@@ -14,6 +14,7 @@ namespace TPC_DiazOlivera
         public Inquilino inquilino { get; set; }
         public Dominio.Reclamos reclamo { get; set; }
         public List<Dominio.Reclamos> listaReclamos=null;
+        public List<Mensaje> listaMensajes = null;
         public string ver = null;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,7 +57,24 @@ namespace TPC_DiazOlivera
                     throw ex;
                 }
             }
-            
+            else if (ver== "Reportes")
+            {
+                try
+                {
+                    //listaMensajes = new List<Mensaje>();
+                    MensajeNegocio negocioMensaje = new MensajeNegocio();
+                    listaMensajes = negocioMensaje.ListarPropios(inquilino.ID);
+                    if (listaMensajes == null)
+                    {
+                        listaMensajes = new List<Mensaje>();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
         }
 
         protected void btCancelar_Click(object sender, EventArgs e)

@@ -53,6 +53,7 @@
     <Compile Include="Inquilino.cs" />
     <Compile Include="Instalaciones.cs" />
     <Compile Include="Invitaciones.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Novedades.cs" />
     <Compile Include="Opciones.cs" />
     <Compile Include="Pagos.cs" />
