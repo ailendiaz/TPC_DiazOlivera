@@ -59,7 +59,10 @@ namespace TPC_DiazOlivera
 
        protected void btnIngresar (object sender, EventArgs e)
         {
-          
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             user = new Persona();
             PersonaNegocio negocio = new PersonaNegocio();
             user.tipoUsuario = new Tipo();
@@ -85,8 +88,8 @@ namespace TPC_DiazOlivera
                 AdministradorNegocio negocioAdmin = new AdministradorNegocio();
                 admin = negocioAdmin.BuscarAdmin(user.ID);
                 Session.Add("Usuario", admin);
-               
-                Response.Redirect("Administrador.aspx");                
+
+                Response.Redirect("Administrador.aspx");
             }
             else if (user.tipoUsuario.ID == 2 || user.tipoUsuario.ID == 3)
             {
@@ -94,7 +97,7 @@ namespace TPC_DiazOlivera
                 InquilinoNegocio negocioInquilino = new InquilinoNegocio();
                 inquilino = negocioInquilino.BuscarInquilino(user.ID);
                 Session.Add("Usuario", inquilino);
-              
+
                 Response.Redirect("Inquilino.aspx");
             }
             else
@@ -121,5 +124,30 @@ namespace TPC_DiazOlivera
                 Response.Redirect("Login.aspx?PrimerLogin=true");
             }
         }
+
+        protected void ValidarUsuario_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = false;
+            user = new Persona();
+            PersonaNegocio negocio = new PersonaNegocio();
+            user.tipoUsuario = new Tipo();
+            user.DNI = txtUsuario.Text;
+            user.contraseña = txtContraseña.Text;
+
+            user = negocio.Login(user);
+            if (user.ID == 0)
+            {
+                args.IsValid = false;
+            }
+            
+            else 
+                args.IsValid = true;
+
+        }
+
     }
+
+
+
+
 }

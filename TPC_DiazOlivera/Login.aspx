@@ -36,10 +36,15 @@
                                     <div>
                                         <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
                                         <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="validacionUsuario" ErrorMessage = "Ingresar Usuario" runat="server" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator>
+                                        <asp:CustomValidator ID= "validarUsuario" ErrorMessage="Usuario o contraseña incorrecta."  ControlToValidate="txtUsuario" OnServerValidate="ValidarUsuario_ServerValidate" runat="server" />
+
                                     </div>
                                     <div <%--class="col-sm-10 --%>">
                                         <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
                                         <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="validacionContraseña" ErrorMessage = "Ingresar contraseña" runat="server" ControlToValidate="txtContraseña" SetFocusOnError="true" ></asp:RequiredFieldValidator>
+                                              
                                     </div>
                                     <div <%--class="col-sm-10 "--%>>
                                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
