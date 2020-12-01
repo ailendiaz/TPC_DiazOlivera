@@ -38,6 +38,10 @@ namespace TPC_DiazOlivera
 
         protected void btnPublicar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             Dominio.Novedades novedades = new Dominio.Novedades();
             NovedadesNegocio negocio = new NovedadesNegocio();
 
@@ -50,9 +54,7 @@ namespace TPC_DiazOlivera
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Page.Validate();
-            if (!Page.IsValid)
-                return;
+           
             Response.Redirect("Administrador.aspx");
         }
     }
