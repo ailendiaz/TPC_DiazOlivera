@@ -85,6 +85,10 @@ namespace TPC_DiazOlivera
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             Gastos aux= new Gastos();
             aux.tipo = new Tipo();
             aux.fechaHora = Convert.ToDateTime(txtFecha.Text);
@@ -109,6 +113,10 @@ namespace TPC_DiazOlivera
 
         protected void btnAgregarTipoGasto_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             Tipo aux = new Tipo();
             TipoNegocio negocio = new TipoNegocio();
 

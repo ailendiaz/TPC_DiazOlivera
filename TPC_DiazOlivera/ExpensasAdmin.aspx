@@ -66,6 +66,8 @@
     <div class="form-group col-md-2">
       <asp:Label ID="lblImporte" Text="Importe" runat="server" style="color:lavender" />
       <asp:TextBox ID="txtImporte" Class="form-control" runat="server" />
+      <asp:RangeValidator ID="validacionImporte" runat="server" ControlToValidate="txtImporte" ErrorMessage="El valor ingresado debe ser numerico" MaximumValue = "100000"  MinimumValue = "0"  Type="Double" />
+
     </div>
   </div>
     <div class="form-group col-md-2">
@@ -79,6 +81,8 @@
         <div class="form-group col-md-2">
              <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:lavender"/>
              <asp:TextBox ID="txtAgregarTipoGasto" Class="form-control" runat="server" />
+             <asp:RegularExpressionValidator ID="validarTipoGasto" runat="server" ControlToValidate="txtAgregarTipoGasto" ValidationGroup="regexptest" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico"/>
+
          </div>
      </div>
     <div class="form-group col-md-2">
