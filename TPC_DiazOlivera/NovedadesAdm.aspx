@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 <link rel="stylesheet" href="../Estilo/NovedadesAdm.css" type="text/css" />
 
- <h3 style="color:lavender">Cargar Novedades: </h3>
+ <h3 style="color:#393D42">Cargar Novedades: </h3>
 
 <div class="contenedorAdm">
    <div id="page" class="container" style="align-content:center">
@@ -18,7 +18,7 @@
     </div>
     <div>
         <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:white" />
-        <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" />  
+        <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" height="150px" textmode="multiline"/>  
         <asp:RequiredFieldValidator ID="ValidacionDetalle" ErrorMessage= "Debe ingresar un detalle" runat="server" ControlToValidate="txtDetalle"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="validarDetalle" runat="server" ControlToValidate="txtDetalle" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico"/>
         

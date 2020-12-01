@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheet" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainAdm" runat="server">
-    <h1>Reportes</h1>
+    <h2 style="color:#393D42; padding:1%">Reportes</h2>
     <br />
     <%if (Request.QueryString["ID"] != null && Request.QueryString["Reclamo"]!=null)
         { %>

@@ -4,7 +4,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h3 style="color:lavender;">Ingreso de Usuario</h3>
+    <h3 style="color:#393D42">Ingreso de Usuario</h3>
     <br />
     <div class="contenedor">
         <div id="page" class="container" style="align-content:center">

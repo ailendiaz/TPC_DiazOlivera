@@ -3,7 +3,7 @@
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h3 style="color:lavender; padding:1%"">Expensas</h3>
+    <h3 style="color:#393D42; padding:1%"">Expensas</h3>
     <br />
     <%if (ver == null)
         { %>
@@ -47,24 +47,24 @@
     <%if (ver == "Incorporar"||ver=="gestion")
         { %>
     <div class="contenedor">
-    <h5 style="color:lavender">Confeccion de Gastos</h5>
+    <h5 style="color:#393D42">Confeccion de Gastos</h5>
         </div>
     <br />
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
     <div class="form-row">
     <div class="form-group col-md-2">
-        <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:lavender"/>
+        <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:#393D42"/>
         <asp:TextBox ID="txtFecha" ReadOnly="true" Class="form-control" runat="server" />  
     </div>
     <%--<div class="form-group col-md-4">--%>
     <div class="form-group">
-        <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:lavender"/>
+        <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:#393D42"/>
         <asp:DropDownList ID="ddlTipoGasto" CssClass="form-control" runat="server">
             
         </asp:DropDownList>
     </div>
     <div class="form-group col-md-2">
-      <asp:Label ID="lblImporte" Text="Importe" runat="server" style="color:lavender" />
+      <asp:Label ID="lblImporte" Text="Importe" runat="server" style="color:#393D42" />
       <asp:TextBox ID="txtImporte" Class="form-control" runat="server" />
       <asp:RangeValidator ID="validacionImporte" runat="server" ControlToValidate="txtImporte" ErrorMessage="El valor ingresado debe ser numerico" MaximumValue = "100000"  MinimumValue = "0"  Type="Double" />
 
@@ -79,7 +79,7 @@
 
     <div class="form-row">   
         <div class="form-group col-md-2">
-             <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:lavender"/>
+             <asp:Label ID="lblAgregarTipoGasto" Text="Tipo de Gasto" runat="server" style="color:#393D42"/>
              <asp:TextBox ID="txtAgregarTipoGasto" Class="form-control" runat="server" />
              <asp:RegularExpressionValidator ID="validarTipoGasto" runat="server" ControlToValidate="txtAgregarTipoGasto" ValidationGroup="regexptest" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico"/>
 
@@ -90,7 +90,7 @@
     </div>
 
 <%--LISTA DE GASTOS INGRESADOS--%>
-    <asp:Label Text="Lista de gastos" runat="server" style="color:lavender"></asp:Label>
+    <asp:Label Text="Lista de gastos" runat="server" style="color:#393D42"></asp:Label>
     <table class="table table-dark">
   <thead>
     <tr>

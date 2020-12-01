@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Reclamos.aspx.cs" Inherits="TPC_DiazOlivera.Reclamos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 
-    <h3 style="color:lavender; padding:1%">Gestión de Reclamos</h3>
+    <h3 style="color:#393D42; padding:1%">Gestión de Reclamos</h3>
     <br />  
     <a class="btn btn-secondary" href="/Reclamos.aspx">Todos</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Pendientes">En proceso</a>

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h1 style="color:white;">Unidad Funcional</h1>
+    <h1 style="color:#393D42">Unidad Funcional</h1>
     <br /> 
     <h3 style="color:white;">Elija una Operacion</h3>
     <br />       

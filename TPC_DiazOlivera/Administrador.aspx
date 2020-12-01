@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="Stylesheet" runat="server">
  <link rel="stylesheet" href="../Estilo/Administrador.css" type="text/css" />
 
-    <h2 style="color: lavender; padding:1%"">Administrador </h2>
+    <h2 style="color:#393D42; padding:1%"">Administrador </h2>
    
     <br />
     <br />
