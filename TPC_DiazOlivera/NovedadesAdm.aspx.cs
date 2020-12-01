@@ -50,6 +50,9 @@ namespace TPC_DiazOlivera
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
             Response.Redirect("Administrador.aspx");
         }
     }

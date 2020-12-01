@@ -33,6 +33,24 @@ namespace TPC_DiazOlivera
         protected global::System.Web.UI.WebControls.TextBox txtFechaHora;
 
         /// <summary>
+        /// validacionFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validacionFecha;
+
+        /// <summary>
+        /// validarFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator validarFecha;
+
+        /// <summary>
         /// lblDetalle control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,24 @@ namespace TPC_DiazOlivera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDetalle;
+
+        /// <summary>
+        /// ValidacionDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidacionDetalle;
+
+        /// <summary>
+        /// validarDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validarDetalle;
 
         /// <summary>
         /// btnPublicar control.

@@ -12,11 +12,17 @@
 
       <div>
         <asp:Label ID="Label1"  Text="Fecha y Hora:" runat="server" style="color:white"/>
-        <asp:TextBox ID="txtFechaHora" Class="form-control" runat="server" />  
+        <asp:TextBox ID="txtFechaHora" Class="form-control" runat="server" /> 
+        <asp:RequiredFieldValidator ID="validacionFecha" ErrorMessage= "Debe ingresar una fecha" runat="server" ControlToValidate="txtFechaHora"></asp:RequiredFieldValidator>
+          <asp:RangeValidator id="validarFecha" runat="server" ControlToValidate="txtFechaHora" MaximumValue="31/12/2050" MinimumValue= "30/11/2020" Type="Date" Display="Dynamic" ErrorMessage="*Fecha invalida"></asp:RangeValidator>
     </div>
     <div>
         <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:white" />
         <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" />  
+        <asp:RequiredFieldValidator ID="ValidacionDetalle" ErrorMessage= "Debe ingresar un detalle" runat="server" ControlToValidate="txtDetalle"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="validarDetalle" runat="server" ControlToValidate="txtDetalle" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico"/>
+        
+
     </div>
    <div>
        <br />
