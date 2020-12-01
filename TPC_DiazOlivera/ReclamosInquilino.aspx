@@ -11,18 +11,18 @@
      <%if (ver == null)
                       { %>
     <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=Reclamos">Ver Reclamos</a>
-    <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=RealiazarReclamo">Realizar Reclamo</a>
+    <a class="btn btn-secondary" style="padding:1%" href="/ReclamosInquilino.aspx?ver=RealizarReclamo">Realizar Reclamo</a>
     <br />  
     <%} %>
         </div>
 
-    <div class="row" style="padding:1%">
+    <div class="row" style="padding:1%;margin:auto;">
     <%if (ver == "Reclamos")
         { %>
             <% foreach (Dominio.Reclamos item in listaReclamos)
                 {%>
              
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card text-white bg-dark mb-3" style="width: 180px; text-align:center;margin:5px">
                       <div class="card-header"><%=item.fechaHora.ToShortDateString() %></div>
                         <div class="card-body">
                          <h4 style="font-weight:bold" class="card-title"><%=item.titulo %></h4>
@@ -44,40 +44,41 @@
                     </div>
                    
               <% } %>
-              
+           
             </div>
-      
+
+            <a href="ReclamosInquilino.aspx" class="btn btn-secondary">Atras</a>
     <%} %>
         
-    <%if (ver=="RealiazarReclamo")
+    <%if (ver=="RealizarReclamo")
         { %>
     <%--<div id="page" class="container" style="border:solid">
  
      <div class="row">
          <div class="col-md-6 col-md-offset-3 text-center">
              <div class="form-group">--%>
-       <div class="contenedorReclamo">
-   <div id="page" class="container" style="align-content:center">
-       <div>
-                 <label for="lblAsunto" class="label" style=font-size:medium >Asunto</label> 
-                 <br />
-                 <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" BorderColor="Black"></asp:TextBox>
+<%--       <div class="contenedorReclamo">--%>
+           <div class="container" style="background-color:dimgray;padding-right: 50%;padding-left: 50%;margin-right: auto;margin-left: auto;">
+
+            <div id="page" style="margin:auto;">
+                <div style="margin:auto;">
+                    <label for="lblAsunto" class="label" style="font-size:medium;" >Asunto</label> 
+                    <br />
+                    <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" BorderColor="Black"></asp:TextBox>
+                </div>
+            <div style="margin:auto;">
+                <% DateTime ahora = DateTime.Now; %>
+                <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
             </div>
-         <div>
-            <% DateTime ahora = DateTime.Now; %>
-           <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
-        </div>
-        <div>
-           <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
-            <br />
-            <asp:TextBox ID="txtDetalle" runat="server" CssClass="txtDetalle" TextMode="MultiLine" BorderColor="Black"></asp:TextBox>
-      </div>
-        <div class="form-group">
-      
-            <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
-            <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
-       
-      </div>
+            <div style="margin:auto;">
+                <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
+                <br />
+                <asp:TextBox ID="txtDetalle" runat="server" TextMode="MultiLine" Height="200px" Width="300px" BorderColor="Black"></asp:TextBox>
+            </div>
+            <div  style="margin:auto;">
+                <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
+                <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
+            </div>
     </div>
   </div>
 

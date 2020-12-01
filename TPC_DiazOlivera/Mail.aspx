@@ -5,13 +5,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainAdm" runat="server">
 
     <div class="container" style="margin-left:5px">
-    <h3> Comunicar Estado de Reclamo: </h3>
+        <h3> Comunicar Estado de Reclamo: </h3>
 
-  Emisor: <asp:textbox id="txtAdmin" runat="server" /><br>
-  Destinatario: <asp:textbox id="txtDestinatario" runat="server" /><br>
-  Asunto: <asp:textbox id="txtAsunto" runat="server" /><br>
-  Texto del mensaje:<br/>
- <asp:textbox id="txtMensaje" runat="server" height="150px" textmode="multiline" /><br>
- <asp:button id="EnviarMensaje" runat="server" onclick="EnviarMensaje_Click" text="Enviar" /><br>
+        Emisor: <asp:textbox id="txtAdmin" runat="server" /><br>
+        Destinatario: <asp:textbox id="txtDestinatario" runat="server" /><br>
+        Asunto: <asp:textbox id="txtAsunto" runat="server" /><br>
+        Texto del mensaje:<br/>
+        <asp:textbox id="txtMensaje" runat="server" height="150px" textmode="multiline" /><br>
+        <asp:button id="EnviarMensaje" runat="server" onclick="EnviarMensaje_Click" text="Enviar" /><br>
     </div>
 </asp:Content>

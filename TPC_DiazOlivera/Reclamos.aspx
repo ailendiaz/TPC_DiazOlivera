@@ -70,7 +70,7 @@
             
           <td style="font-size:15px">
 
-                <a class="btn btn-secondary" href="Mail.aspx?<%--Mail=<%=item.inquilino.email %>--%>ID=<%=item.ID %>">Enviar Mail</a>
+                <a class="btn btn-secondary" href="Mail.aspx?<%--Mail=<%=item.inquilino.email %>--%>ID=<%=item.inquilino.ID %>">Enviar Mail</a>
             </td>
         </tr>
 

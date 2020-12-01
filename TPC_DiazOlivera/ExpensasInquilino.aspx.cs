@@ -35,16 +35,10 @@ namespace TPC_DiazOlivera
             try
             {
                 
-                    if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
+                if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
                 {
                     int ID = Convert.ToInt32(Request.QueryString["ID"]);
                     string estadoExp = Request.QueryString["estado"];
-
-                    ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();
-                    ExpensaIndividual expensaInd = new ExpensaIndividual();
-                    expensaInd.transaccion = txtOperacion.Text; // Si ingresas un numero manual funciona. Lo que no anda es el txtbox
-                    negocioExp.CargarTransaccion(expensaInd, ID);
-                    negocioExp.ModificarEstado(ID, estadoExp.ToLower());
                 }
                 
                 
@@ -71,7 +65,17 @@ namespace TPC_DiazOlivera
 
         }
 
-       
-        
+        protected void btnIngresarTransferencia_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(Request.QueryString["ID"]);
+            string estadoExp = Request.QueryString["estado"];
+            ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();
+            ExpensaIndividual expensaInd = new ExpensaIndividual();
+            expensaInd.transaccion = txtOperacion.Text; // Si ingresas un numero manual funciona. Lo que no anda es el txtbox
+            negocioExp.CargarTransaccion(expensaInd, ID);
+            negocioExp.ModificarEstado(ID, estadoExp.ToLower());
+            Response.Redirect("Inquilino.aspx");
+
+        }
     }
 }

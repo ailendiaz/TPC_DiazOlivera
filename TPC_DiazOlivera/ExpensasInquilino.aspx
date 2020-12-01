@@ -14,45 +14,44 @@
     <a  href="ExpensasInquilino.aspx?ver=impagas" class="btn btn-secondary">Impagas</a>
     <br />  
    <div class="Container"> 
-       <div class="row">
-    <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
+    <% if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
         {%>
-            
-              
-             <div class="card-deck text-white bg-dark mb-3" style="max-width: 18rem;">
-                 <div class="card-header">Expensa ID: <%=item.ID %>
-                    <div class="card-body">
-                       <h5 class="card-title"><% =item.fecha.Date %></h5>
-                         <p class="card-text">$<% =item.total%></p>
+            <h2>Ingrese el Numero de Transaccion</h2>
+            <br />
+            <asp:TextBox ID="txtOperacion" style="max-width: 15rem" runat="server"></asp:TextBox>
+            <asp:Button ID="btnIngresarTransferencia" CssClass="btn btn-secondary" OnClick="btnIngresarTransferencia_Click" Text="Ingresar" runat="server" />  
+            <br />
+       <%} %>
+        <%else
+            {%>
+              <div class="row">  
+            <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
+                {%>  
+                    <div class="card-deck text-white bg-dark mb-3" style="margin:5px; width:180px;" >
+                        <%--max-width: 18rem;--%>
+                        <div class="card-header" style="text-align:center;">Expensa ID: <%=item.ID %>
+                            <div class="card-body" style="text-align:center;">
+                                <h5 class="card-title"  style="text-align:center;"><% =item.fecha.Date.ToShortDateString() %></h5>
+                                <p class="card-text" style="font-weight:bold; text-align:center;">$<% =item.total%></p>
                         <%if (item.estado.estado == "Paga")
-                            { %>
-                             <p class="card-text"  style="text-align:center; font-size:15px;background-color:darkseagreen;color:white;font-weight:bold"><% =item.estado.estado%></p>
-
+                          { %>
+                                <p class="card-text"  style="text-align:center; font-size:15px;background-color:darkseagreen;color:white;font-weight:bold"><% =item.estado.estado%></p>
                         <%}
                             else if (item.estado.estado == "Informada")
                              {%>
-                             <p class="card-text" style="text-align:center;font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold"><% =item.estado.estado%></p>
+                                 <p class="card-text" style="text-align:center;font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold"><% =item.estado.estado%></p>
                              <%} %>
                           <%else if (item.estado.estado == "Impaga")
                              {%>
-                              <p class="card-text" style="text-align:center;font-size:15px;background-color:indianred;color:white;font-weight:bold"><% =item.estado.estado%></p>
-       
-                              
-                              <asp:Label text="Numero de Transaccion" runat="server" />
-                              <asp:TextBox ID="txtOperacion" runat="server"  style="max-width: 15rem"/>
-                               <br />
-                              <a class="btn btn-secondary" href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
-                              
-                              
-                            <%}
-                                %>
-                        
+                                <p class="card-text" style="text-align:center;font-size:15px;background-color:indianred;color:white;font-weight:bold"><% =item.estado.estado%></p>                                     
+                                <a class="btn btn-secondary" href="ExpensasInquilino.aspx?ID=<%=item.ID %>&estado=<%="Informado" %>">Informar Pago</a>
+                            <%} %>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <%} %>
-            </div>
-       
+             <%} %>
+        </div>
+       <%}%>
        <a class="btn btn-secondary" href="Inquilino.aspx">Atras</a>
     </div>
 

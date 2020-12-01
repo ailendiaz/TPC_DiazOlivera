@@ -24,12 +24,12 @@
              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
                     <div class="card-body">
-                       <h5 class="card-title"><% =item.fecha.ToShortDateString() %></h5>
-                         <p class="card-text">$<% =item.total %>
-                             <p class="card-text">Nro. de transaccion:<% =item.transaccion%> 
-
-                         </p>
-                         
+                       <p class="card-text"><% =item.fecha.ToShortDateString() %>
+                       <p class="card-text" style="font-weight:bold;">$<% =item.total %>
+                       <p class="card-text">Nro. de transaccion:
+                       <br />
+                        <% =item.transaccion%> 
+                       </p> 
                         <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
                         <br />
                         <br />

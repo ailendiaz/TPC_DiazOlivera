@@ -56,34 +56,30 @@ namespace TPC_DiazOlivera
                     try
                     {
                         negocioExpensa.ModificarEstado(Convert.ToInt32(Request.QueryString["ID"]), Request.QueryString["estado"].ToLower());
-
-
                     }
                     catch (Exception ex)
                     {
-
                         throw ex;
                     }
 
                 }
                 listaExpensas = negocioExpensa.Listar();
             }
-            else { 
+            else 
+            { 
                 Gastos aux = new Gastos();
                 List<Tipo> tiposGasto = new List<Tipo>();
                 TipoNegocio negocio = new TipoNegocio();
                 tiposGasto = negocio.ListarTipoGasto();
             
-
-
-            if (!IsPostBack) 
-            { 
-                txtFecha.Text = Convert.ToString(DateTime.Now);
-                ddlTipoGasto.DataSource = tiposGasto;
-                ddlTipoGasto.DataTextField = "tipo";
-                ddlTipoGasto.DataValueField = "ID";
-                ddlTipoGasto.DataBind();
-            }
+                if (!IsPostBack) 
+                { 
+                    txtFecha.Text = Convert.ToString(DateTime.Now);
+                    ddlTipoGasto.DataSource = tiposGasto;
+                    ddlTipoGasto.DataTextField = "tipo";
+                    ddlTipoGasto.DataValueField = "ID";
+                    ddlTipoGasto.DataBind();
+                }
             }
         }
 
