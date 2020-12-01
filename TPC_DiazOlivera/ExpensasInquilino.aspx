@@ -16,7 +16,7 @@
    <div class="Container"> 
     <% if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
         {%>
-            <h2>Ingrese el Numero de Transaccion</h2>
+            <h2 style="color:lavender">Ingrese el Numero de Transaccion</h2>
             <br />
             <asp:TextBox ID="txtOperacion" style="max-width: 15rem" runat="server"></asp:TextBox>
             <asp:Button ID="btnIngresarTransferencia" CssClass="btn btn-secondary" OnClick="btnIngresarTransferencia_Click" Text="Ingresar" runat="server" />  

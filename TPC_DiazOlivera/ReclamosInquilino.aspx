@@ -59,13 +59,14 @@
          <div class="col-md-6 col-md-offset-3 text-center">
              <div class="form-group">--%>
 <%--       <div class="contenedorReclamo">--%>
-           <div class="container" style="background-color:dimgray;padding-right: 50%;padding-left: 50%;margin-right: auto;margin-left: auto;">
+    
+           <div class="conteiner" style="background-color:dimgray;padding-right:40%;;padding-left:30%;*/*//*margin-right: auto;*//*margin-left: auto;*/ align-content: center;">
 
             <div id="page" style="margin:auto;">
                 <div style="margin:auto;">
                     <label for="lblAsunto" class="label" style="font-size:medium;" >Asunto</label> 
                     <br />
-                    <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" BorderColor="Black"></asp:TextBox>
+                    <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" Height="30px" Width="300px" BorderColor="Black"></asp:TextBox>
                 </div>
             <div style="margin:auto;">
                 <% DateTime ahora = DateTime.Now; %>
@@ -76,9 +77,11 @@
                 <br />
                 <asp:TextBox ID="txtDetalle" runat="server" TextMode="MultiLine" Height="200px" Width="300px" BorderColor="Black"></asp:TextBox>
             </div>
-            <div  style="margin:auto;">
+            <div  style="margin-bottom:20%;">
                 <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
-                <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
+                <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" padding="2%" />
+               <br />
+               
             </div>
     </div>
   </div>
