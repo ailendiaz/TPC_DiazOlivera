@@ -19,6 +19,8 @@
             <h2 style="color:lavender">Ingrese el Numero de Transaccion</h2>
             <br />
             <asp:TextBox ID="txtOperacion" style="max-width: 15rem" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="validacionOperacion" runat="server" ControlToValidate="txtOperacion"  ErrorMessage= "Debe ingresar un número de transaccion" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="validaOperacion" runat="server" ControlToValidate="txtOperacion" ValidationExpression="^[0-9]*$" ErrorMessage="El valor debe ser numerico" ForeColor="Red"/>
             <asp:Button ID="btnIngresarTransferencia" CssClass="btn btn-secondary" OnClick="btnIngresarTransferencia_Click" Text="Ingresar" runat="server" />  
             
             <br />

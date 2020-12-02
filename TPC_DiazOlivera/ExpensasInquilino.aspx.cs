@@ -67,6 +67,12 @@ namespace TPC_DiazOlivera
 
         protected void btnIngresarTransferencia_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             int ID = Convert.ToInt32(Request.QueryString["ID"]);
             string estadoExp = Request.QueryString["estado"];
             ExpensaIndividualNegocio negocioExp = new ExpensaIndividualNegocio();

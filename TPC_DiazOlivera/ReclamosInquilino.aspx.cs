@@ -84,6 +84,13 @@ namespace TPC_DiazOlivera
 
         protected void btEnviar_Click(object sender, EventArgs e)
         {
+
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
+
             Dominio.Persona persona = new Persona();
             ReclamoNegocio negocio = new ReclamoNegocio();
             persona = (Dominio.Persona)Session["Usuario"];

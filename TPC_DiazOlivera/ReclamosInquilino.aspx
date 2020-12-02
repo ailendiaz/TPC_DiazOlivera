@@ -67,6 +67,9 @@
                     <label for="lblAsunto" class="label" style="font-size:medium;" >Asunto</label> 
                     <br />
                     <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" Height="30px" Width="300px" BorderColor="Black"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="validacionAsunto" ErrorMessage= "Debe ingresar un Asunto" runat="server" ControlToValidate="txtAsunto" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="validarAsunto" runat="server" ControlToValidate="txtAsunto" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico" ForeColor="Red"/>
+
                 </div>
             <div style="margin:auto;">
                 <% DateTime ahora = DateTime.Now; %>
@@ -76,6 +79,9 @@
                 <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
                 <br />
                 <asp:TextBox ID="txtDetalle" runat="server" TextMode="MultiLine" Height="200px" Width="300px" BorderColor="Black"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="ValidacionDetalle" ErrorMessage= "Debe ingresar un Detalle" runat="server" ControlToValidate="txtDetalle" ForeColor="Red"></asp:RequiredFieldValidator>
+<%--                <asp:RegularExpressionValidator ID="ValidarDetalle" runat="server" ControlToValidate="txtDetalle" ValidationExpression="^[a-zA-Z 0-9]*$(?!^[.,;?]*$)" ErrorMessage="El valor ingresado debe ser alfabetico" ForeColor="Red"/>--%>
+
             </div>
             <div  style="margin-bottom:20%;">
                 <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
