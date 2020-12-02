@@ -3,51 +3,65 @@
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainAdm" runat="server">
-    <h3 style="color:#393D42; padding:1%"">Expensas</h3>
+    <h3 style="color:#393D42; padding:1%; text-shadow: 2px 2px 5px white;">Expensas</h3>
     <br />
     <%if (ver == null)
         { %>
         <a href="ExpensasAdmin.aspx?ver=pagos" class="btn btn-secondary">Verificacion de pagos</a>
         <a href="ExpensasAdmin.aspx?ver=gestion" class="btn btn-secondary">Gestion de expensas</a>
+        
     <br />  
     <%} %>
     <% if (ver == "pagos")
         {%>
-
+    <div class="form-group">
+        <div class="form-group col-md-2">
+        <asp:Label ID="lblEstado" Text="Estado de Expensa" runat="server" style="color:#393D42"/>
+        <asp:DropDownList ID="ddlEstadoExpensa" AutoPostBack="true" CssClass="form-control" runat="server">
+            
+        </asp:DropDownList>
+       </div>
+    </div>
         <div class="Container"> 
             <div class="row">
      <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
          {%>
             
-             <%if (item.estado.estado == "Informada")
-                 { %> 
+           <%--  <%if (item.estado.estado == "Informada")
+                 { %> --%>
+                <div class="col">
              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
                     <div class="card-body">
-                       <p class="card-text"><% =item.fecha.ToShortDateString() %>
-                       <p class="card-text" style="font-weight:bold;">$<% =item.total %>
+                       <p class="card-text"><% =item.fecha.ToShortDateString() %></p>
+                        <p class="card-text" style="font-weight:bold;">ID UF: <% =item.depto.ID %></p>
+                       <p class="card-text" style="font-weight:bold;">$<% =item.total %></p>
                        <p class="card-text">Nro. de transaccion:
                        <br />
                         <% =item.transaccion%> 
-                       </p> 
-                        <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
-                        <br />
-                        <br />
-                        <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
+                       </p>
+                        <%if (item.estado.estado == "Informada")
+                            { %>
+                            <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
+                            <br />
+                            <br />
+                            <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Paga" %>&ver=pagos">Confirmar Pago</a>
+                        <%} %>
                     </div>
                   </div>
             </div>
-           <%} %>
+          <%-- <%} %>--%>
         <%} %>
+        </div>
             
             <br />
             <a href="ExpensasAdmin.aspx" class="btn btn-secondary">Atras</a>
     </div>
     <%} %>
-    <%if (ver == "Incorporar"||ver=="gestion")
+    <%else if (ver == "Incorporar"||ver=="gestion")
         { %>
     <div class="contenedor">
-    <h5 style="color:#393D42">Confeccion de Gastos</h5>
+    <h5 style="color:#393D42; text-shadow: 2px 2px 5px white;">Confeccion de Gastos</h5>
         </div>
     <br />
     <%--INPUTS PARA INGRESAR LOS GASTOS--%>
@@ -90,7 +104,7 @@
     </div>
 
 <%--LISTA DE GASTOS INGRESADOS--%>
-    <asp:Label Text="Lista de gastos" runat="server" style="color:#393D42"></asp:Label>
+    <asp:Label Text="Lista de gastos" runat="server" style="color:#393D42;font-weight:bold;font-size:large;"></asp:Label>
     <table class="table table-dark">
   <thead>
     <tr>
@@ -132,7 +146,7 @@
     <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ver=Confeccionar">Siguiente</a>
     <br />  
     <% }%>
-    <% if (ver == "Confeccionar")
+    <%else if (ver == "Confeccionar")
         { %>
      <asp:Label Text="Lista de gastos" runat="server" style="color:lavender"></asp:Label>
     <table class="table table-dark">

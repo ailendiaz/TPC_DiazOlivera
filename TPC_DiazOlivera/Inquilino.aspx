@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="../Estilo/Inquilino.css" type="text/css" />
     
 
-    <h2 style="color:lavender; padding:1%">Bienvenido:<% =inquilino.nombre +" "+inquilino.apellido %>.</h2>
+    <h2 style="color:lavender; padding:1%">Bienvenido/a: <% =inquilino.nombre +" "+inquilino.apellido %>.</h2>
 
 
 <%--    <div class="wrapper">

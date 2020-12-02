@@ -98,8 +98,16 @@ namespace TPC_DiazOlivera
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             Page.Validate();
-            if (!Page.IsValid)
+            if (!Page.IsValid) {
+                //lblErrorDNI.Text = "No es un DNI valido";
+                //lblErrorApellidos.Text = "No es un apellido valido";
+                //lblErrorNombres.Text = "No es un nombre valido";
+                //lblErrorGenero.Text = "No es un genero valido";
+                //lblErrorMail.Text = "No es un Correo valido";
+                //lblErrorTelefono.Text = "No es un telefono valido";
+                //lblErrorNacimiento.Text = "No es una fecha de nacimiento valida";
                 return;
+            }
             try
             {
                 

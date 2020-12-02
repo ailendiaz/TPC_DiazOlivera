@@ -49,7 +49,7 @@ namespace Negocio
             {
                 List<ExpensaIndividual> lista = new List<ExpensaIndividual>();
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearQuery("select ei.ID,ei.IDUnidadFuncional,ei.IDEstadoExpensa,ei.Fecha,ei.Importe from Expensas_individuales as ei");
+                datos.setearQuery("select ei.ID,ei.IDUnidadFuncional,ei.IDEstadoExpensa,ei.Fecha,ei.Importe from Expensas_individuales as ei order by ei.Fecha desc");
                 datos.ejecutarReader();
                 while (datos.reader.Read())
                 {

@@ -3,20 +3,34 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheet" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainAdm" runat="server">
-    <h2 style="color:#393D42; padding:1%">Reportes</h2>
+    <h2 style="color:#393D42; padding:1%; text-shadow: 2px 2px 5px white;">Reportes</h2>
     <br />
     <%if (Request.QueryString["ID"] != null && Request.QueryString["Reclamo"]!=null)
         { %>
     <div class="container" style="margin-left:5px">
         <h3> Comunicar Estado de Reclamo: </h3>
 
-        Emisor: <asp:textbox id="txtAdmin" runat="server" /><br>
-        Destinatario: <asp:textbox id="txtDestinatario" runat="server" /><br>
-        Reclamo: <asp:TextBox id="txtReclamo" runat="server" /> <br />
-        Asunto: <asp:textbox id="txtAsunto" runat="server" /><br>
-        Texto del mensaje:<br/>
-        <asp:textbox id="txtMensaje" runat="server" height="150px" textmode="multiline" /><br>
-        <asp:button id="EnviarMensaje" runat="server" onclick="EnviarMensaje_Click" text="Enviar" /><br>
+        <label for="Emisor" style="font-weight:bold;">Emisor:</label> 
+        <div class="form-group col-md-4">
+            <asp:textbox id="txtAdmin" Class="form-control" runat="server" />
+        </div>
+        <label for="Destinatario" style="font-weight:bold;">Destinatario:</label>
+        <div class="form-group col-md-4">
+            <asp:textbox id="txtDestinatario" Class="form-control" runat="server" />
+        </div>
+        <label for="Reclamo" style="font-weight:bold;">Reclamo:</label> 
+        <div class="form-group col-md-1">
+            <asp:TextBox id="txtReclamo" Class="form-control" runat="server" />
+        </div>
+        <label for="Asunto" style="font-weight:bold;">Asunto:</label> 
+        <div class="form-group col-md-6">
+            <asp:textbox id="txtAsunto" Class="form-control" runat="server" />
+        </div>
+        <label for="Mensaje" style="font-weight:bold;">Texto del mensaje:</label>
+        <div class="form-group col-md-6">
+            <asp:textbox id="txtMensaje" runat="server" Class="form-control" height="150px" textmode="multiline" />
+        </div>
+        <asp:button id="EnviarMensaje" CssClass="btn btn-secondary" runat="server" onclick="EnviarMensaje_Click" text="Enviar" /><br>
         <br />
     </div>
     <%} %>

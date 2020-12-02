@@ -13,7 +13,7 @@ namespace TPC_DiazOlivera
 {
     public partial class NovedadesInquilino : System.Web.UI.Page
     {
-        //public List<Dominio.Novedades> listaNovedades = null;
+        public string ver { get; set; }
         public List<Dominio.Novedades> listaNovedades { get; set; }
         public Inquilino inquilino { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -33,10 +33,18 @@ namespace TPC_DiazOlivera
                 Session.Add("MensajeError", "No cuenta con el permiso para Ingresar a esta seccion");
                 Response.Redirect("ErrorAdmin.aspx");
             }
-
+            ver = Request.QueryString["ver"];
             listaNovedades = new List<Dominio.Novedades>();
             NovedadesNegocio negocio = new NovedadesNegocio();
-            listaNovedades=negocio.listar();
+            if (ver == "Todas")
+            {
+                listaNovedades = negocio.listar();
+            }
+            else
+            {
+                listaNovedades = negocio.listar().FindAll(x => x.fechaHora.Year == DateTime.Now.Year && x.fechaHora.Month == DateTime.Now.Month);
+            }
+
         }
     }
 }

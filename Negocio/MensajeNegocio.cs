@@ -15,7 +15,7 @@ namespace Negocio
             {
                 AccesoDatos datos = new AccesoDatos();
                 List<Mensaje> lista = new List<Mensaje>();
-                datos.setearQuery("select ID,IDEmisor,IDReceptor,Asunto,Detalle,FechaHora,IDReclamo from Mensajes");
+                datos.setearQuery("select ID,IDEmisor,IDReceptor,Asunto,Detalle,FechaHora,IDReclamo from Mensajes order by FechaHora desc");
                 datos.ejecutarReader();
                 while (datos.reader.Read())
                 {
@@ -36,7 +36,7 @@ namespace Negocio
             {
                 AccesoDatos datos = new AccesoDatos();
                 List<Mensaje> lista = new List<Mensaje>();
-                datos.setearQuery("select ID,IDEmisor,IDReceptor,Asunto,Detalle,FechaHora,IDReclamo from Mensajes where IDEmisor=@ID or IDReceptor =@ID");
+                datos.setearQuery("select ID,IDEmisor,IDReceptor,Asunto,Detalle,FechaHora,IDReclamo from Mensajes where IDEmisor=@ID or IDReceptor =@ID order by FechaHora desc");
                 datos.agregarParametro("@ID",IDUsuario);
                 datos.ejecutarReader();
                 while (datos.reader.Read())

@@ -30,5 +30,29 @@ namespace Negocio
                 throw ex;
             }
         }
+        public List<Estado> ListarEstadosExpensas()
+        {
+            try
+            {
+                List<Estado> lista = new List<Estado>();
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearQuery("select *from Estado_Expensas");
+                datos.ejecutarReader();
+                while (datos.reader.Read())
+                {
+                    Estado aux = new Estado();
+                    aux.ID = Convert.ToInt32(datos.reader[0]);
+                    aux.estado = Convert.ToString(datos.reader[1]);
+                    lista.Add(aux);
+                }
+                datos.cerrarConexion();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

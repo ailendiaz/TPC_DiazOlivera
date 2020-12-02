@@ -13,6 +13,7 @@ namespace TPC_DiazOlivera
     public partial class ExpensasAdmin : System.Web.UI.Page
     {
         public List<Gastos> listaGastos = null;
+        public List<Estado> listaEstados = null;
         public List<ExpensaIndividual> listaExpensas=null;
         public Administrador admin = null;
         public string ver = null;
@@ -33,6 +34,7 @@ namespace TPC_DiazOlivera
                 Response.Redirect("ErrorInquilino.aspx");
             }
 
+            
             if (Session["listaGastos"] == null)
             {
                 listaGastos = new List<Gastos>();
@@ -48,8 +50,9 @@ namespace TPC_DiazOlivera
             if (ver=="pagos")
             {
                 listaExpensas = new List<ExpensaIndividual>();
+                listaEstados = new List<Estado>();
                 ExpensaIndividualNegocio negocioExpensa = new ExpensaIndividualNegocio();
-
+                EstadoNegocio negocioEstado = new EstadoNegocio();
                 if (Request.QueryString["ID"]!=null && Request.QueryString["estado"] != null)
                 {
                     
@@ -63,7 +66,17 @@ namespace TPC_DiazOlivera
                     }
 
                 }
-                listaExpensas = negocioExpensa.Listar();
+                if (!IsPostBack)
+                {
+                    listaEstados = negocioEstado.ListarEstadosExpensas();
+                    ddlEstadoExpensa.DataSource = listaEstados;
+                    ddlEstadoExpensa.DataTextField = "estado";
+                    ddlEstadoExpensa.DataValueField = "ID";
+                    ddlEstadoExpensa.DataBind();
+                }
+
+                listaExpensas = negocioExpensa.Listar().FindAll(x => x.estado.ID == Convert.ToInt32(ddlEstadoExpensa.SelectedItem.Value));
+
             }
             else 
             { 

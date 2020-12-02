@@ -20,6 +20,7 @@
             <br />
             <asp:TextBox ID="txtOperacion" style="max-width: 15rem" runat="server"></asp:TextBox>
             <asp:Button ID="btnIngresarTransferencia" CssClass="btn btn-secondary" OnClick="btnIngresarTransferencia_Click" Text="Ingresar" runat="server" />  
+            
             <br />
        <%} %>
         <%else

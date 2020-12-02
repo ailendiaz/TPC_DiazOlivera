@@ -27,7 +27,7 @@
         <div class="capa-gradient">
             <div class="container-details">
                 <div class="details">
-                    <h1>BIENVENIDO</h1>
+                    <h1 style="color:white; text-shadow: 2px 2px 5px black;">BIENVENIDO</h1>
                     <% if (!PrimerLogin)
                         {%>
                         <div class="contenedorAcceso" id="contenedorlogin">

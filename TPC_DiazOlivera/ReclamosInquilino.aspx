@@ -94,7 +94,6 @@
             <thead>
                 <tr>
                     <th scope="col">Fecha y Hora</th>
-                    <th scope="col">Administrador</th>
                     <th scope="col">Reclamo</th>
                     <th scope="col">Titulo</th>
                     <th scope="col">Detalle</th>
@@ -106,7 +105,6 @@
                     { %>
                     <tr>
                         <td style="font-size:15px"><% =item.fechaHora %> </td>
-                        <td style="font-size:15px"><% =item.IDEmisor %> </td>
                         <td style="font-size:15px"><% =item.IDReclamo %> </td>
                         <td style="font-size:15px"><% =item.asunto %> </td>
                         <td style="font-size:15px"><% =item.detalle %> </td>

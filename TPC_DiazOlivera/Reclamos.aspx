@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="Reclamos.aspx.cs" Inherits="TPC_DiazOlivera.Reclamos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Stylesheet" runat="server">
 
-    <h3 style="color:#393D42; padding:1%">Gestión de Reclamos</h3>
+    <h3 style="color:#393D42; padding:1%; text-shadow: 2px 2px 5px white;">Gestión de Reclamos</h3>
     <br />  
     <a class="btn btn-secondary" href="/Reclamos.aspx">Todos</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Pendientes">En proceso</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Finalizados">Solucionados</a>
-    <a class="btn btn-secondary" href="/MailAdmin.aspx">Mensajes</a>
+    <a class="btn btn-secondary" href="/MailAdmin.aspx">Reportes</a>
 
     <br />
     <table class="table table-dark">
@@ -40,23 +40,23 @@
             <td style="font-size:15px"><% =item.detalle %> </td>
             <%if (item.estado.ID == 1)
                 { %>
-                    <td style="font-size:15px;background-color:#ff6666;color:white;font-weight:bold"> <%= item.estado.estado %>
+                    <td style="font-size:15px;background-color:#ff6666;color:white;font-weight:bold;vertical-align:middle"> <%= item.estado.estado %></td>
                 <%} %>
                 <%else if (item.estado.ID == 2)
                     {%>
-                        <td style="font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold"> <%= item.estado.estado %>
+                        <td style="font-size:15px;background-color:#FFFFCC;color:black;font-weight:bold;vertical-align:middle;"> <%= item.estado.estado %></td>
                     <%} %>
                        <%else
                          { %>
-                               <td style="font-size:15px;background-color:darkseagreen;color:white;font-weight:bold"> <%= item.estado.estado %>
+                               <td style="font-size:15px;background-color:darkseagreen;color:white;font-weight:bold;vertical-align:middle;"> <%= item.estado.estado %></td>
                         <%} %>
                <%-- <asp:CheckBox ID="CheckBox1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Sin Revisar"></asp:Label> 
                 <br />  
                 <asp:CheckBox ID="CheckBox2" runat="server" /><asp:Label ID="Label2" runat="server" Text="En Proceso"></asp:Label>  
                 <br />  
                 <asp:CheckBox ID="CheckBox3" runat="server" /><asp:Label ID="Label3" runat="server" Text="Solucionado"></asp:Label>--%>
-            </td>
-             <td style="font-size:15px">
+            
+             <td style="font-size:15px;text-align:center;">
                  <%if(item.estado.ID==1)
                 { %>
                 <a class="btn btn-secondary" href="Reclamos.aspx?ID=<%=item.ID %>&Estado=EnProceso&ver=<%= ver %>">En proceso</a>
@@ -72,7 +72,7 @@
             
           <td style="font-size:15px">
 
-                <a class="btn btn-secondary" href="MailAdmin.aspx?ID=<%=item.inquilino.ID %>&Reclamo=<%=item.ID %>">Enviar Mail</a>
+                <a class="btn btn-secondary" href="MailAdmin.aspx?ID=<%=item.inquilino.ID %>&Reclamo=<%=item.ID %>">Enviar Reporte</a>
             </td>
         </tr>
 

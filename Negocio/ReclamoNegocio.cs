@@ -17,7 +17,7 @@ namespace Negocio
                 List<Reclamos> lista = new List<Reclamos>();
                 AccesoDatos datos = new AccesoDatos();
 
-                datos.setearQuery("select r.ID, r.IDUsuario,r.FechaHora, r.Asunto, r.Detalle,er.ID, er.Nombre from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado");
+                datos.setearQuery("select r.ID, r.IDUsuario,r.FechaHora, r.Asunto, r.Detalle,er.ID, er.Nombre from reclamos as r inner join Estado_Reclamo as er on er.ID = r.IDEstado order by r.FechaHora desc");
                 datos.ejecutarReader();
 
                 while (datos.reader.Read())
