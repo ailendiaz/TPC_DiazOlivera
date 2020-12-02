@@ -48,7 +48,7 @@
         <div class="cols">
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="containerInq">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+					<div class="front" style="background-image: url(https://verfachadasdecasas.com/wp-content/uploads/2017/05/Fachada-angosta-y-alta-con-rejas.jpg)">
 						<div class="inner">
 							<p>Novedades</p>
 						</div>
@@ -65,7 +65,7 @@
 					<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="containerInq">
 
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+					<div class="front" style="background-image: url(https://verfachadasdecasas.com/wp-content/uploads/2017/05/Fachada-angosta-y-alta-con-rejas.jpg)">
 						<div class="inner">
 							<p>Reclamos</p>
 						</div>
@@ -80,7 +80,7 @@
 
 					<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="containerInq">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+					<div class="front" style="background-image: url(https://verfachadasdecasas.com/wp-content/uploads/2017/05/Fachada-angosta-y-alta-con-rejas.jpg)">
 						<div class="inner">
 							<p>Estado de Cuenta</p>
 						</div>

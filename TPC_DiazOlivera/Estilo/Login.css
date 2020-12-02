@@ -49,12 +49,11 @@ header {
     background-size: cover;
     animation: movimiento 10s infinite linear alternate;
     background-repeat: no-repeat;
-    
 }
 
     #contenedorlogin {
         background-color: rgb(128,128,128,08);
-        opacity: 0.6;
+        opacity: 1.0;
         width: 20%;
         height: 60%;
         margin-left: 5%;

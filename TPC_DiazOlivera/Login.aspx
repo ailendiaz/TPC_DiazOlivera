@@ -16,9 +16,9 @@
 
 <body>
 <header>
-    <nav class="navbar navbar-light black">
-        <a class="navbar-brand" href="#" style="color:gray"> HabitApp
-        <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="20" height="20" class="d-inline-block align-top" alt="" loading="lazy">
+    <nav class="navbar navbar-light black  justify-content-end">
+        <a class="navbar-brand" href="#" style="color:gray; padding:0%"> HabitApp
+<%--        <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="20" height="20" class="d-inline-block align-top" alt="" loading="lazy">--%>
         </a>
     </nav>
 
