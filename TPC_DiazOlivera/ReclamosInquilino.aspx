@@ -17,7 +17,7 @@
     <%} %>
         </div>
     
-    <div class="row" style="padding:1%;margin:auto;">
+    <div class="row" style="padding:1%;margin-left:3%;">
     <%if (ver == "Reclamos")
         { %>
             <% foreach (Dominio.Reclamos item in listaReclamos)
@@ -48,7 +48,7 @@
            
             </div>
 
-            <a href="ReclamosInquilino.aspx" class="btn btn-secondary">Atras</a>
+            <a href="ReclamosInquilino.aspx" style="margin-left:3%" class="btn btn-secondary">Atras</a>
     <%} %>
         
     <%else if (ver == "RealizarReclamo")
@@ -60,35 +60,37 @@
              <div class="form-group">--%>
 <%--       <div class="contenedorReclamo">--%>
     
-           <div class="conteiner" style="background-color:dimgray;padding-right:40%;;padding-left:30%;*/*//*margin-right: auto;*//*margin-left: auto;*/ align-content: center;">
+           <div class="conteiner" style="/*background-color:dimgray;*//*padding-right:30%;*/padding-left:30%;margin-left:7%;align-content:center; border:solid">
 
-            <div id="page" style="margin:auto;">
-                <div style="margin:auto;">
-                    <label for="lblAsunto" class="label" style="font-size:medium;" >Asunto</label> 
+            <div id="page"style="margin:auto;">
+                <br />
+                <div style="margin:auto">
+                    <label for="lblAsunto" class="label" style="font-size:medium;">Asunto</label> 
                     <br />
                     <asp:TextBox ID="txtAsunto" runat="server" CssClass="txtAsunto" Height="30px" Width="300px" BorderColor="Black"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validacionAsunto" ErrorMessage= "Debe ingresar un Asunto" runat="server" ControlToValidate="txtAsunto" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="validarAsunto" runat="server" ControlToValidate="txtAsunto" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico" ForeColor="Red"/>
-
                 </div>
-            <div style="margin:auto;">
+                <br />
+            <div <%--style="margin:auto;"--%>>
                 <% DateTime ahora = DateTime.Now; %>
                 <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
             </div>
-            <div style="margin:auto;">
+                <br />
+            <div <%--style="margin:auto;"--%>>
                 <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
                 <br />
                 <asp:TextBox ID="txtDetalle" runat="server" TextMode="MultiLine" Height="200px" Width="300px" BorderColor="Black"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="ValidacionDetalle" ErrorMessage= "Debe ingresar un Detalle" runat="server" ControlToValidate="txtDetalle" ForeColor="Red"></asp:RequiredFieldValidator>
-<%--                <asp:RegularExpressionValidator ID="ValidarDetalle" runat="server" ControlToValidate="txtDetalle" ValidationExpression="^[a-zA-Z 0-9]*$(?!^[.,;?]*$)" ErrorMessage="El valor ingresado debe ser alfabetico" ForeColor="Red"/>--%>
 
             </div>
-            <div  style="margin-bottom:20%;">
+                <br />
+            <div style="/*margin-bottom:auto; */align-content:center">
                 <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
-                <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" padding="2%" />
-               <br />
-               
+                <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
+
             </div>
+                <br />
     </div>
   </div>
 

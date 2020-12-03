@@ -50,12 +50,12 @@
 				<div class="containerInq">
 					<div class="front" style="background-image: url(https://verfachadasdecasas.com/wp-content/uploads/2017/05/Fachada-angosta-y-alta-con-rejas.jpg)">
 						<div class="inner">
-							<p>Novedades</p>
+							<p>Estado de Cuenta</p>
 						</div>
 					</div>
 					<div class="back">
 						<div class="inner">
-                            <a href="NovedadesInquilino.aspx" class="btn btn-secondary">Ingresar</a>
+                            <a href="ExpensasInquilino" class="btn btn-secondary">Ingresar</a>
 						</div>
 					</div>
 					</div>
@@ -82,12 +82,12 @@
 				<div class="containerInq">
 					<div class="front" style="background-image: url(https://verfachadasdecasas.com/wp-content/uploads/2017/05/Fachada-angosta-y-alta-con-rejas.jpg)">
 						<div class="inner">
-							<p>Estado de Cuenta</p>
+							<p>Novedades</p>
 						</div>
 					</div>
 					<div class="back">
 						<div class="inner">
-                            <a href="ExpensasInquilino.aspx" class="btn btn-secondary">Ingresar</a>
+                            <a href="NovedadesInquilino.aspx" class="btn btn-secondary">Ingresar</a>
 						</div>
 					</div>
 					</div>

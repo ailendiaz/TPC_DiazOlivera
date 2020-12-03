@@ -16,13 +16,17 @@
    <div class="Container"> 
     <% if (Request.QueryString["ID"] != null && Request.QueryString["estado"] != null)
         {%>
-            <h2 style="color:lavender">Ingrese el Numero de Transaccion</h2>
+            <h4 style="color:lavender">Ingrese el Numero de Transaccion:</h4>
             <br />
-            <asp:TextBox ID="txtOperacion" style="max-width: 15rem" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="validacionOperacion" runat="server" ControlToValidate="txtOperacion"  ErrorMessage= "Debe ingresar un número de transaccion" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="validaOperacion" runat="server" ControlToValidate="txtOperacion" ValidationExpression="^[0-9]*$" ErrorMessage="El valor debe ser numerico" ForeColor="Red"/>
+            <div class="form-group col-md-4">
+            <asp:TextBox ID="txtOperacion" Class="form-control" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="validacionOperacion" runat="server" ControlToValidate="txtOperacion"  ErrorMessage= "Debe ingresar un número de transaccion" ForeColor="Red" display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="validaOperacion" runat="server" ControlToValidate="txtOperacion" ValidationExpression="^[0-9]*$" ErrorMessage="El valor debe ser numerico"  display="Dynamic" ForeColor="Red"/>
+            </div>
+            <span class="input-group-btn">
             <asp:Button ID="btnIngresarTransferencia" CssClass="btn btn-secondary" OnClick="btnIngresarTransferencia_Click" Text="Ingresar" runat="server" />  
-            
+            </span>
+
             <br />
        <%} %>
         <%else
@@ -55,8 +59,10 @@
              <%} %>
         </div>
        <%}%>
-       <a class="btn btn-secondary" href="Inquilino.aspx">Atras</a>
+          
     </div>
-
+     <a class="btn btn-secondary" <%--style="position:absolute; bottom:40px;"--%> href="Inquilino.aspx">Atras</a>
     
+
+
 </asp:Content>

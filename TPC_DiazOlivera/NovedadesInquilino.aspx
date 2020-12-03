@@ -5,10 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-    <h3 style="color:lavender; padding:1%">Novedades</h3>
+    <h2 style="color:lavender; padding:1%">Novedades</h2>
     <br />
-    <a class="btn btn-secondary" style="padding:5px" href="NovedadesInquilino.aspx">Recientes</a>
-    <a class="btn btn-secondary" style="padding:5px" href="NovedadesInquilino.aspx?ver=Todas">Todas</a>
+    <a class="btn btn-secondary" style="padding:1%" href="NovedadesInquilino.aspx">Recientes</a>
+    <a class="btn btn-secondary" style="padding:1%" href="NovedadesInquilino.aspx?ver=Todas">Todas</a>
     <br />
     <br />
     <div class="row">
