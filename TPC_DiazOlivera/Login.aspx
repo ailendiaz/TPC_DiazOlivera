@@ -18,7 +18,6 @@
 <header>
     <nav class="navbar navbar-light black  justify-content-end">
         <a class="navbar-brand" href="#" style="color:gray; padding:0%"> HabitApp
-<%--        <img src="C:/Users/ailen/OneDrive/Desktop/UTN/PROG III/TPC_DiazOlivera/TPC_DiazOlivera/LogoHabitApp.png" width="20" height="20" class="d-inline-block align-top" alt="" loading="lazy">--%>
         </a>
     </nav>
 
@@ -41,13 +40,13 @@
                                         <asp:CustomValidator ID= "validarUsuario" ErrorMessage="Usuario o contraseña incorrecta."  ControlToValidate="txtUsuario" OnServerValidate="ValidarUsuario_ServerValidate" runat="server" />
 
                                     </div>
-                                    <div <%--class="col-sm-10 --%>">
+                                    <div>
                                         <label for="ContraseñaUsuario" style="font-weight:bold;">Contraseña</label>
                                         <asp:TextBox ID="txtContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Contraseña..." CssClass="textbox "></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="validacionContraseña" ErrorMessage = "Ingresar contraseña" runat="server" ControlToValidate="txtContraseña" SetFocusOnError="true" ></asp:RequiredFieldValidator>
                                               
                                     </div>
-                                    <div <%--class="col-sm-10 "--%>>
+                                    <div >
                                         <asp:Button ID="Button1" runat="server" Text="Ingresar" OnClick="btnIngresar" class="btn btn-secondary" BorderColor="" />
                                     </div>
                                 </div>
@@ -63,16 +62,16 @@
                                         <label for="NombredeUsuario" style="font-weight:bold;">DNI</label>
                                         <asp:TextBox ID="txtDNIPrimerLogin" class="form-control"  runat="server" readonly="true" CssClass="textbox "></asp:TextBox>
                                     </div>
-                                    <div <%--class="col-sm-10 --%>">
+                                    <div >
                                         <label for="ContraseñaUsuario" style="font-weight:bold;">Nueva Contraseña</label>
                                         <asp:TextBox ID="txtContraseñaPrimerLogin" TextMode="Password" class="form-control" runat="server" placeholder="Nueva Contraseña..." CssClass="textbox "></asp:TextBox>
                                     </div>
-                                    <div <%--class="col-sm-10 --%>">
+                                    <div >
                                         <label for="ConfirmarContraseña" style="font-weight:bold;">Confirme Contraseña</label>
                                         <asp:TextBox ID="txtConfirmarContraseña" TextMode="Password" class="form-control" runat="server" placeholder="Confirme Contraseña..." CssClass="textbox "></asp:TextBox>
                                     </div>
 
-                                    <div class="row" <%--class="col-sm-10 "--%>>
+                                    <div class="row" >
                                         <asp:Button ID="btnAceptarNuevaContraseña" style="margin:5px;" runat="server" Text="Confirmar" OnClick="btnAceptarNuevaContraseña_Click" class="btn btn-secondary" BorderColor="" />
                                         <a class="btn btn-secondary" style="margin:5px;" href="Login.aspx">Volver</a>
                                     </div>

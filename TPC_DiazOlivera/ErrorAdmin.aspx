@@ -15,7 +15,6 @@
     <br />
     <br />   
     <div>
-<%--        <p style="color:white;font-weight:bold"><% ="ERROR: "+exception.ToString() %></p>--%>
     </div>
     
 </asp:Content>

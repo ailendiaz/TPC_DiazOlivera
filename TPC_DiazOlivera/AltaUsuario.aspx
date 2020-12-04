@@ -104,7 +104,6 @@
             <div>
                 <asp:Button ID="btnAceptar" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btn btn-secondary" runat="server" />
                 <a class="btn btn-secondary" href="Administrador.aspx">Cancelar</a>
-<%--                <asp:Button ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="btn btn-secondary" runat="server" />--%>
              </div>
          </div>
     </div>

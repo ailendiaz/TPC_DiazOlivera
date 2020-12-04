@@ -6,13 +6,12 @@
     <a class="btn btn-secondary" href="/Reclamos.aspx">Todos</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Pendientes">En proceso</a>
     <a class="btn btn-secondary" href="/Reclamos.aspx?ver=Finalizados">Solucionados</a>
-    <a class="btn btn-secondary" href="/MailAdmin.aspx">Reportes</a>
+    <a class="btn btn-secondary" href="/ReporteAdmin.aspx">Reportes</a>
 
     <br />
     <table class="table table-dark">
   <thead>
     <tr>
-<%--      <th scope="col">ID</th>--%>
       <th scope="col">Fecha y Hora</th>
       <th scope="col">Nombre y Apellido</th>
       <th scope="col">Titulo</th>
@@ -32,7 +31,6 @@
         <%con++;%>
         
         <tr>
-<%--            <th scope="row"><%=item.ID %></th>--%>
          
             <td style="font-size:15px"><% =item.fechaHora.ToShortDateString() %> </td>  
             <td style="font-size:15px"><% =item.inquilino.nombre+" "+item.inquilino.apellido %> </td>
@@ -50,11 +48,6 @@
                          { %>
                                <td style="font-size:15px;background-color:darkseagreen;color:white;font-weight:bold;vertical-align:middle;"> <%= item.estado.estado %></td>
                         <%} %>
-               <%-- <asp:CheckBox ID="CheckBox1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Sin Revisar"></asp:Label> 
-                <br />  
-                <asp:CheckBox ID="CheckBox2" runat="server" /><asp:Label ID="Label2" runat="server" Text="En Proceso"></asp:Label>  
-                <br />  
-                <asp:CheckBox ID="CheckBox3" runat="server" /><asp:Label ID="Label3" runat="server" Text="Solucionado"></asp:Label>--%>
             
              <td style="font-size:15px;text-align:center;">
                  <%if(item.estado.ID==1)
@@ -67,18 +60,15 @@
                 <a class="btn btn-secondary" href="Reclamos.aspx?ID=<%=item.ID %>&Estado=Solucionado&ver=<%= ver %>">Solucionado</a>
 
                 <%} %>
-<%--                <asp:Button ID="Modificar" Text="Modificar" OnClick="Modificar_Click" runat="server" class="btn btn-secondary"/>--%>
              </td> 
             
           <td style="font-size:15px">
 
-                <a class="btn btn-secondary" href="MailAdmin.aspx?ID=<%=item.inquilino.ID %>&Reclamo=<%=item.ID %>">Enviar Reporte</a>
+                <a class="btn btn-secondary" href="ReporteAdmin.aspx?ID=<%=item.inquilino.ID %>&Reclamo=<%=item.ID %>">Enviar Reporte</a>
             </td>
         </tr>
 
         <%} %>
   </tbody>
 </table>
-<%--    <asp:Button ID="Aceptar" runat="server" Text="Aceptar" OnClick="btnAceptar"  class="btn btn-secondary" BorderColor="" />--%>
-<%--    <asp:Button ID="Cancelar" runat="server" Text="Cancelar" OnClick="btnCancelar"  class="btn btn-secondary" BorderColor="" />--%>
 </asp:Content>

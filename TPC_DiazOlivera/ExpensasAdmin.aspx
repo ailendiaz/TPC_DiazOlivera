@@ -27,8 +27,7 @@
      <%foreach (Dominio.ExpensaIndividual item in listaExpensas)
          {%>
             
-           <%--  <%if (item.estado.estado == "Informada")
-                 { %> --%>
+          
                 <div class="col">
              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                  <div class="card-header">Expensa ID: <%=item.ID %></div>
@@ -50,7 +49,7 @@
                     </div>
                   </div>
             </div>
-          <%-- <%} %>--%>
+         
         <%} %>
         </div>
             
@@ -70,7 +69,7 @@
         <asp:Label ID="lblFecha"  Text="Fecha" runat="server" style="color:#393D42"/>
         <asp:TextBox ID="txtFecha" ReadOnly="true" Class="form-control" runat="server" />  
     </div>
-    <%--<div class="form-group col-md-4">--%>
+    
     <div class="form-group">
         <asp:Label ID="lblTipo" Text="Tipo de Gasto" runat="server" style="color:#393D42"/>
         <asp:DropDownList ID="ddlTipoGasto" CssClass="form-control" runat="server">
@@ -190,7 +189,7 @@
     
     <br />  
     <% }%>
-<%--    <%} %>--%>
+
 
     
 

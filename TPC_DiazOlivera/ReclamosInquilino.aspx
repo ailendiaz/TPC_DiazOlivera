@@ -53,14 +53,10 @@
         
     <%else if (ver == "RealizarReclamo")
         { %>
-    <%--<div id="page" class="container" style="border:solid">
- 
-     <div class="row">
-         <div class="col-md-6 col-md-offset-3 text-center">
-             <div class="form-group">--%>
-<%--       <div class="contenedorReclamo">--%>
+   
+
     
-           <div class="conteiner" style="/*background-color:dimgray;*//*padding-right:30%;*/padding-left:30%;margin-left:7%;align-content:center; border:solid">
+           <div class="conteiner" style="padding-left:30%;margin-left:7%;align-content:center; border:solid">
 
             <div id="page"style="margin:auto;">
                 <br />
@@ -72,12 +68,12 @@
                     <asp:RegularExpressionValidator ID="validarAsunto" runat="server" ControlToValidate="txtAsunto" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico" ForeColor="Red"/>
                 </div>
                 <br />
-            <div <%--style="margin:auto;"--%>>
+            <div>
                 <% DateTime ahora = DateTime.Now; %>
                 <label for="lblFechaHora" class="label" style=font-size:medium>Fecha y Hora: <% =ahora %></label>
             </div>
                 <br />
-            <div <%--style="margin:auto;"--%>>
+            <div>
                 <label for="lblDetalle" class="label" style=font-size:medium >Detalle:</label>
                 <br />
                 <asp:TextBox ID="txtDetalle" runat="server" TextMode="MultiLine" Height="200px" Width="300px" BorderColor="Black"></asp:TextBox>
@@ -85,7 +81,7 @@
 
             </div>
                 <br />
-            <div style="/*margin-bottom:auto; */align-content:center">
+            <div style="align-content:center">
                 <asp:Button ID="btEnviar" runat="server" Text="Enviar" OnClick="btEnviar_Click" Class="btn btn-secondary" />
                 <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Class="btn btn-secondary" />
 

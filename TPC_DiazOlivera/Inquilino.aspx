@@ -8,41 +8,6 @@
     <h2 style="color:lavender; padding:1%">Bienvenido/a: <% =inquilino.nombre +" "+inquilino.apellido %>.</h2>
 
 
-<%--    <div class="wrapper">
-        
-        <%foreach (Dominio.Opciones item in listaOpciones)
-            {%>
-        <%if (item.tipo.ID == 2)
-            { %>
-
-        
-  <div class="cols col-4">
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="containerInq">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-						<div class="inner">
-							<p><%=item.nombre %></p>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-                            <%--<asp:Button />--%>
-						<%--</div>
-					</div>
-				</div>
-			</div>
-
-      </div>--%>
-
-
- 
-        <% %>
-
-        <%  %>
-            
-  <%--  </div>--%>
-    
-
     <div class="wrapper">
 
         <div class="cols">

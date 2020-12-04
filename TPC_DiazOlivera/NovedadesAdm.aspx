@@ -20,14 +20,12 @@
         <asp:Label ID="lblDetalle"  Text="Detalle:" runat="server" style="color:white" />
         <asp:TextBox ID="txtDetalle" Class="form-control" runat="server" height="150px" textmode="multiline"/>  
         <asp:RequiredFieldValidator ID="ValidacionDetalle" ErrorMessage= "Debe ingresar un detalle" runat="server" ControlToValidate="txtDetalle"></asp:RequiredFieldValidator>
-<%--        <asp:RegularExpressionValidator ID="validarDetalle" runat="server" ControlToValidate="txtDetalle" ValidationExpression="^[a-z & A-Z]*$" ErrorMessage="El valor ingresado debe ser alfabetico"/>--%>
         
 
     </div>
    <div>
        <br />
          <asp:Button ID="btnPublicar" Text="Publicar" runat="server" Onclick="btnPublicar_Click" class="btn btn-secondary "/>
-<%--         <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Onclick="btnCancelar_Click" class="btn btn-secondary"/>--%>
        <a class="btn btn-secondary" href="Administrador.aspx">Cancelar</a>
        </div>
         </div>

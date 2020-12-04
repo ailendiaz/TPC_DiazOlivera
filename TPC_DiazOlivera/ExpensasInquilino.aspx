@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExpensasInquilino.aspx.cs" Inherits="TPC_DiazOlivera.ExpensasInquilino" %>
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="headInquilino" runat="server">
 
-</asp:Content>--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheets" runat="server">
     
 
@@ -61,7 +59,7 @@
        <%}%>
           
     </div>
-     <a class="btn btn-secondary" <%--style="position:absolute; bottom:40px;"--%> href="Inquilino.aspx">Atras</a>
+     <a class="btn btn-secondary" href="Inquilino.aspx">Atras</a>
     
 
 
