@@ -71,14 +71,16 @@
                 <asp:RequiredFieldValidator ID="validacionMail" ErrorMessage= "Debe ingresar una mail" runat="server" ControlToValidate="txtMail"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="validarmail" runat="server" ErrorMessage= "Formato de mail incorrecto"  ControlToValidate="txtMail" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" /> 
             </div>
-            <div>
-                <asp:Label ID="lblTelefono" style="color:white; font-weight: bold" Text="Telefono" runat="server" />
-                <asp:TextBox ID="txtTelefono" Class="form-control" runat="server" /> 
-                <asp:Label ID="lblErrorTelefono" Text="" runat="server" />
-                <asp:RequiredFieldValidator ID="validacionTel" ErrorMessage= "Debe ingresar una telefono" runat="server" ControlToValidate="txtTelefono"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="validatel" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^[0-9]*$" ErrorMessage="El valor debe ser numerico"/>
-            </div>
-
+            <%if (ddlABM.SelectedItem.Value == "1")
+                { %>
+                <div>
+                    <asp:Label ID="lblTelefono" style="color:white; font-weight: bold" Text="Telefono" runat="server" />
+                    <asp:TextBox ID="txtTelefono" Class="form-control" runat="server" /> 
+                    <asp:Label ID="lblErrorTelefono" Text="" runat="server" />
+                    <asp:RequiredFieldValidator ID="validacionTel" ErrorMessage= "Debe ingresar una telefono" runat="server" ControlToValidate="txtTelefono"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="validatel" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^[0-9]*$" ErrorMessage="El valor debe ser numerico"/>
+                </div>
+                <%} %>
             <%if (ddlTipos.SelectedValue == "2")
                 {%>
                 <div >

@@ -137,8 +137,12 @@ namespace TPC_DiazOlivera
                         inquilino.tipoUsuario = new Tipo();
                         inquilino.tipoUsuario.ID = 2;
                         negocio.AltaInquilino(inquilino);
-                        negocio.AsignarDepto(inquilino);
-                        
+                        if (!negocio.AsignarDepto(inquilino))
+                        {
+                            DeptoNegocio negocioDepto = new DeptoNegocio();
+                            negocioDepto.Guardar(inquilino.departamento);
+                            negocio.AsignarDepto(inquilino);
+                        }
                     }
                     else
                     {
@@ -161,7 +165,7 @@ namespace TPC_DiazOlivera
                         negocio.AltaAdministrador(administrador);
 
                     }
- 
+
                 }
                 else if (ddlABM.SelectedValue == "2")
                 {
@@ -169,7 +173,6 @@ namespace TPC_DiazOlivera
                     PersonaNegocio negocio = new PersonaNegocio();
                     persona.DNI = txtDNI.Text;
                     negocio.BajaUsuario(persona);
-                    Response.Redirect("Administrador.aspx");
                 }
 
                         else
@@ -187,9 +190,8 @@ namespace TPC_DiazOlivera
                           persona.telefonos.Add(aux);
                           persona.fechaNac = Convert.ToDateTime(txtNacimiento.Text);
                           negocio.ModificacionUsuario(persona);
-                          Response.Redirect("Administrador.aspx");
-
                          }
+                Response.Redirect("Administrador.aspx");
 
             }
 
@@ -223,6 +225,7 @@ namespace TPC_DiazOlivera
             txtApellidos.Text = persona.apellido;
             txtNombres.Text = persona.nombre;
             txtMail.Text = persona.email;
+            txtGenero.Text = persona.genero;
             txtNacimiento.Text = persona.fechaNac.ToShortDateString();
             txtTelefono.ReadOnly = true;
             txtPiso.ReadOnly = true;

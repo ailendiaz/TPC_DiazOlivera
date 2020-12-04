@@ -115,7 +115,7 @@ namespace Negocio
 
         }
 
-        public void AsignarDepto(Inquilino inquilino)
+        public bool AsignarDepto(Inquilino inquilino)
         {
             
             try
@@ -128,11 +128,12 @@ namespace Negocio
                 datos.agregarParametro("@DNI", inquilino.DNI);
                 datos.ejecutarAccion();
                 datos.cerrarConexion();
+                return true;
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                return false;
+                //throw ex;
             }
         }
 
