@@ -103,6 +103,7 @@ namespace Negocio
 
                 if (!datos.reader.Read())
                 {
+                    datos.cerrarConexion();
                     return aux;
                 }
                 aux.DNI = Convert.ToString(datos.reader[0]);
@@ -176,6 +177,25 @@ namespace Negocio
                 datos.ejecutarAccion();
                 datos.cerrarConexion();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public string EncriptarDNI(Int64 ID)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearQuery("select CONVERT(varchar(100), Hashbytes('MD5',DNI),2) from Datos_Personales where IDUsuario=@ID");
+                datos.agregarParametro("@ID",ID);
+                datos.ejecutarReader();
+                datos.reader.Read();
+                string aux = Convert.ToString(datos.reader[0]);
+                datos.cerrarConexion();
+                return aux;
             }
             catch (Exception ex)
             {

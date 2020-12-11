@@ -43,8 +43,9 @@ namespace TPC_DiazOlivera
                 {
                     user = (Persona)Session["Usuario"];
                     txtDNIPrimerLogin.Text = user.DNI;
+                    txtDNIPrimerLogin.ReadOnly = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Session["Usuario"] = null;
                     Response.Redirect("Login.aspx");
@@ -75,7 +76,8 @@ namespace TPC_DiazOlivera
                 //Insertar mensaje de que no encontro el usuario
                 Response.Redirect("Login.aspx");
             }
-            if (user.DNI == user.contraseña)
+            string DNIencriptado = negocio.EncriptarDNI(user.ID);
+            if (DNIencriptado == user.contraseña)
             {
                 Session.Add("Usuario", user);
                 Response.Redirect("Login.aspx?PrimerLogin=true");
