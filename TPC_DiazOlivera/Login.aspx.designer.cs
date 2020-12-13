@@ -42,6 +42,15 @@ namespace TPC_DiazOlivera
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validacionUsuario;
 
         /// <summary>
+        /// Control validarUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator validarUsuario;
+
+        /// <summary>
         /// Control txtContraseña.
         /// </summary>
         /// <remarks>
