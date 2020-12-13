@@ -37,7 +37,7 @@
                  
                                         <asp:TextBox ID="txtUsuario" class="form-control"  runat="server" placeholder="DNI..." CssClass="textbox "></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="validacionUsuario" ErrorMessage = "Ingresar Usuario" runat="server" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator>
-                                        <asp:CustomValidator ID= "validarUsuario" ErrorMessage="Usuario o contraseña incorrecta."  ControlToValidate="txtUsuario" OnServerValidate="ValidarUsuario_ServerValidate" runat="server" />
+<%--                                        <asp:CustomValidator ID= "validarUsuario" ErrorMessage="Usuario o contraseña incorrecta."  ControlToValidate="txtUsuario" OnServerValidate="ValidarUsuario_ServerValidate" runat="server" />--%>
 
                                     </div>
                                     <div>

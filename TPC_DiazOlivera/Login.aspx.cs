@@ -141,9 +141,9 @@ namespace TPC_DiazOlivera
             {
                 args.IsValid = false;
             }
-            
             else 
                 args.IsValid = true;
+
 
         }
 
