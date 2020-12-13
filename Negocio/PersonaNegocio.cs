@@ -96,11 +96,12 @@ namespace Negocio
             {
                 AccesoDatos datos = new AccesoDatos();
                 Persona aux = new Persona();
-                string p ="admin'";
                 
                 datos.setearQuery("select dp.DNI, u.Contraseña,u.IDTipo ,u.ID  from Usuarios as u inner join Datos_Personales as dp on dp.IDUsuario = u.ID where dp.DNI = @DNI and u.Contraseña = Convert(varchar(100),HashBytes('MD5','"+user.contraseña+"'), 2)");
+                //datos.setearQuery("select dp.DNI, u.Contraseña,u.IDTipo ,u.ID  from Usuarios as u inner join Datos_Personales as dp on dp.IDUsuario = u.ID where dp.DNI = @DNI and u.Contraseña = Convert(varchar(100),HashBytes('MD5', @PASS), 2)");
+
                 datos.agregarParametro("@DNI", user.DNI);
-                datos.agregarParametro("@PASS", user.contraseña);
+                //datos.agregarParametro("@PASS", user.contraseña);
                 datos.ejecutarReader();
 
                 if (!datos.reader.Read())
