@@ -35,10 +35,16 @@
                        <p class="card-text"><% =item.fecha.ToShortDateString() %></p>
                         <p class="card-text" style="font-weight:bold;">ID UF: <% =item.depto.ID %></p>
                        <p class="card-text" style="font-weight:bold;">$<% =item.total %></p>
-                       <p class="card-text">Nro. de transaccion:
-                       <br />
-                        <% =item.transaccion%> 
-                       </p>
+                       
+                        <%if (item.estado.estado != "Impaga")
+                            { %>
+                                <p class="card-text">Nro. de transaccion:
+                                <br />
+                                <% =item.transaccion%> 
+                                </p>                        
+                        <%} %>
+                        
+                        
                         <%if (item.estado.estado == "Informada")
                             { %>
                             <a class="btn btn-secondary" href="ExpensasAdmin.aspx?ID=<%=item.ID %>&estado=<%="Impaga" %>&ver=pagos">Rechazar Pago</a>
